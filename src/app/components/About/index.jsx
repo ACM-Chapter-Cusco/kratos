@@ -1,17 +1,13 @@
-import Image from "next/image";
 import React from "react";
 import TextAbout from "./TextAbout";
 import Imagery from "./Imagery";
+import LeftLine from "../common/LeftLine";
 
 const About = () => {
   return (
     <div className="flex justify-between items-stretch my-20">
-      <Image
-        src="/lateral-vertical-line.svg"
-        alt="Line"
-        width={140}
-        height={450}
-      />
+      <LeftLine color='0A84FF' />
+
       <div className="w-[32%] flex items-center">
         <TextAbout />
       </div>
