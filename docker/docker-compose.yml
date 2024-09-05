@@ -1,0 +1,22 @@
+services:
+  npm:
+    container_name: kratos-npm
+    image: node:22-alpine3.19
+    working_dir: /code
+    volumes:
+      - ../:/code
+    command: npm install
+
+  fronend:
+    container_name: kratos-fronend
+    image: node:22-alpine3.19
+    working_dir: /code
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../:/code
+      - ../:/workspace:cached
+    depends_on:
+      npm:
+        condition: service_completed_successfully
+    command: npm run dev
