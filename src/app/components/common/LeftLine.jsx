@@ -5,7 +5,7 @@ const LeftLine = ({ color }) => {
   return (
     <>
       <div
-        className={`flex flex-col justify-center items-center mt-5 ${styles.circle_gradient}`}
+        className={`hidden md:flex flex-col justify-center items-center mt-5 ${styles.circle_gradient}`}
         style={{
           '--color': `#${color}66`,
           '--color-20': `#${color}11`,
