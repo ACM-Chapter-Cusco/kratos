@@ -1,0 +1,17 @@
+.line_down {
+  width: 2px;
+  height: 247px;
+  background: linear-gradient(to top, transparent, var(--color));
+}
+
+.line_top {
+  width: 2px;
+  height: 247px;
+  background: linear-gradient(to bottom, transparent, var(--color));
+}
+
+
+.circle_gradient {
+  width: 140px;
+  background: radial-gradient(circle, var(--color) 0%, var(--color-20) 17%, transparent 24%);
+}
