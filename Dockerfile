@@ -24,4 +24,14 @@ USER nextjs
 EXPOSE 3000
 ENV PORT 3000
 CMD ["npm", "start"]
+=======
+WORKDIR /code
+COPY package.json .
+
+FROM base AS installer
+RUN npm install
+
+FROM installer AS build
+COPY . .
+RUN npm run build
 
