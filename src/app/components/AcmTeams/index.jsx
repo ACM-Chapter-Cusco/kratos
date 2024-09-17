@@ -1,49 +1,48 @@
-import H2 from "../common/H2"
-import LeftLine from "../common/LeftLine"
-import { BrainSvg } from "../Svgs/BrainSvg"
-import { CupSvg } from "../Svgs/CupSvg"
-import { PcSvg } from "../Svgs/PcSvg"
-import { ArticlesTeams } from "./ArticlesTeams"
+import H2 from "../common/H2";
+import LeftLine from "../common/LeftLine";
+import { BrainSvg } from "../Svgs/BrainSvg";
+import { CupSvg } from "../Svgs/CupSvg";
+import { PcSvg } from "../Svgs/PcSvg";
+import { ArticlesTeams } from "./ArticlesTeams";
 
 const Teams = [
   {
     color: "A6FF00",
     content: {
       title: "dev",
-      info: "Subgrupo de ACM que se enfoca en el desarrollo de software web"
+      info: "Subgrupo de ACM que se enfoca en el desarrollo de software web",
     },
     links: {
       code: "#",
-      weebsite: "#"
+      weebsite: "#",
     },
-    svg: <PcSvg />
+    svg: <PcSvg />,
   },
   {
     color: "00FFF6",
     content: {
       title: "inv",
-      info: "Subgrupo de ACM que se enfoca en el desarrollo de software web"
+      info: "Subgrupo de ACM que se enfoca en el desarrollo de software web",
     },
     links: {
       code: "#",
-      weebsite: "#"
+      weebsite: "#",
     },
-    svg: <BrainSvg />
+    svg: <BrainSvg />,
   },
   {
     color: "FA114F",
     content: {
       title: "icpc",
-      info: "Subgrupo de ACM que se enfoca en el desarrollo de software web"
+      info: "Subgrupo de ACM que se enfoca en el desarrollo de software web",
     },
     links: {
       code: "#",
-      weebsite: "#"
+      weebsite: "#",
     },
-    svg: <CupSvg />
-  }
-]
-
+    svg: <CupSvg />,
+  },
+];
 
 const AcmTeams = () => {
   return (
@@ -54,18 +53,20 @@ const AcmTeams = () => {
         <div className="w-full flex flex-wrap flex-col md:flex-row md:px-10 justify-between items-center gap-x-2 gap-y-6 ">
           {Teams.map((team, index) => {
             return (
-              <ArticlesTeams key={index} color={team.color} content={team.content} links={team.links}>
+              <ArticlesTeams
+                key={index}
+                color={team.color}
+                content={team.content}
+                links={team.links}
+              >
                 {team.svg}
               </ArticlesTeams>
-            )
-          })
-          }
+            );
+          })}
         </div>
       </div>
-
-
     </section>
-  )
-}
+  );
+};
 
 export default AcmTeams;
