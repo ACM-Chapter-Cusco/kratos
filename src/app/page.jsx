@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import AcmTeams from "./components/AcmTeams";
 import MembersSection from "./components/Members";
+import Events from "./components/Events";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
           <Header />
           <Hero />
           <About />
+          <Events />
           <AcmTeams />
           <MembersSection />
         </div>
