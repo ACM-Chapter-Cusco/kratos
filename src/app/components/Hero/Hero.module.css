@@ -1,0 +1,5 @@
+/* Hero LOGO ACM */
+.glow:hover {
+  filter: drop-shadow(0px 0px 10px rgba(10, 132, 255, 0.5));
+  scale: 110%;
+}

@@ -1,0 +1,114 @@
+/* LOGO STYLES */
+.logo_container {
+  position: relative;
+}
+
+.logo_container .rombo {
+  width: 35px;
+  height: 35px;
+  transform: rotate(45deg);
+  border: 2px solid #0a84ff;
+  border-radius: 5px;
+  animation: outTestRombo 0.4s ease;
+}
+
+.logo_container .circle {
+  position: absolute;
+  top: 4px;
+  left: 25px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid #7e8b9f;
+  animation: outTestCircle 0.4s ease-in-out;
+}
+
+.logo_container:hover {
+  cursor: pointer;
+}
+
+.logo_container:hover .rombo {
+  transform: translate(10px) rotate(45deg);
+  animation: reboteRomboInicial 0.8s ease-in-out;
+}
+
+.logo_container:hover .circle {
+  transform: translate(-11px);
+  animation: reboteCircleInicial 0.4s ease-in-out;
+}
+
+@keyframes reboteRomboInicial {
+  0% {
+    transform: translateX(0) rotate(45deg);
+  }
+
+  20% {
+    transform: translateX(10px) rotate(45deg);
+  }
+
+  40% {
+    transform: translateX(7px) rotate(45deg);
+  }
+
+  60% {
+    transform: translateX(10px) rotate(45deg);
+  }
+
+  80% {
+    transform: translateX(8px) rotate(45deg);
+  }
+
+  100% {
+    transform: translateX(10px) rotate(45deg);
+  }
+}
+
+@keyframes reboteCircleInicial {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-14px);
+  }
+
+  100% {
+    transform: translateX(-10px);
+  }
+}
+
+@keyframes outTestRombo {
+  0% {
+    transform: translateX(10px) rotate(45deg);
+  }
+
+  50% {
+    transform: translateX(-4px) rotate(45deg);
+  }
+
+  100% {
+    transform: translateX(0px) rotate(45deg);
+  }
+}
+
+@keyframes outTestCircle {
+  0% {
+    transform: translateX(-6px) rotate(45deg);
+  }
+
+  25% {
+    transform: translateX(4px) rotate(45deg);
+  }
+
+  50% {
+    transform: translateX(0px) rotate(45deg);
+  }
+
+  75% {
+    transform: translateX(5px) rotate(45deg);
+  }
+
+  100% {
+    transform: translateX(0px) rotate(45deg);
+  }
+}
