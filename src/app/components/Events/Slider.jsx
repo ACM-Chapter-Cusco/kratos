@@ -4,6 +4,8 @@ import React, { useRef, useState } from "react";
 import sty from "./Events.module.css";
 import Image from "next/image";
 
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
+
 const dataEvents = [
   {
     id: 0,
@@ -70,41 +72,43 @@ const dataEvents = [
   },
 ];
 const Slider = () => {
-  const fondosRef = useRef(null);
+  const backgroundsRef = useRef(null);
   const cardsRef = useRef(null);
   const [itemActive, setItemActive] = useState(2);
   const countItems = dataEvents.length;
 
-  const irSiguienteItem = () => {
-    const fondos = fondosRef.current;
+  const goNextItem = () => {
+    const backgrounds = backgroundsRef.current;
     const cards = cardsRef.current;
 
     setItemActive((itemActive) => (itemActive + 1) % countItems);
 
-    if (fondos && cards) {
+    if (backgrounds && cards) {
       const itemsCards = cards.querySelectorAll(".cards .item");
       cards.append(itemsCards[0]);
 
       setTimeout(() => {
-        const itemsFondos = fondos.querySelectorAll(".fondos .item");
-        fondos.append(itemsFondos[0]);
+        const itemsbackgrounds =
+          backgrounds.querySelectorAll(".backgrounds .item");
+        backgrounds.append(itemsbackgrounds[0]);
       }, 370);
     }
   };
 
-  const irAnteriorItem = () => {
-    const fondos = fondosRef.current;
+  const goBackItem = () => {
+    const backgrounds = backgroundsRef.current;
     const cards = cardsRef.current;
 
     setItemActive((itemActive) => (itemActive - 1) % countItems);
 
-    if (fondos && cards) {
+    if (backgrounds && cards) {
       const itemsCards = cards.querySelectorAll(".cards .item");
       cards.prepend(itemsCards[itemsCards.length - 1]);
 
       setTimeout(() => {
-        const itemsFondos = fondos.querySelectorAll(".fondos .item");
-        fondos.prepend(itemsFondos[itemsFondos.length - 1]);
+        const itemsbackgrounds =
+          backgrounds.querySelectorAll(".backgrounds .item");
+        backgrounds.prepend(itemsbackgrounds[itemsbackgrounds.length - 1]);
       }, 370);
     }
   };
@@ -119,13 +123,13 @@ const Slider = () => {
     }
 
     for (let i = 0; i < valorMovimiento; i++) {
-      irSiguienteItem();
+      goNextItem();
     }
   };
 
   return (
     <div className={`${sty.slider} bg-azul-git`}>
-      <div className={`fondos ${sty.fondos}`} ref={fondosRef}>
+      <div className={`backgrounds ${sty.backgrounds}`} ref={backgroundsRef}>
         {dataEvents.map((event, index) => (
           <div
             className={`item ${sty.item} ${
@@ -160,16 +164,16 @@ const Slider = () => {
       </div>
       <div className={`${sty.arrows} flex gap-x-4`}>
         <button
-          className="bg-white-azul text-black font-mono w-[40px] h-[40px] rounded-xl text-2xl transition duration-200 hover:scale-110"
-          onClick={irAnteriorItem}
+          className="flex justify-center items-center bg-white-azul text-black font-mono w-[40px] h-[40px] rounded-xl text-2xl transition duration-200 hover:scale-110"
+          onClick={goBackItem}
         >
-          {"<"}
+          <FaArrowLeft />
         </button>
         <button
-          className="bg-white-azul text-black  font-mono w-[40px] h-[40px] rounded-xl text-2xl transition duration-200 hover:scale-110"
-          onClick={irSiguienteItem}
+          className="flex justify-center items-center bg-white-azul text-black  font-mono w-[40px] h-[40px] rounded-xl text-2xl transition duration-200 hover:scale-110"
+          onClick={goNextItem}
         >
-          {">"}
+          <FaArrowRight />
         </button>
       </div>
       <div
