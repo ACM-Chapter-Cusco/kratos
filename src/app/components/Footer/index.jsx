@@ -16,20 +16,19 @@ const Footer = () => {
 
           <div className="flex">
             <Image
-              src="/unsaac_logo.png"
-              alt="unsaac logo"
-              width={80}
-              height={80}
-              className=""
-            />
-            <Image
               src="/info_logo.png"
               alt="informatica logo"
               width={80}
               height={80}
               className=""
             />
-
+            <Image
+              src="/unsaac_logo.png"
+              alt="unsaac logo"
+              width={109}
+              height={80}
+              className=""
+            />
           </div>
 
         </div>
