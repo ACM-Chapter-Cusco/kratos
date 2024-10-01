@@ -2,6 +2,7 @@ import React from 'react'
 import { SectionsFooter } from './SectionsFooter'
 import Image from 'next/image'
 import SocialMediaFooter from './SocialMediaFooter'
+import LinksFooter from './LinksFooter'
 
 const Footer = () => {
   return (
@@ -33,9 +34,9 @@ const Footer = () => {
 
         </div>
         <div className="flex flex-col md:flex-row justify-center items-center gap-6">
-          <a href="#">Help</a>
-          <a href="#">Terminos</a>
-          <a href="#">Estatuto</a>
+          <LinksFooter link="#">Help</LinksFooter>
+          <LinksFooter link="#">Terminos</LinksFooter>
+          <LinksFooter link="#">Estatuto</LinksFooter>
         </div>
       </div>
 
