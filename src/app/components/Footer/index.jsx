@@ -1,4 +1,5 @@
 import React from 'react'
+import { SectionsFooter } from './SectionsFooter'
 
 const Footer = () => {
   return (
@@ -6,6 +7,7 @@ const Footer = () => {
       <div className="h-auto w-[1400px] px-4 flex flex-col py-8 px-12 text-base text-white-azul" >
         <div className="flex flex-col md:flex-row justify-between items-center mb-4">
           <div>redes</div>
+          <SectionsFooter />
 
           <div>logo unsaac</div>
 
