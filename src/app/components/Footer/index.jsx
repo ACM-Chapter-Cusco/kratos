@@ -1,13 +1,17 @@
 import React from 'react'
 import { SectionsFooter } from './SectionsFooter'
 import Image from 'next/image'
+import SocialMediaFooter from './SocialMediaFooter'
 
 const Footer = () => {
   return (
     <footer className="flex justify-center bg-dark-1">
       <div className="h-auto w-[1400px] px-4 flex flex-col py-8 px-12 text-base text-white-azul" >
         <div className="flex flex-col md:flex-row justify-between items-center mb-4">
-          <div>redes</div>
+          <div className="flex flex-col items-center gap-y-4">
+            <h3 className="text-base font-bold">ACM.Chapter.Cusco</h3>
+            <SocialMediaFooter />
+          </div>
           <SectionsFooter />
 
           <div className="flex">
