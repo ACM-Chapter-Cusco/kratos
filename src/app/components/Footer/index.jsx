@@ -1,5 +1,6 @@
 import React from 'react'
 import { SectionsFooter } from './SectionsFooter'
+import Image from 'next/image'
 
 const Footer = () => {
   return (
@@ -9,7 +10,23 @@ const Footer = () => {
           <div>redes</div>
           <SectionsFooter />
 
-          <div>logo unsaac</div>
+          <div className="flex">
+            <Image
+              src="/unsaac_logo.png"
+              alt="unsaac logo"
+              width={80}
+              height={80}
+              className=""
+            />
+            <Image
+              src="/info_logo.png"
+              alt="informatica logo"
+              width={80}
+              height={80}
+              className=""
+            />
+
+          </div>
 
         </div>
         <div className="flex flex-col md:flex-row justify-center items-center gap-6">
