@@ -4,7 +4,7 @@ import TitlesFooter from './TitlesFooter'
 
 export const SectionsFooter = () => {
   return (
-    <div className="flex flex-col md:flex-row justify-between items-center gap-40">
+    <div className="flex flex-col flex-wrap md:flex-row justify-between items-center gap-x-40 gap-y-6">
       <div>
         <TitlesFooter title="About" />
         <div className="flex flex-col justify-start">

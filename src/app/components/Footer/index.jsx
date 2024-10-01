@@ -7,8 +7,8 @@ import LinksFooter from './LinksFooter'
 const Footer = () => {
   return (
     <footer className="flex justify-center bg-dark-1">
-      <div className="h-auto w-[1400px] px-4 flex flex-col py-8 px-12 text-base text-white-azul" >
-        <div className="flex flex-col md:flex-row justify-between items-center mb-4">
+      <div className="h-auto w-[1400px] px-4 flex flex-col py-8 px-12 text-base text-white-azul gap-y-6" >
+        <div className="flex flex-col md:flex-row justify-between items-center mb-4 gap-y-6 gap-x-4">
           <div className="flex flex-col items-center gap-y-4">
             <h3 className="text-base font-bold">ACM.Chapter.Cusco</h3>
             <SocialMediaFooter />
@@ -33,7 +33,7 @@ const Footer = () => {
           </div>
 
         </div>
-        <div className="flex flex-col md:flex-row justify-center items-center gap-6">
+        <div className="flex flex-row justify-center items-center gap-6">
           <LinksFooter link="#">Help</LinksFooter>
           <LinksFooter link="#">Terminos</LinksFooter>
           <LinksFooter link="#">Estatuto</LinksFooter>
