@@ -13,11 +13,11 @@ export default function Home() {
       <div className="flex flex-col items-center bg-azul-git">
         <Header />
         <div className="max-w-pantalla h-auto pt-[112px]">
-          {/* <Hero />
+          <Hero />
           <About />
           <Events />
           <AcmTeams />
-          <MembersSection /> */}
+          <MembersSection />
         </div>
       </div>
     </>
