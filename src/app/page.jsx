@@ -4,6 +4,7 @@ import About from "./components/About";
 import AcmTeams from "./components/AcmTeams";
 import MembersSection from "./components/Members";
 import Events from "./components/Events";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
           <MembersSection />
         </div>
       </div>
+      <Footer />
     </>
   );
 }
