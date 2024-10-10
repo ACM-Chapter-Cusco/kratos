@@ -35,3 +35,11 @@ body {
     text-wrap: balance;
   }
 }
+
+.w-pantalla {
+  @apply w-[1400px];
+}
+
+.max-w-pantalla {
+  @apply max-w-[1400px];
+}

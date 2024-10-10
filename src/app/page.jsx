@@ -1,4 +1,4 @@
-import Header from "./components/Navigation";
+import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import AcmTeams from "./components/AcmTeams";
@@ -11,9 +11,9 @@ export default function Home() {
     <>
       {/*Header principal*/}
 
-      <div className="flex justify-center bg-azul-git">
-        <div className="h-auto w-[1400px] px-4">
-          <Header />
+      <div className="flex flex-col items-center bg-azul-git">
+        <Header />
+        <div className="max-w-pantalla h-auto pt-[112px]">
           <Hero />
           <About />
           <Events />
