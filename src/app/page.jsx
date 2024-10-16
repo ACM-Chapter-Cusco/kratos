@@ -5,6 +5,7 @@ import AcmTeams from "./components/AcmTeams";
 import MembersSection from "./components/Members";
 import Events from "./components/Events";
 import Footer from "./components/Footer";
+import Gallery from "./components/Gallery";
 
 export default function Home() {
   return (
@@ -13,12 +14,15 @@ export default function Home() {
 
       <div className="flex flex-col items-center bg-azul-git">
         <Header />
-        <div className="max-w-pantalla h-auto pt-[112px]">
-          <Hero />
-          <About />
-          <Events />
-          <AcmTeams />
-          <MembersSection />
+        <div className="flex w-full justify-center">
+          <div className="w-pantalla h-auto lg:pr-5">
+            <Hero />
+            <About />
+            <Events />
+            <AcmTeams />
+            <Gallery />
+            <MembersSection />
+          </div>
         </div>
       </div>
       <Footer />
