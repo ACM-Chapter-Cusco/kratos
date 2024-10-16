@@ -8,23 +8,29 @@ import style from "./Hero.module.css";
 
 const Hero = () => {
   return (
-    <div className="flex justify-between items-center my-10">
+    <div className="relative mt-5 flex h-screen w-full flex-col items-center justify-center gap-10 pb-10 lg:flex-row lg:justify-between lg:gap-0">
       {/* Redes sociales */}
-      <LeftLine color="0A84FF" />
+      <div className="hidden lg:block">
+        <LeftLine color="0A84FF" />
+      </div>
 
       {/* Parte principal */}
-      <div className="flex justify-center items-center">
+      <div className="flex flex-col-reverse items-center justify-center gap-8 md:flex-row">
         <HeroText />
-        <Image
-          src="/acm-logo-img.svg"
-          alt="Hero"
-          width={290}
-          height={290}
-          className={`${style.glow} ml-8  transition-all duration-300`}
-        />
+        <div className="h-[200px] w-[200px] xl:h-[290px] xl:w-[290px]">
+          <Image
+            src="/acm-logo-img.svg"
+            alt="Hero"
+            width={290}
+            height={290}
+            className={`${style.glow} transition-all duration-300`}
+          />
+        </div>
       </div>
       {/* Redes sociales */}
-      <SocialMedia />
+      <div className="absolute bottom-10 md:relative md:bottom-0">
+        <SocialMedia />
+      </div>
     </div>
   );
 };
