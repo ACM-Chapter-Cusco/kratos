@@ -16,12 +16,12 @@ export default function Home() {
         <Header />
         <div className="flex w-full justify-center">
           <div className="w-pantalla h-auto lg:pr-5">
-            {/* <Hero />
-            <About /> */}
+            <Hero />
+            <About />
             <Events />
-            {/* <AcmTeams />
+            <AcmTeams />
             <Gallery />
-            <MembersSection /> */}
+            <MembersSection />
           </div>
         </div>
       </div>
