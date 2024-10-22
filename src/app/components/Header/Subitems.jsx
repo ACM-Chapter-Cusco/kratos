@@ -20,15 +20,15 @@ const Subitems = ({ opciones, isVisible }) => {
     <div
       className={`transform transition-opacity duration-700 ${
         isVisible ? "opacity-100" : "opacity-0"
-      } top-[30px] inline-block md:absolute`}
+      } top-[30px] inline-block lg:absolute`}
     >
-      <ul className="mt-5 flex flex-col gap-y-2 p-2 text-white-azul md:mt-0 md:gap-y-0 md:rounded-lg md:border-[2px] md:border-dark-1 md:bg-dark-2">
+      <ul className="mt-5 flex flex-col gap-y-2 p-2 text-white-azul lg:mt-0 lg:gap-y-0 lg:rounded-lg lg:border-[2px] lg:border-dark-1 lg:bg-dark-2">
         {opciones.map((opcion) => (
           <li key={opcion.valor}>
             <a
               href="#"
               style={{ minWidth: "min-content" }}
-              className="group flex items-center gap-x-3 px-3 py-1 font-Opensans text-[20px] md:rounded-md md:border-[2px] md:border-dark-2 md:hover:border-dark-1"
+              className="group flex items-center gap-x-3 px-3 py-1 font-Opensans text-[20px] lg:rounded-lg lg:border-[2px] lg:border-dark-2 lg:hover:border-dark-1"
             >
               {ICONS[opcion.icon]}
               <p>{opcion.valor}</p>

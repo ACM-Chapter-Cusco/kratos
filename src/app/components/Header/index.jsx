@@ -25,7 +25,7 @@ const Header = () => {
 
         <div className="w-pantalla">
           {/* Nav on desktop */}
-          <div className="hidden items-center justify-between p-3 py-8 md:flex">
+          <div className="hidden items-center justify-between p-3 py-8 lg:flex">
             <Logo />
             <Navbar />
             <Button type="secundary">Join</Button>
@@ -33,7 +33,7 @@ const Header = () => {
 
           {/* Nav on mobile closed */}
           {!isToggleOpen && (
-            <div className="flex w-full items-center justify-between p-3 py-8 md:hidden">
+            <div className="flex w-full items-center justify-between p-3 py-8 lg:hidden">
               <Logo />
               <button onClick={() => setIsToggleOpen(true)}>
                 <HiMenuAlt3 size="30px" />
