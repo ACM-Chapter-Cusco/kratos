@@ -9,7 +9,6 @@ const Events = () => {
         <LeftLine color="0A84FF" />
       </div>
 
-      {/* desktop version */}
       <div className="my-2 flex flex-grow flex-col items-center justify-center">
         <div className="mb-16 flex w-full justify-center text-white-azul">
           <H2 title="events" />

@@ -145,13 +145,14 @@ const Slider = () => {
                 fill="true"
                 className={`${sty.img} rounded-2xl bg-gradient-to-r from-azul-git md:rounded-r-3xl`}
               />
+              {/* gradient for the background */}
               <div className="hidden md:block">
                 <div className="absolute inset-0 rounded-r-xl bg-gradient-to-r from-azul-git" />
               </div>
             </div>
 
             <div
-              className={`${sty.content} absolute z-10 mt-10 flex w-[100%] flex-col gap-y-3 md:ml-10 md:mt-0 md:w-[60%] md:gap-y-6`}
+              className={`${sty.content} relative z-10 mt-10 flex w-[100%] flex-col gap-y-3 md:absolute md:ml-10 md:mt-0 md:w-[40%] md:gap-y-6 xl:w-[60%]`}
             >
               <h2 className="font-Opensans text-3xl font-extrabold uppercase text-blue sm:text-4xl">
                 {event.title}
