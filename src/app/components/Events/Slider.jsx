@@ -137,25 +137,26 @@ const Slider = () => {
             }`}
             key={event.id}
           >
-            {/* Imagen de fondo */}
-
-            <div className="absolute right-0 w-[60%] h-full">
+            {/* IMAGEN DE FONDO */}
+            <div className="relative right-0 h-[30%] w-[100%] md:absolute md:h-full md:w-[60%]">
               <Image
                 src={event.img}
                 alt={event.title}
                 fill="true"
-                className={`${sty.img} bg-gradient-to-r from-azul-git rounded-r-3xl`}
+                className={`${sty.img} rounded-2xl bg-gradient-to-r from-azul-git md:rounded-r-3xl`}
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-azul-git rounded-r-xl" />
+              <div className="hidden md:block">
+                <div className="absolute inset-0 rounded-r-xl bg-gradient-to-r from-azul-git" />
+              </div>
             </div>
 
             <div
-              className={`${sty.content} absolute w-[60%] z-10 flex flex-col gap-y-6 ml-10`}
+              className={`${sty.content} absolute z-10 mt-10 flex w-[100%] flex-col gap-y-3 md:ml-10 md:mt-0 md:w-[60%] md:gap-y-6`}
             >
-              <h2 className="font-Opensans text-4xl text-blue uppercase font-extrabold">
+              <h2 className="font-Opensans text-3xl font-extrabold uppercase text-blue sm:text-4xl">
                 {event.title}
               </h2>
-              <p className="font-Play text-white-azul text-2xl">
+              <p className="font-Play text-lg text-white-azul sm:text-2xl">
                 {event.description}
               </p>
             </div>
@@ -164,43 +165,43 @@ const Slider = () => {
       </div>
       <div className={`${sty.arrows} flex gap-x-4`}>
         <button
-          className="flex justify-center items-center bg-white-azul text-black font-mono w-[40px] h-[40px] rounded-xl text-2xl transition duration-200 hover:scale-110"
+          className="flex h-[40px] w-[40px] items-center justify-center rounded-xl bg-white-azul font-mono text-2xl text-black transition duration-200 hover:scale-110"
           onClick={goBackItem}
         >
           <FaArrowLeft />
         </button>
         <button
-          className="flex justify-center items-center bg-white-azul text-black  font-mono w-[40px] h-[40px] rounded-xl text-2xl transition duration-200 hover:scale-110"
+          className="flex h-[40px] w-[40px] items-center justify-center rounded-xl bg-white-azul font-mono text-2xl text-black transition duration-200 hover:scale-110"
           onClick={goNextItem}
         >
           <FaArrowRight />
         </button>
       </div>
       <div
-        className={`cards ${sty.cards} absolute bottom-[0] left-0 z-20 w-full h-[250px]`}
+        className={`cards hidden md:block ${sty.cards} absolute bottom-[0] left-0 z-20 h-[250px] w-full`}
         ref={cardsRef}
       >
         {dataEvents.map((event, index) => (
           <div
             className={`item ${
               sty.item
-            } cursor-pointer absolute w-[120px] h-[150px] transition duration-200 inline-block ${
+            } absolute inline-block h-[150px] w-[120px] cursor-pointer transition duration-200 ${
               index === itemActive ? sty.active : ""
             } `}
             key={event.id}
             onClick={() => handleCardsClick(index)}
           >
-            <div className="absolute w-[120px] h-[150px] rounded-xl overflow-hidden">
+            <div className="absolute h-[150px] w-[120px] overflow-hidden rounded-xl">
               <Image
                 src={event.img}
                 alt={event.title}
                 fill="true"
                 className={`${sty.img}`}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black  " />
+              <div className="absolute inset-0 bg-gradient-to-t from-black" />
             </div>
             <h3
-              className={`${sty.content} text-xs text-white uppercase font-bold`}
+              className={`${sty.content} text-xs font-bold uppercase text-white`}
             >
               {event.title}
             </h3>
