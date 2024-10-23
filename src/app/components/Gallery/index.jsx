@@ -7,6 +7,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./Gallery.css";
 import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
+import H2 from "../common/H2";
 
 const Gallery = () => {
   const arraySlides = [
@@ -19,33 +20,35 @@ const Gallery = () => {
     "https://www.themoviedb.org/t/p/w1280/X9iFHeIYgfqoZImvdidx8b9v4R.jpg",
   ];
   return (
-    <div className="container">
-      <h1 className="heading">Event Section</h1>
-      <Swiper
-        effect={"coverflow"}
-        grabCursor={true}
-        centeredSlides={true}
-        loop={true}
-        slidesPerView={"auto"}
-        coverflowEffect={{
-          rotate: 0,
-          stretch: 0,
-          depth: 100,
-          modifier: 2.5,
-        }}
-        pagination={{ el: ".swiper-pagination", clickable: true }}
-        modules={[EffectCoverflow, Pagination, Navigation]}
-        className="swiper_container"
-      >
-        {arraySlides.map((slide, index) => {
-          return (
-            <SwiperSlide key={index}>
-              <img src={slide} alt="slide" />
-            </SwiperSlide>
-          );
-        })}
-        <div className="swiper-pagination"></div>
-      </Swiper>
+    <div className="flex w-[100%] flex-col items-center gap-16">
+      <H2 title="Galeria" />
+      <div className="container">
+        <Swiper
+          effect={"coverflow"}
+          grabCursor={true}
+          centeredSlides={true}
+          loop={true}
+          slidesPerView={"auto"}
+          coverflowEffect={{
+            rotate: 0,
+            stretch: 0,
+            depth: 100,
+            modifier: 2.5,
+          }}
+          pagination={{ el: ".swiper-pagination", clickable: true }}
+          modules={[EffectCoverflow, Pagination, Navigation]}
+          className="swiper_container"
+        >
+          {arraySlides.map((slide, index) => {
+            return (
+              <SwiperSlide key={index}>
+                <img src={slide} alt="slide" />
+              </SwiperSlide>
+            );
+          })}
+          <div className="swiper-pagination"></div>
+        </Swiper>
+      </div>
     </div>
   );
 };

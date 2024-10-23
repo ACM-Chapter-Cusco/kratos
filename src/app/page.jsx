@@ -17,7 +17,7 @@ export default function Home() {
         <div className="flex w-full justify-center">
           <div className="w-pantalla flex h-auto flex-col items-center lg:pr-5">
             <Hero />
-            <About />
+            {/* <About /> */}
             <Events />
             <AcmTeams />
             <Gallery />

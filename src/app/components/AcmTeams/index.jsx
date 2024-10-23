@@ -46,7 +46,7 @@ const Teams = [
 
 const AcmTeams = () => {
   return (
-    <section className="flex h-auto w-full flex-col items-center justify-around gap-16 py-20 text-white-azul md:h-[90vh] lg:gap-0">
+    <section className="flex h-auto w-full flex-col items-center justify-around gap-16 py-20 md:h-[90vh] lg:gap-0">
       <H2 title="teams" />
       <div className="flex w-full items-center justify-between">
         <div className="hidden lg:block">
