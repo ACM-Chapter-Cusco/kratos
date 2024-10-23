@@ -5,7 +5,7 @@ const TextAbout = () => {
   return (
     <div className="flex flex-col items-center gap-y-8">
       <div className="flex flex-col items-end ">
-        <h3 className="text-[40px]  font-extrabold font-Opensans leading-tight">
+        <h3 className="text-[35px]  md:text-[40px]  font-extrabold font-Opensans leading-tight">
           <span className="text-blue">ACM.</span>Chapter.Cusco
         </h3>
         <h3 className="text-blue text-[30px] leading-tight">UNSAAC</h3>
