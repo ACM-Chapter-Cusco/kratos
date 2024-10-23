@@ -5,14 +5,32 @@ import LeftLine from "../common/LeftLine";
 
 const About = () => {
   return (
-    <div className="flex  h-auto md:flex-row flex-col-reverse justify-between items-center md:items-stretch my-20 box-border">
-      <LeftLine color='0A84FF' />
+    <div className="my-20 box-border flex h-auto w-[90%] flex-col-reverse items-center justify-between lg:w-full lg:flex-row lg:items-stretch">
+      <div className="hidden lg:block">
+        <LeftLine color="0A84FF" />
+      </div>
 
-      <div className="md:w-[32%] flex items-center w-full">
+      <div className="ml-0 flex w-full flex-col items-center justify-center gap-10 lg:ml-[100px] lg:w-[32%]">
+        {/* titulo desktop*/}
+        <div className="hidden flex-col items-end lg:flex">
+          <h3 className="font-Opensans text-[35px] font-extrabold leading-tight md:text-[40px]">
+            <span className="text-blue">ACM.</span>Chapter.Cusco
+          </h3>
+          <h3 className="text-[30px] leading-tight text-blue">UNSAAC</h3>
+        </div>
+
         <TextAbout />
       </div>
-      <div className="md:w-[50%] w-full h-[400px] md:h-auto py-4 md:p-0 flex items-center justify-center">
+      <div className="flex w-full items-center justify-center py-4 md:p-0">
         <Imagery />
+      </div>
+
+      {/* title mobile */}
+      <div className="mb-8 flex flex-col items-end lg:hidden">
+        <h3 className="font-Opensans text-[35px] font-extrabold leading-tight md:text-[40px]">
+          <span className="text-blue">ACM.</span>Chapter.Cusco
+        </h3>
+        <h3 className="text-[30px] leading-tight text-blue">UNSAAC</h3>
       </div>
     </div>
   );
