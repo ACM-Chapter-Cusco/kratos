@@ -46,11 +46,13 @@ const Teams = [
 
 const AcmTeams = () => {
   return (
-    <section className="h-auto md:h-[90vh] w-auto flex flex-col items-center justify-around py-20  text-white-azul">
+    <section className="flex h-auto w-full flex-col items-center justify-around gap-16 py-20 text-white-azul md:h-[90vh] lg:gap-0">
       <H2 title="teams" />
-      <div className="flex items-center justify-between w-full">
-        <LeftLine color="0A84FF" className="hidden md:flex" />
-        <div className="w-full flex flex-wrap flex-col md:flex-row md:px-10 justify-between items-center gap-x-2 gap-y-6 ">
+      <div className="flex w-full items-center justify-between">
+        <div className="hidden lg:block">
+          <LeftLine color="0A84FF" />
+        </div>
+        <div className="flex w-full flex-col flex-wrap items-center justify-center gap-x-10 gap-y-10 md:w-auto md:flex-row md:px-10 lg:mr-10">
           {Teams.map((team, index) => {
             return (
               <ArticlesTeams
