@@ -49,7 +49,7 @@ const containerVars = {
 const DropdownMenu = ({ closeToggle }) => {
   return (
     <motion.div
-      className={`fixed z-[60] w-full origin-top shadow-xl md:hidden ${styles.blur_backdrop_filter}`}
+      className={`fixed z-[60] w-full origin-top shadow-xl lg:hidden ${styles.blur_backdrop_filter}`}
       variants={menuVars}
       initial="initial"
       animate="animate"
@@ -57,7 +57,7 @@ const DropdownMenu = ({ closeToggle }) => {
     >
       <div className={`rounded-b-3xl bg-azul-git pb-20 opacity-[0.98]`}>
         {/* logo y cerrar  */}
-        <div className="flex items-center justify-between p-3 py-8 md:hidden">
+        <div className="flex items-center justify-between p-3 py-8">
           <Logo />
           <button onClick={closeToggle}>
             <IoClose size="40px" />
