@@ -202,8 +202,8 @@ const Slider = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black" />
             </div>
             <h3
-              className={`${sty.content} text-xs font-bold uppercase text-white`}
-            >
+              className={`${sty.content} text-xs font-bold uppercase text-white-azul`}
+>
               {event.title}
             </h3>
           </div>
