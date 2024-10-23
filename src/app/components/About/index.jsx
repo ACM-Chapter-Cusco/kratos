@@ -11,7 +11,7 @@ const About = () => {
       </div>
 
       <div className="ml-0 flex w-full flex-col items-center justify-center gap-10 lg:ml-[100px] lg:w-[32%]">
-        {/* titulo desktop*/}
+        {/* desktop title*/}
         <div className="hidden flex-col items-end lg:flex">
           <h3 className="font-Opensans text-[35px] font-extrabold leading-tight md:text-[40px]">
             <span className="text-blue">ACM.</span>Chapter.Cusco
@@ -25,7 +25,7 @@ const About = () => {
         <Imagery />
       </div>
 
-      {/* title mobile */}
+      {/* mobile title */}
       <div className="mb-8 flex flex-col items-end lg:hidden">
         <h3 className="font-Opensans text-[35px] font-extrabold leading-tight md:text-[40px]">
           <span className="text-blue">ACM.</span>Chapter.Cusco
