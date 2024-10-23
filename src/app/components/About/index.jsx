@@ -13,7 +13,7 @@ const About = () => {
       <div className="ml-0 flex w-full flex-col items-center justify-center gap-10 lg:ml-[65px] lg:w-[32%]">
         {/* desktop title*/}
         <div className="hidden flex-col items-end lg:flex">
-          <h3 className="font-Opensans text-[35px] font-extrabold leading-tight md:text-[40px]">
+          <h3 className="font-Opensans text-[35px] font-extrabold leading-tight text-white-azul md:text-[40px]">
             <span className="text-blue">ACM.</span>Chapter.Cusco
           </h3>
           <h3 className="text-[30px] leading-tight text-blue">UNSAAC</h3>
@@ -27,7 +27,7 @@ const About = () => {
 
       {/* mobile title */}
       <div className="mb-8 flex flex-col items-end lg:hidden">
-        <h3 className="font-Opensans text-[35px] font-extrabold leading-tight md:text-[40px]">
+        <h3 className="text-white-azulleading-tight font-Opensans text-[35px] font-extrabold md:text-[40px]">
           <span className="text-blue">ACM.</span>Chapter.Cusco
         </h3>
         <h3 className="text-[30px] leading-tight text-blue">UNSAAC</h3>
