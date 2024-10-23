@@ -203,7 +203,7 @@ const Slider = () => {
             </div>
             <h3
               className={`${sty.content} text-xs font-bold uppercase text-white-azul`}
-            >
+>
               {event.title}
             </h3>
           </div>
