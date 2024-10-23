@@ -20,7 +20,7 @@ const Gallery = () => {
     "https://www.themoviedb.org/t/p/w1280/X9iFHeIYgfqoZImvdidx8b9v4R.jpg",
   ];
   return (
-    <div className="flex w-[100%] flex-col items-center gap-16">
+    <div className="mb-0 flex w-[100%] flex-col items-center gap-16 lg:mb-44">
       <H2 title="Galeria" />
       <div className="container">
         <Swiper

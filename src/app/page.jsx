@@ -15,9 +15,9 @@ export default function Home() {
       <div className="flex flex-col items-center bg-azul-git">
         <Header />
         <div className="flex w-full justify-center">
-          <div className="w-pantalla flex h-auto flex-col items-center lg:pr-5">
+          <div className="w-pantalla flex h-auto flex-col items-center gap-10 lg:pr-5">
             <Hero />
-            {/* <About /> */}
+            <About />
             <Events />
             <AcmTeams />
             <Gallery />
