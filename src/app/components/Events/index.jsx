@@ -13,7 +13,7 @@ const Events = () => {
         <div className="hidden lg:block">
           <LeftLine color="0A84FF" />
         </div>
-        <div className="flex w-[90%] flex-col items-center justify-center">
+        <div className="flex w-[88%] flex-col items-center justify-center">
           <Slider />
         </div>
       </div>
