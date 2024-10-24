@@ -37,7 +37,7 @@ const Imagery = () => {
         alt="Image1"
         width={280}
         height={280}
-        className="absolute -right-9 top-32 scale-75 rounded-2xl shadow-2xl shadow-black transition-transform duration-300 hover:scale-110 md:left-[440px] md:top-56 md:scale-100 hover:md:scale-105"
+        className="absolute -right-9 top-32 scale-75 rounded-2xl shadow-2xl shadow-black transition-transform duration-300 hover:scale-90 md:left-[440px] md:top-56 md:scale-100 hover:md:scale-105"
       />
     </div>
   );

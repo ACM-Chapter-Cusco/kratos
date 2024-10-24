@@ -152,12 +152,12 @@ const Slider = () => {
             </div>
 
             <div
-              className={`${sty.content} relative z-10 mt-10 flex w-[100%] flex-col gap-y-3 md:absolute md:ml-10 md:mt-0 md:w-[50%] md:gap-y-6 xl:w-[60%]`}
+              className={`${sty.content} relative z-10 mt-10 flex w-[100%] flex-col gap-y-3 md:absolute md:ml-10 md:mt-0 md:w-[50%] md:gap-y-6 xl:w-[45%]`}
             >
               <h2 className="font-Opensans text-3xl font-extrabold uppercase text-blue sm:text-4xl">
                 {event.title}
               </h2>
-              <p className="font-Play text-lg text-white-azul sm:text-2xl">
+              <p className="font-Play text-lg text-gris2 sm:text-2xl">
                 {event.description}
               </p>
             </div>
@@ -203,7 +203,7 @@ const Slider = () => {
             </div>
             <h3
               className={`${sty.content} text-xs font-bold uppercase text-white-azul`}
->
+            >
               {event.title}
             </h3>
           </div>
