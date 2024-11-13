@@ -10,7 +10,7 @@ const Teams = [
     color: "A6FF00",
     content: {
       title: "dev",
-      info: "Subgrupo de ACM que se enfoca en el desarrollo de software web",
+      info: "Subgrupo de ACM enfocado en el diseño y desarrollo web",
     },
     links: {
       code: "#",
@@ -21,8 +21,8 @@ const Teams = [
   {
     color: "00FFF6",
     content: {
-      title: "inv",
-      info: "Subgrupo de ACM que se enfoca en el desarrollo de software web",
+      title: "ai",
+      info: "Subgrupo de ACM enfocado en inteligencia artificial",
     },
     links: {
       code: "#",
@@ -34,7 +34,7 @@ const Teams = [
     color: "FA114F",
     content: {
       title: "icpc",
-      info: "Subgrupo de ACM que se enfoca en el desarrollo de software web",
+      info: "Subgrupo de ACM enfocado en programacion competitiva",
     },
     links: {
       code: "#",
