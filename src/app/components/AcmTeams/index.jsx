@@ -34,7 +34,7 @@ const Teams = [
     color: "FA114F",
     content: {
       title: "icpc",
-      info: "Subgrupo de ACM enfocado en programacion competitiva",
+      info: "Subgrupo de ACM enfocado en programación competitiva",
     },
     links: {
       code: "#",
