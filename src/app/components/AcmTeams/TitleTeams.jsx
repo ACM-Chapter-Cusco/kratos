@@ -1,17 +1,15 @@
 export const TitleTeams = ({ children, color, title }) => {
   return (
-    <div className="flex items-center justify-between font-extrabold text-[41px] ">
+    <div className="flex items-center justify-start gap-x-5 text-[41px] font-extrabold">
       <div
-        className="ml-3 h-[60px] w-[60px] transform rotate-45 rounded-lg flex justify-center items-center"
+        className="ml-3 flex h-[60px] w-[60px] rotate-45 transform items-center justify-center rounded-lg"
         style={{ backgroundColor: `#${color}` }}
       >
-        <div className="transform rotate-50">
-          {children}
-        </div>
+        <div className="rotate-50 transform">{children}</div>
       </div>
-      <h3 >
+      <h3>
         acm.<span style={{ color: `#${color}` }}>{title}</span>
       </h3>
     </div>
-  )
-}
+  );
+};

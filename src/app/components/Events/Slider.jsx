@@ -11,7 +11,7 @@ const dataEvents = [
     id: 0,
     title: "Cuscontest",
     description:
-      "Desafiante y divertido concurso de programación en el cual puedes demostrar tus habilidades de resolución de problemas asi como vivir una experiencia memorable con tu equipo.",
+      "Concurso de programación desafiante y divertido, en el cual puedes demostrar tus habilidades de resolución de problemas y vivir una experiencia memorable con tu equipo.",
     img: "/events/img1.png",
     prevImg: "/events/prev-img1.png",
   },
@@ -35,7 +35,7 @@ const dataEvents = [
     id: 3,
     title: "Cuscontest",
     description:
-      "Desafiante y divertido concurso de programación en el cual puedes demostrar tus habilidades de resolución de problemas asi como vivir una experiencia memorable con tu equipo.",
+      "Concurso de programación desafiante y divertido, en el cual puedes demostrar tus habilidades de resolución de problemas y vivir una experiencia memorable con tu equipo.",
     img: "/events/img1.png",
     prevImg: "/events/prev-img1.png",
   },
@@ -59,7 +59,7 @@ const dataEvents = [
     id: 6,
     title: "Cuscontest",
     description:
-      "Desafiante y divertido concurso de programación en el cual puedes demostrar tus habilidades de resolución de problemas asi como vivir una experiencia memorable con tu equipo.",
+      "Concurso de programación desafiante y divertido, en el cual puedes demostrar tus habilidades de resolución de problemas y vivir una experiencia memorable con tu equipo.",
     img: "/events/img1.png",
     prevImg: "/events/prev-img1.png",
   },
