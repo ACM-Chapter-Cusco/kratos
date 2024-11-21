@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: "425px",
+      },
       boxShadow: {
         "3xl": "0 35px 60px -15px rgba(0, 0, 0, 0.3)",
       },
@@ -19,6 +22,8 @@ module.exports = {
         Inter: ["Inter", "sans-serif"],
         Opensans: ["Open Sans", "sans-serif"],
         Play: ["Play", "sans-serif"],
+        Raleway: ["Raleway", "sans-serif"],
+        Code: ["Source Code Pro", "monospace"],
       },
       colors: {
         "dark-2": "#0F1317",
@@ -33,8 +38,8 @@ module.exports = {
       },
     },
     rotate: {
-      '50': "-45deg",
-      '45': "45deg"
+      50: "-45deg",
+      45: "45deg",
     },
   },
   plugins: [],
