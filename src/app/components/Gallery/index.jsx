@@ -11,13 +11,13 @@ import H2 from "../common/H2";
 
 const Gallery = () => {
   const arraySlides = [
-    "https://image.tmdb.org/t/p/w1280/9TFSqghEHrlBMRR63yTx80Orxva.jpg",
-    "https://www.themoviedb.org/t/p/w1280/8PYqGSd8MOm5ce8io4qNSAiSExW.jpg",
-    "https://www.themoviedb.org/t/p/w1280/6QR2FOCQr41gSduN70WulRIhJb7.jpg",
-    "https://www.themoviedb.org/t/p/w1280/e5ZqqPlhKstzB4geibpZh38w7Pq.jpg",
-    "https://www.themoviedb.org/t/p/w1280/ynqqkPy8RiawjGtWFIsF9pmYZtJ.jpg",
-    "https://www.themoviedb.org/t/p/w1280/kWJw7dCWHcfMLr0irTHAPIKrJ4I.jpg",
-    "https://www.themoviedb.org/t/p/w1280/X9iFHeIYgfqoZImvdidx8b9v4R.jpg",
+    "/gallery/gallery1.png",
+    "/gallery/gallery2.png",
+    "/gallery/gallery3.png",
+    "/gallery/gallery4.png",
+    "/gallery/gallery5.png",
+    "/gallery/gallery6.png",
+    "/gallery/gallery7.png",
   ];
   return (
     <div className="mb-0 flex w-[100%] flex-col items-center gap-16 lg:mb-44">

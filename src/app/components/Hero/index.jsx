@@ -28,7 +28,7 @@ const Hero = () => {
         </div>
       </div>
       {/* Redes sociales */}
-      <div className="absolute bottom-10 md:relative md:bottom-0">
+      <div className="absolute bottom-20 md:relative md:bottom-0">
         <SocialMedia />
       </div>
     </div>

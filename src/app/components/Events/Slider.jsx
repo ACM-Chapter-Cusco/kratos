@@ -11,64 +11,73 @@ const dataEvents = [
     id: 0,
     title: "Cuscontest",
     description:
-      "dolor sit amet consectetur adipisicing elit. Ducimus veniam nihil distinctio iure quidem a, culpa mollitia odio blanditiis modi soluta consequuntur obcaecati asperiores dolore explicabo libero hic, veritatis itaque",
-    img: "/events/img1.svg",
+      "Concurso de programación desafiante y divertido, en el cual puedes demostrar tus habilidades de resolución de problemas y vivir una experiencia memorable con tu equipo.",
+    img: "/events/img1.png",
+    prevImg: "/events/prev-img1.png",
   },
   {
     id: 1,
     title: "Todos vuelven",
     description:
-      "dolor sit amet consectetur adipisicing elit. Ducimus veniam nihil distinctio iure quidem a, culpa mollitia odio blanditiis modi soluta consequuntur obcaecati asperiores dolore explicabo libero hic, veritatis itaque",
-    img: "/events/img2.svg",
+      "Fascinantes charlas de exalumnos de la carrera como tú, donde cuentan sus experiencias sobre como triunfaron en el extranjero. Una oportunidad para encontrar tu rumbo en la carrera y hacer networking.",
+    img: "/events/img2.png",
+    prevImg: "/events/prev-img2.png",
   },
   {
     id: 2,
     title: "Induccion al cachimbo",
     description:
-      "dolor sit amet consectetur adipisicing elit. Ducimus veniam nihil distinctio iure quidem a, culpa mollitia odio blanditiis modi soluta consequuntur obcaecati asperiores dolore explicabo libero hic, veritatis itaque",
-    img: "/events/img3.svg",
+      "Charla donde buscamos dar una mejor perspectiva a los nuevos ingresantes sobre nuestra carrera y mostrarles las maravillosas cosas que pueden crear en un futuro.",
+    img: "/events/img3.png",
+    prevImg: "/events/prev-img3.png",
   },
   {
     id: 3,
     title: "Cuscontest",
     description:
-      "dolor sit amet consectetur adipisicing elit. Ducimus veniam nihil distinctio iure quidem a, culpa mollitia odio blanditiis modi soluta consequuntur obcaecati asperiores dolore explicabo libero hic, veritatis itaque",
-    img: "/events/img1.svg",
+      "Concurso de programación desafiante y divertido, en el cual puedes demostrar tus habilidades de resolución de problemas y vivir una experiencia memorable con tu equipo.",
+    img: "/events/img1.png",
+    prevImg: "/events/prev-img1.png",
   },
   {
     id: 4,
     title: "Todos vuelven",
     description:
-      "dolor sit amet consectetur adipisicing elit. Ducimus veniam nihil distinctio iure quidem a, culpa mollitia odio blanditiis modi soluta consequuntur obcaecati asperiores dolore explicabo libero hic, veritatis itaque",
-    img: "/events/img2.svg",
+      "Fascinantes charlas de exalumnos de la carrera como tú, donde cuentan sus experiencias sobre como triunfaron en el extranjero. Una oportunidad para encontrar tu rumbo en la carrera y hacer networking.",
+    img: "/events/img2.png",
+    prevImg: "/events/prev-img2.png",
   },
   {
     id: 5,
     title: "Induccion al cachimbo",
     description:
-      "dolor sit amet consectetur adipisicing elit. Ducimus veniam nihil distinctio iure quidem a, culpa mollitia odio blanditiis modi soluta consequuntur obcaecati asperiores dolore explicabo libero hic, veritatis itaque",
-    img: "/events/img3.svg",
+      "Charla donde buscamos dar una mejor perspectiva a los nuevos ingresantes sobre nuestra carrera y mostrarles las maravillosas cosas que pueden crear en un futuro.",
+    img: "/events/img3.png",
+    prevImg: "/events/prev-img3.png",
   },
   {
     id: 6,
     title: "Cuscontest",
     description:
-      "dolor sit amet consectetur adipisicing elit. Ducimus veniam nihil distinctio iure quidem a, culpa mollitia odio blanditiis modi soluta consequuntur obcaecati asperiores dolore explicabo libero hic, veritatis itaque",
-    img: "/events/img1.svg",
+      "Concurso de programación desafiante y divertido, en el cual puedes demostrar tus habilidades de resolución de problemas y vivir una experiencia memorable con tu equipo.",
+    img: "/events/img1.png",
+    prevImg: "/events/prev-img1.png",
   },
   {
     id: 7,
     title: "Todos vuelven",
     description:
-      "dolor sit amet consectetur adipisicing elit. Ducimus veniam nihil distinctio iure quidem a, culpa mollitia odio blanditiis modi soluta consequuntur obcaecati asperiores dolore explicabo libero hic, veritatis itaque",
-    img: "/events/img2.svg",
+      "Fascinantes charlas de exalumnos de la carrera como tú, donde cuentan sus experiencias sobre como triunfaron en el extranjero. Una oportunidad para encontrar tu rumbo en la carrera y hacer networking.",
+    img: "/events/img2.png",
+    prevImg: "/events/prev-img2.png",
   },
   {
     id: 8,
     title: "Induccion al cachimbo",
     description:
-      "dolor sit amet consectetur adipisicing elit. Ducimus veniam nihil distinctio iure quidem a, culpa mollitia odio blanditiis modi soluta consequuntur obcaecati asperiores dolore explicabo libero hic, veritatis itaque",
-    img: "/events/img3.svg",
+      "Charla donde buscamos dar una mejor perspectiva a los nuevos ingresantes sobre nuestra carrera y mostrarles las maravillosas cosas que pueden crear en un futuro.",
+    img: "/events/img3.png",
+    prevImg: "/events/prev-img3.png",
   },
 ];
 const Slider = () => {
@@ -194,7 +203,7 @@ const Slider = () => {
           >
             <div className="absolute h-[150px] w-[120px] overflow-hidden rounded-xl">
               <Image
-                src={event.img}
+                src={event.prevImg}
                 alt={event.title}
                 fill="true"
                 className={`${sty.img}`}

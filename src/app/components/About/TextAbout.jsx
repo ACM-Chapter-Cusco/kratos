@@ -5,11 +5,11 @@ const TextAbout = () => {
   return (
     <div className="flex flex-col items-center gap-y-12">
       <p className="font-Play text-lg text-gris2 sm:text-2xl lg:leading-tight">
-        Somos un circulo de estudios formado por estudiantes de la carrera de
-        Ingeniería Informática y de Sistemas de la universidad UNSAAC que
-        compartimos interes por la informatica y la tecnologia dispuestos a
-        fomentar esta pasion mediante eventos, compentencias y muchas
-        actividades mas.{" "}
+        Somos un círculo de estudios formado por estudiantes de la carrera de
+        Ingeniería Informática y de Sistemas de la Universidad UNSAAC, que
+        compartimos interés por la informática y la tecnología, y estamos
+        dispuestos a fomentar esta pasión mediante eventos, competencias y
+        muchas actividades más.{" "}
       </p>
       <Button>More</Button>
     </div>

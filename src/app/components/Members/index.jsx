@@ -4,34 +4,29 @@ import H2 from "../common/H2";
 
 const MembersList = [
   {
-    name: "John Doe",
-    position: "Chairperson",
-    image: "/members/member.jpeg",
+    name: "Gustavo Ochoa",
+    position: "Presidente",
+    image: "/members/president.png",
   },
   {
-    name: "Jane Doe",
-    position: "Vice Chairperson",
-    image: "/members/member.jpeg",
+    name: "Vanessa Reynaga",
+    position: "Vicepresidenta",
+    image: "/members/vicepresident.png",
   },
   {
-    name: "John Doe",
-    position: "Secretary",
-    image: "/members/member.jpeg",
+    name: "Milton Achahui",
+    position: "Tesorero",
+    image: "/members/tesorero.png",
   },
   {
-    name: "Jane Doe",
-    position: "Treasurer",
-    image: "/members/member.jpeg",
+    name: "Wilger Aucapuri",
+    position: "Memberships",
+    image: "/members/memberships.png",
   },
   {
-    name: "John Doe",
-    position: "Member",
-    image: "/members/member.jpeg",
-  },
-  {
-    name: "Jane Doe",
-    position: "Member",
-    image: "/members/member.jpeg",
+    name: "Yerson Chirinos",
+    position: "Redes Sociales",
+    image: "/members/social-media.png",
   },
 ];
 
