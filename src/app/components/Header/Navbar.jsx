@@ -15,7 +15,12 @@ const Navbar = () => {
     <>
       <nav className="flex gap-x-8 font-Inter">
         {navItems.map((item) => (
-          <NavItem key={item.id} valor={item.valor} subItems={item.subItems} />
+          <NavItem
+            key={item.id}
+            href={item.href}
+            valor={item.valor}
+            subItems={item.subItems}
+          />
         ))}
       </nav>
     </>

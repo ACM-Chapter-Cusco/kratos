@@ -29,7 +29,7 @@ const Hero = () => {
         <div className="absolute bottom-0 z-30 flex h-[20rem] w-full bg-gradient-to-t from-azul-git to-transparent"></div>
       </div>
 
-      <div className="relative z-50 ml-4 flex flex-col items-start gap-y-[1.5rem] px-[1.12rem] lg:mt-[2rem] lg:gap-y-[2.5rem] xl:gap-y-[4.81rem]">
+      <div className="relative z-30 ml-4 flex flex-col items-start gap-y-[1.5rem] px-[1.12rem] lg:mt-[2rem] lg:gap-y-[2.5rem] xl:gap-y-[4.81rem]">
         <div className="">
           <h1 className="md:text-[3.5 rem] font-Opensans text-[2.5rem] font-[800] lg:text-[5rem]">
             CUS<span className="text-blue">CONTEST</span>
