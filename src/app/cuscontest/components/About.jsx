@@ -5,7 +5,7 @@ const About = () => {
   return (
     <>
       {/* Desktop */}
-      <div className="relative flex w-full flex-col bg-orange-900 text-gris2 max-lg:p-[1.25rem] max-md:hidden sm:w-[640px] sm:bg-purple-900 md:w-[768px] md:gap-y-5 md:bg-sky-900 lg:w-[1024px] lg:gap-y-10 lg:bg-red-900 xl:w-[1280px] xl:bg-yellow-900">
+      <div className="relative flex w-full flex-col text-gris2 max-lg:p-[1.25rem] max-md:hidden sm:w-[640px] md:w-[768px] md:gap-y-5 lg:w-[1024px] lg:gap-y-10 xl:w-[1280px]">
         {/* Top part */}
         <div className="flex w-full items-stretch max-md:p-[1.25rem] md:gap-5 lg:gap-10">
           {/* content */}
@@ -92,7 +92,7 @@ const About = () => {
       </div>
 
       {/* mobile */}
-      <div className="relative flex w-full flex-col bg-orange-900 text-gris2 max-lg:p-[1.25rem] sm:w-[640px] sm:bg-purple-900 md:hidden md:w-[768px] md:gap-y-5 md:bg-sky-900 lg:w-[1024px] lg:gap-y-10 lg:bg-red-900 xl:w-[1280px] xl:bg-yellow-900">
+      <div className="relative flex w-full flex-col text-gris2 max-lg:p-[1.25rem] sm:w-[640px] md:hidden md:w-[768px] md:gap-y-5 lg:w-[1024px] lg:gap-y-10 xl:w-[1280px]">
         {/* Top part */}
         <div className="flex w-full flex-col items-stretch gap-y-10 max-md:p-[1.25rem]">
           {/* content */}
