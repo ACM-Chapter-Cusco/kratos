@@ -2,7 +2,10 @@ import React from "react";
 import Header from "../components/Header";
 import Hero from "./components/Hero";
 import SimulatorSection from "./components/SimulatorSection";
-import About from "./components/About";
+
+// We need to have another about component in cuscontest folder
+// currently is used the general about component
+import About from "../components/About";
 
 const CuscontestPage = () => {
   return (
