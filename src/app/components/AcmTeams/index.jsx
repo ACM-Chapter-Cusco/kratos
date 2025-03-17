@@ -7,7 +7,7 @@ import { ArticlesTeams } from "./ArticlesTeams";
 
 const Teams = [
   {
-    color: "A6FF00",
+    color: "dev",
     content: {
       title: "dev",
       info: "Subgrupo de ACM enfocado en el diseño y desarrollo web",
@@ -19,7 +19,7 @@ const Teams = [
     svg: <PcSvg />,
   },
   {
-    color: "00FFF6",
+    color: "ai",
     content: {
       title: "ai",
       info: "Subgrupo de ACM enfocado en inteligencia artificial",
@@ -31,7 +31,7 @@ const Teams = [
     svg: <BrainSvg />,
   },
   {
-    color: "FA114F",
+    color: "icpc",
     content: {
       title: "icpc",
       info: "Subgrupo de ACM enfocado en programación competitiva",
@@ -46,8 +46,10 @@ const Teams = [
 
 const AcmTeams = () => {
   return (
-    <section className="flex h-auto w-full flex-col items-center justify-around gap-16 py-20 text-white-azul lg:gap-0">
-      <H2 title="teams" />
+    <section className="text-white-blue relative flex h-auto w-full flex-col items-center justify-around gap-16 py-20 lg:gap-0">
+      <div className="top-16 left-0 flex w-full justify-center lg:absolute">
+        <H2 title="teams" />
+      </div>
       <div className="flex w-full items-center justify-between">
         <div className="hidden lg:block">
           <LeftLine color="0A84FF" />
