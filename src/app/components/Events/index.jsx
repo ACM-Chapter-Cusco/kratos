@@ -5,7 +5,7 @@ import Slider from "./Slider";
 const Events = () => {
   return (
     <div className="flex h-screen w-full flex-col items-center justify-center gap-16">
-      <div className="flex w-full justify-center text-white-azul">
+      <div className="text-white-blue flex w-full justify-center">
         <H2 title="events" />
       </div>
 
