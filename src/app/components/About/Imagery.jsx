@@ -4,35 +4,29 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
 
-// Variante para el contenedor con un retraso inicial significativo
-const containerVariants = {
+const imageryVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      delayChildren: 3.5, // Espera 3 segundos antes de animar a los hijos
-      staggerChildren: 0.5, // Medio segundo entre cada imagen
+      delayChildren: 3,
+      staggerChildren: 0.5,
     },
   },
 };
 
-// Variantes mejoradas para las imágenes individuales
 const imageVariants = {
-  hidden: {
-    opacity: 0,
-    scale: 0.8, // Comienza un poco más pequeña
-  },
+  hidden: { opacity: 0, scale: 0.8 },
   visible: {
     opacity: 1,
-    scale: 1, // Tamaño final normal
+    scale: 1,
     transition: {
-      // Configuración cuidadosa para una animación suave
       type: "spring",
-      stiffness: 100, // Rigidez moderada
-      damping: 15, // Amortiguación suficiente para evitar rebote excesivo
-      mass: 1, // Masa estándar
-      duration: 0.7, // Duración fija para un control preciso
-      ease: "easeOut", // Curva de aceleración suave
+      stiffness: 100,
+      damping: 15,
+      mass: 1,
+      duration: 0.7,
+      ease: "easeOut",
     },
   },
 };
@@ -40,7 +34,7 @@ const imageVariants = {
 const Imagery = () => {
   return (
     <motion.div
-      variants={containerVariants}
+      variants={imageryVariants}
       className="relative h-[350px] w-full md:mb-10 md:h-[500px] md:w-[690px]"
     >
       {/* Primera imagen */}
