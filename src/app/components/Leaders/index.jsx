@@ -227,7 +227,7 @@ const Leaders = () => {
                 />
               </div>
               <div className="text-white-blue font-Raleway flex flex-col items-center space-y-[0.31rem]">
-                <p className="text-p-sm text-center">Paul</p>
+                <p className="text-p-sm text-center">Paul Auccacusi</p>
                 <p className="text-p-xs">acm.ai Lider</p>
               </div>
             </motion.div>
@@ -392,7 +392,7 @@ const Leaders = () => {
                 />
               </div>
               <div className="text-white-blue font-Raleway flex flex-col items-center space-y-[0.31rem]">
-                <p className="text-p-sm">Paul</p>
+                <p className="text-p-sm">Paul Auccacusi</p>
                 <p className="text-p-xs">acm.ai Lider</p>
               </div>
             </motion.div>
