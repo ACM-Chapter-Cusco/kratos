@@ -6,7 +6,7 @@ import Events from "./components/Events";
 import Footer from "./components/Footer";
 import Gallery from "./components/Gallery";
 import Leaders from "./components/Leaders";
-import { ReactLenis, useLenis } from 'lenis/react'
+import { ReactLenis, useLenis } from "lenis/react";
 
 export default function Home() {
   return (
@@ -27,7 +27,6 @@ export default function Home() {
         </div>
         <Footer />
       </ReactLenis>
-      
     </>
   );
 }
