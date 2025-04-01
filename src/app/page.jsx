@@ -13,7 +13,7 @@ export default function Home() {
       <div className="bg-blue-git flex flex-col items-center">
         <Header />
         <div className="flex w-full justify-center">
-          <div className="w-pantalla flex h-auto flex-col items-center gap-10 lg:pr-5">
+          <div className="w-pantalla flex h-auto flex-col items-center gap-10 overflow-hidden lg:pr-5">
             <Hero />
             <About />
             <Events />
