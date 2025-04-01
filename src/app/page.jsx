@@ -6,26 +6,28 @@ import Events from "./components/Events";
 import Footer from "./components/Footer";
 import Gallery from "./components/Gallery";
 import Leaders from "./components/Leaders";
+import { ReactLenis, useLenis } from 'lenis/react'
 
 export default function Home() {
   return (
     <>
-      {/*Header principal*/}
-
-      <div className="bg-blue-git flex flex-col items-center">
-        <Header />
-        <div className="flex w-full justify-center">
-          <div className="w-pantalla flex h-auto flex-col items-center gap-10 overflow-hidden lg:pr-5">
-            <Hero />
-            <About />
-            <Events />
-            <AcmTeams />
-            <Gallery />
-            <Leaders />
+      <ReactLenis root>
+        <div className="bg-blue-git flex flex-col items-center">
+          <Header />
+          <div className="flex w-full justify-center">
+            <div className="w-pantalla flex h-auto flex-col items-center gap-10 lg:pr-5">
+              <Hero />
+              <About />
+              <Events />
+              <AcmTeams />
+              <Gallery />
+              <Leaders />
+            </div>
           </div>
         </div>
-      </div>
-      <Footer />
+        <Footer />
+      </ReactLenis>
+      
     </>
   );
 }
