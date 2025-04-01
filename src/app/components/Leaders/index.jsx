@@ -97,7 +97,7 @@ const Leaders = () => {
               </div>
             </motion.div>
 
-            {/* Vicepresidenta */}
+            {/* Vicepresidente */}
             <motion.div
               variants={leaderVariants}
               className="absolute left-1/2 flex translate-y-[1.5rem] transform flex-col items-center gap-y-[1.5rem] md:w-[8rem] md:translate-x-[6.5rem] xl:w-[12rem] xl:translate-x-[8.5rem]"
@@ -257,12 +257,12 @@ const Leaders = () => {
                 />
               </div>
               <div className="text-white-blue font-Raleway flex flex-col items-center space-y-[0.31rem]">
-                <p className="text-p-sm">Gustavo Ochoa</p>
+                <p className="text-p-sm text-center">Patrick Pumacahua</p>
                 <p className="text-p-xs">Presidente</p>
               </div>
             </motion.div>
 
-            {/* Vicepresidenta */}
+            {/* Vicepresidente */}
             <motion.div
               variants={leaderVariants}
               className="flex inline-flex w-[8rem] flex-col items-center gap-y-[1.5rem]"
@@ -275,7 +275,7 @@ const Leaders = () => {
                 />
               </div>
               <div className="text-white-blue font-Raleway flex flex-col items-center space-y-[0.31rem]">
-                <p className="text-p-sm text-center">Vanessa Reynaga</p>
+                <p className="text-p-sm text-center">Max Toledo</p>
                 <p className="text-p-xs">Vicepresidenta</p>
               </div>
             </motion.div>
@@ -293,7 +293,7 @@ const Leaders = () => {
                 />
               </div>
               <div className="text-white-blue font-Raleway flex flex-col items-center space-y-[0.31rem]">
-                <p className="text-p-sm">Milton Achahui</p>
+                <p className="text-p-sm text-center">Sandro Salluca</p>
                 <p className="text-p-xs">Tesorero</p>
               </div>
             </motion.div>
@@ -311,7 +311,7 @@ const Leaders = () => {
                 />
               </div>
               <div className="text-white-blue font-Raleway flex flex-col items-center space-y-[0.31rem]">
-                <p className="text-p-sm"> Wilger Aucapuri</p>
+                <p className="text-p-sm text-center"> Wagner Florez</p>
                 <p className="text-p-xs">Memberships</p>
               </div>
             </motion.div>
@@ -329,7 +329,7 @@ const Leaders = () => {
                 />
               </div>
               <div className="text-white-blue font-Raleway flex flex-col items-center space-y-[0.31rem]">
-                <p className="text-p-sm">Yerson Chirinos</p>
+                <p className="text-p-sm text-center">Aracely Llancaya</p>
                 <p className="text-p-xs">Redes Sociales</p>
               </div>
             </motion.div>
@@ -356,7 +356,7 @@ const Leaders = () => {
                 />
               </div>
               <div className="text-white-blue font-Raleway flex flex-col items-center space-y-[0.31rem]">
-                <p className="text-p-sm">Max</p>
+                <p className="text-p-sm text-center">Max Toledo</p>
                 <p className="text-p-xs">acm.dev Lider</p>
               </div>
             </motion.div>
@@ -374,7 +374,7 @@ const Leaders = () => {
                 />
               </div>
               <div className="text-white-blue font-Raleway flex flex-col items-center space-y-[0.31rem]">
-                <p className="text-p-sm">Jhamsid Romero</p>
+                <p className="text-p-sm text-center">Piero Nieto</p>
                 <p className="text-p-xs">acm.icpc Lider</p>
               </div>
             </motion.div>
@@ -392,7 +392,7 @@ const Leaders = () => {
                 />
               </div>
               <div className="text-white-blue font-Raleway flex flex-col items-center space-y-[0.31rem]">
-                <p className="text-p-sm">Paul Auccacusi</p>
+                <p className="text-p-sm text-center">Paul Auccacusi</p>
                 <p className="text-p-xs">acm.ai Lider</p>
               </div>
             </motion.div>
