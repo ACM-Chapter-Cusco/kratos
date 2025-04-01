@@ -1,5 +1,6 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { delay, motion } from "framer-motion";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -8,6 +9,20 @@ import "swiper/css/navigation";
 import "./Gallery.css";
 import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
 import H2 from "../common/H2";
+
+import {
+  titleVariants,
+  contentVariants,
+  extendVariant,
+} from "@/lib/animations/textVariants";
+
+const customContentVariants = extendVariant(contentVariants, {
+  visible: {
+    transition: {
+      delay: 1.5,
+    },
+  },
+});
 
 const Gallery = () => {
   const arraySlides = [
@@ -20,9 +35,16 @@ const Gallery = () => {
     "/gallery/gallery7.png",
   ];
   return (
-    <div className="mb-0 flex w-[100%] flex-col items-center gap-16 lg:mb-44">
-      <H2 title="Galeria" />
-      <div className="container">
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ amount: 0.5, once: true }}
+      className="mb-0 flex w-[100%] flex-col items-center gap-16 lg:mb-44"
+    >
+      <motion.div variants={titleVariants}>
+        <H2 title="Galeria" />
+      </motion.div>
+      <motion.div variants={customContentVariants} className="container">
         <Swiper
           effect={"coverflow"}
           grabCursor={true}
@@ -48,8 +70,8 @@ const Gallery = () => {
           })}
           <div className="swiper-pagination"></div>
         </Swiper>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

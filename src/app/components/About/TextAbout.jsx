@@ -1,18 +1,63 @@
+"use client";
+
 import React from "react";
 import Button from "../Header/Button";
+import { delay, motion, stagger } from "framer-motion";
+
+const textAndButtonVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 3,
+      delayChildren: 1,
+    },
+  },
+};
+
+const textVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 1,
+    },
+  },
+};
+
+const buttonVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 1,
+      delay: 5,
+    },
+  },
+};
 
 const TextAbout = () => {
   return (
-    <div className="flex flex-col items-center gap-y-12">
-      <p className="font-Play text-lg text-gris2 sm:text-2xl lg:leading-tight">
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={textAndButtonVariants}
+      className="flex flex-col items-center gap-y-12"
+    >
+      <motion.p
+        variants={textVariants}
+        className="font-Big text-white-blue/60 text-p font-Play"
+      >
         Somos un círculo de estudios formado por estudiantes de la carrera de
         Ingeniería Informática y de Sistemas de la Universidad UNSAAC, que
         compartimos interés por la informática y la tecnología, y estamos
         dispuestos a fomentar esta pasión mediante eventos, competencias y
         muchas actividades más.{" "}
-      </p>
-      <Button>More</Button>
-    </div>
+      </motion.p>
+      <motion.div variants={buttonVariants}>
+        <Button>More</Button>
+      </motion.div>
+    </motion.div>
   );
 };
 
