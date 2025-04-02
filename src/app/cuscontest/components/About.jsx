@@ -5,20 +5,20 @@ const About = () => {
   return (
     <>
       {/* Desktop */}
-      <div className="relative flex w-full flex-col text-gris2 max-lg:p-[1.25rem] max-md:hidden sm:w-[640px] md:w-[768px] md:gap-y-5 lg:w-[1024px] lg:gap-y-10 xl:w-[1280px]">
+      <div className="text-gray relative flex w-full flex-col max-lg:p-[1.25rem] max-md:hidden sm:w-[640px] md:w-[768px] md:gap-y-5 lg:w-[1024px] lg:gap-y-10 xl:w-[1280px]">
         {/* Top part */}
         <div className="flex w-full items-stretch max-md:p-[1.25rem] md:gap-5 lg:gap-10">
           {/* content */}
           <div className="flex-1 md:space-y-[1.8rem] lg:space-y-[2.4rem]">
-            <h2 className="font-Opensans font-[800] text-white max-md:text-center md:text-[1.5rem] lg:text-[2.1rem] xl:text-[2.7rem]">
-              ¿Que rayos es <span className="text-[#0A84FF]">Cuscontest</span>?
+            <h2 className="font-Opensans text-white-blue text-h5 font-[800] max-md:text-center">
+              ¿Que rayos es <span className="text-blue">Cuscontest</span>?
             </h2>
-            <p className="text-[1rem] max-md:text-center lg:text-[1.3rem] xl:text-[1.625rem]">
-              Lorem ipsum dolor sit amet consectetur. <br /> Egestas nec aliquet
-              nec netus egestas blandit quis urna. Vitae aliquet in eu mattis
-              nibh felis ultricies. Tortor gravida quis pharetra aenean faucibus
-              fames ac. Augue ut sagittis tincidunt placerat bibendum ipsum.
-              Augue ut sagittis tincidunt placerat bibendum ipsum.
+            <p className="text-p">
+              Es un concurso de programación al estilo ICPC, donde equipos de
+              hasta 3 personas tienen 5 horas para resolver una serie de
+              problemas. Durante la competencia, los participantes ponen a
+              prueba sus conocimientos en algoritmos y estructuras de datos,
+              además de mostrar su trabajo en equipo.
             </p>
           </div>
           {/* image */}
@@ -33,7 +33,7 @@ const About = () => {
         {/* Bottom part */}
         <div className="flex">
           {/* numbers */}
-          <div className="flex flex-[0.42] flex-col justify-between font-Opensans font-[700] md:space-y-12 lg:space-y-16">
+          <div className="font-Opensans flex flex-[0.42] flex-col justify-between font-[700] md:space-y-12 lg:space-y-16">
             <div className="space-y-2">
               <p className="text-[2rem] md:text-[1.6rem] lg:text-[2.5rem] xl:text-[3rem]">
                 Equipos
@@ -66,12 +66,12 @@ const About = () => {
             <img
               src="/images/cuscontest/orange-ballom.svg"
               alt="about-3"
-              className="absolute left-0 top-0 h-[40%]"
+              className="absolute top-0 left-0 h-[40%]"
             />
             <img
               src="/images/cuscontest/green-ballom.svg"
               alt="about-3"
-              className="absolute right-0 top-[40%] h-[30%]"
+              className="absolute top-[40%] right-0 h-[30%]"
             />
             <img
               src="/images/cuscontest/pink-ballom.svg"
@@ -92,24 +92,24 @@ const About = () => {
       </div>
 
       {/* mobile */}
-      <div className="relative flex w-full flex-col text-gris2 max-lg:p-[1.25rem] sm:w-[640px] md:hidden md:w-[768px] md:gap-y-5 lg:w-[1024px] lg:gap-y-10 xl:w-[1280px]">
+      <div className="text-gray relative flex w-full flex-col max-lg:p-[1.25rem] sm:w-[640px] md:hidden md:w-[768px] md:gap-y-5 lg:w-[1024px] lg:gap-y-10 xl:w-[1280px]">
         {/* Top part */}
         <div className="flex w-full flex-col items-stretch gap-y-10 max-md:p-[1.25rem]">
           {/* content */}
           <div className="space-y-8">
-            <h2 className="font-Opensans text-[2rem] font-[800] text-white max-md:text-center">
-              ¿Que rayos es <span className="text-[#0A84FF]">Cuscontest</span>?
+            <h2 className="font-Opensans text-white-blue text-h5 font-[800] max-md:text-center">
+              ¿Que rayos es <span className="text-blue">Cuscontest</span>?
             </h2>
             <p className="text-[1rem] max-md:text-center">
-              Lorem ipsum dolor sit amet consectetur. <br /> Egestas nec aliquet
-              nec netus egestas blandit quis urna. Vitae aliquet in eu mattis
-              nibh felis ultricies. Tortor gravida quis pharetra aenean faucibus
-              fames ac. Augue ut sagittis tincidunt placerat bibendum ipsum.
-              Augue ut sagittis tincidunt placerat bibendum ipsum.
+              Es un concurso de programación al estilo ICPC, donde equipos de
+              hasta 3 personas tienen 5 horas para resolver una serie de
+              problemas. Durante la competencia, los participantes ponen a
+              prueba sus conocimientos en algoritmos y estructuras de datos,
+              además de mostrar su trabajo en equipo
             </p>
           </div>
           {/* numbers */}
-          <div className="flex w-full justify-center space-y-2 font-Opensans font-[700]">
+          <div className="font-Opensans flex w-full justify-center space-y-2 font-[700]">
             <div className="flex w-fit flex-col items-center">
               <p className="w-full text-start text-[2rem]">Equipos</p>
               <div className="flex items-center gap-x-[1.56rem]">
@@ -122,7 +122,7 @@ const About = () => {
           </div>
           {/* Bottom part */}
           <div className="flex w-full justify-center">
-            <Button variant="outline" className="w-[20rem] px-[3rem]">
+            <Button variant="outline" className="px-[3rem]">
               Ver como participar
             </Button>
           </div>
@@ -140,13 +140,13 @@ const About = () => {
         </div>
 
         {/* Ballom */}
-        {/* <div className="absolute h-full md:-top-2 md:left-[4.2rem] lg:-top-10 lg:left-[4rem] xl:left-[6rem]">
+        <div className="absolute left-1/2 h-full -translate-x-1/2 transform">
           <img
             src="/images/cuscontest/transparent-ballom.png"
             alt="about-4"
-            className="md:h-[80%] lg:h-[94%]"
+            className="max-md:w-[12rem]"
           />
-        </div> */}
+        </div>
       </div>
     </>
   );
