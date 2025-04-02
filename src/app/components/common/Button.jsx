@@ -26,8 +26,8 @@ const Button = React.forwardRef(
         onClick={action}
         className={twMerge(
           clsx(
-            "focus-visible:ring-ring inline-flex cursor-pointer items-center justify-center gap-2 whitespace-nowrap text-[#0A84FF] transition-colors duration-300 focus-visible:ring-1 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50",
-            "rounded-[1.87rem] px-3 py-1 text-xs md:px-10 md:py-2 md:text-base xl:border-4 xl:px-[2.55rem] xl:py-[1rem] xl:text-[1.87rem] xl:font-[600]",
+            "focus-visible:ring-ring text-blue inline-flex cursor-pointer items-center justify-center gap-2 whitespace-nowrap transition-colors duration-300 focus-visible:ring-1 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50",
+            "rounded-full px-3 py-[0.5rem] text-xs md:px-10 md:py-2 md:text-base xl:border-4 xl:px-[3rem] xl:py-[0.5rem] xl:text-[1.87rem] xl:font-[600]",
             buttonVariants[variant],
             className,
           ),

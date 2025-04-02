@@ -67,11 +67,11 @@ const Simulador = () => {
           className="flex w-full justify-start md:justify-end"
           onClick={() => setIsRunning(true)}
         >
-          <div className="w-flull bg-dev-500 hover:bg-dev-600 flex cursor-pointer items-center gap-x-2 rounded-md px-[1.25rem] py-[0.2rem] text-white md:rounded-xl md:py-[0.4rem]">
-            <div className="flex size-[0.75rem] items-center justify-center rounded-full bg-white">
+          <div className="w-flull hover:bg-dev-600 text-white-blue flex cursor-pointer items-center gap-x-2 rounded-md bg-[#0AB764] px-[1.25rem] py-[0.2rem] transition-colors duration-300 hover:bg-[#0AB764]/50 md:rounded-xl md:py-[0.4rem]">
+            <div className="flex size-[0.75rem] items-center justify-center rounded-full bg-[#fff]">
               <img src="/images/cuscontest/icon-play.png" alt="icon-play" />
             </div>
-            <p className="font-Raleway text-[0.75rem] font-[700] text-white">
+            <p className="font-Raleway text-[0.75rem] font-[700] text-[#fff]">
               Run
             </p>
           </div>
