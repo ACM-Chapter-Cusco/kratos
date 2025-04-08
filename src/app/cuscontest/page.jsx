@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import SimulatorSection from "./components/SimulatorSection";
 import About from "./components/About";
 import Comp from "./components/Comp";
+import FAQSection from "./components/FAQSection";
 
 const CuscontestPage = () => {
   return (
@@ -16,6 +17,7 @@ const CuscontestPage = () => {
             <SimulatorSection />
             <About />
 
+           <FAQSection />
             {/* quitar este div */}
             {/* <div className="h-60 w-full bg-green-500"></div>
             <Comp /> */}
