@@ -1,45 +1,110 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
+
+const imageryVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      delayChildren: 3,
+      staggerChildren: 0.5,
+    },
+  },
+};
+
+const imageVariants = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 15,
+      mass: 1,
+      duration: 0.7,
+      ease: "easeOut",
+    },
+  },
+};
 
 const Imagery = () => {
   return (
-    <div className="relative h-[400px] w-[400px] md:mb-10 md:h-[500px] md:w-[690px]">
-      <Image
-        src="/about/image5.svg"
-        alt="Image1"
-        width={98}
-        height={98}
-        className="absolute top-4 hidden scale-75 rounded-2xl shadow-2xl shadow-black transition-transform duration-300 ease-in-out hover:scale-100 md:left-12 md:top-20 md:block md:scale-100 md:hover:scale-125"
-      />
-      <Image
-        src="/about/image2.svg"
-        alt="Image1"
-        width={172}
-        height={172}
-        className="absolute -left-6 top-40 scale-75 rounded-2xl shadow-2xl shadow-black transition-transform duration-300 hover:scale-100 md:left-24 md:top-60 md:scale-100 hover:md:scale-110"
-      />
-      <Image
-        src="/about/image3.svg"
-        alt="Image1"
-        width={360}
-        height={550}
-        className="absolute -top-10 left-0 scale-75 rounded-2xl shadow-2xl shadow-black transition-transform duration-300 hover:scale-90 md:left-48 md:top-0 md:scale-100 hover:md:scale-105"
-      />
-      <Image
-        src="/about/image4.svg"
-        alt="Image1"
-        width={60}
-        height={60}
-        className="absolute left-36 top-52 hidden scale-75 rounded-2xl shadow-2xl shadow-black transition-transform duration-300 hover:scale-125 md:left-80 md:top-80 md:block md:scale-100"
-      />
-      <Image
-        src="/about/image1.svg"
-        alt="Image1"
-        width={280}
-        height={280}
-        className="absolute -right-9 top-32 scale-75 rounded-2xl shadow-2xl shadow-black transition-transform duration-300 hover:scale-90 md:left-[440px] md:top-56 md:scale-100 hover:md:scale-105"
-      />
-    </div>
+    <motion.div
+      variants={imageryVariants}
+      className="relative h-[350px] w-full md:mb-10 md:h-[500px] md:w-[690px]"
+    >
+      {/* Primera imagen */}
+      <motion.div
+        variants={imageVariants}
+        className="absolute top-4 hidden h-[98px] w-[98px] md:top-20 md:left-12 md:block"
+      >
+        {/* Div hijo con las transiciones CSS */}
+        <div className="relative h-full w-full scale-75 rounded-2xl shadow-2xl shadow-black transition-transform duration-300 ease-in-out hover:scale-100 md:scale-100 md:hover:scale-125">
+          <Image
+            src="/about/image5.svg"
+            alt="Image0"
+            fill
+            style={{ objectFit: "cover" }}
+            className="rounded-2xl"
+          />
+        </div>
+      </motion.div>
+
+      {/* Segunda imagen */}
+      <motion.div
+        variants={imageVariants}
+        className="absolute top-25 -left-6 h-[172px] w-[172px] md:top-60 md:left-24"
+      >
+        {/* Div hijo con las transiciones CSS */}
+        <div className="relative h-full w-full scale-60 rounded-2xl shadow-2xl shadow-black transition-transform duration-300 ease-in-out hover:scale-100 md:scale-100 hover:md:scale-110">
+          <Image
+            src="/about/image2.svg"
+            alt="Image1"
+            fill
+            style={{ objectFit: "cover" }}
+            className="rounded-2xl"
+          />
+        </div>
+      </motion.div>
+
+      {/* Tercera imagen */}
+      <motion.div
+        variants={imageVariants}
+        className="absolute -top-10 left-0 h-[300px] w-[400px] md:top-0 md:left-48"
+      >
+        {/* Div hijo con las transiciones CSS */}
+        <div className="relative h-full w-full scale-60 shadow-2xl shadow-black transition-transform duration-300 ease-in-out hover:scale-90 md:scale-100 hover:md:scale-105">
+          <Image
+            src="/about/image3.svg"
+            alt="Image2"
+            fill
+            style={{ objectFit: "cover" }}
+            className="rounded-2xl"
+          />
+        </div>
+      </motion.div>
+
+      {/* Cuarta imagen */}
+      <motion.div
+        variants={imageVariants}
+        className="absolute top-20 -right-9 h-[280px] w-[280px] md:top-56 md:left-[400px]"
+      >
+        {/* Div hijo con las transiciones CSS */}
+        <div className="relative h-full w-full scale-60 rounded-2xl shadow-2xl shadow-black transition-transform duration-300 ease-in-out hover:scale-90 md:scale-100 hover:md:scale-105">
+          <Image
+            src="/about/image1.svg"
+            alt="Image3"
+            fill
+            style={{ objectFit: "cover" }}
+            className="rounded-2xl"
+          />
+        </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

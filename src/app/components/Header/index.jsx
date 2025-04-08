@@ -12,14 +12,29 @@ import { useState } from "react";
 
 import { AnimatePresence, motion } from "framer-motion";
 
+const navVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  show: {
+    opacity: 1,
+    transition: {
+      delay: 6.5,
+    },
+  },
+};
+
 const Header = () => {
   const [isToggleOpen, setIsToggleOpen] = useState(false);
 
   return (
     <>
       {/* Navbar */}
-      <div
-        className={`fixed top-0 z-50 flex w-full justify-center bg-azul-git bg-opacity-80 bg-clip-padding ${styles.blur_backdrop_filter}`}
+      <motion.div
+        initial="hidden"
+        animate="show"
+        variants={navVariants}
+        className={`bg-blue-git/90 fixed top-0 z-50 flex w-full justify-center bg-clip-padding ${styles.blur_backdrop_filter}`}
       >
         {/* div to specify the width of the menu */}
 
@@ -36,12 +51,12 @@ const Header = () => {
             <div className="flex w-full items-center justify-between p-3 py-8 lg:hidden">
               <Logo />
               <button onClick={() => setIsToggleOpen(true)}>
-                <HiMenuAlt3 size="30px" />
+                <HiMenuAlt3 className="text-white-blue mr-5 text-[40px]" />
               </button>
             </div>
           )}
         </div>
-      </div>
+      </motion.div>
 
       {/* displayed drop-down menu on mobile */}
       <AnimatePresence>

@@ -7,8 +7,8 @@ import { SectionsFooterMobile } from "./SectionsFooterMobile";
 
 const Footer = () => {
   return (
-    <footer className="flex justify-center bg-dark-1">
-      <div className="flex h-auto w-[80%] flex-col gap-y-6 px-4 py-8 text-base text-white-azul md:w-[1400px] md:px-12">
+    <footer className="bg-dark-1 flex justify-center">
+      <div className="text-white-blue flex h-auto w-[80%] flex-col gap-y-6 px-4 py-8 text-base md:w-[1400px] md:px-12">
         <div className="mb-4 flex flex-col items-center justify-between gap-x-4 gap-y-6 md:flex-row md:items-center">
           <div className="flex flex-col items-center gap-y-10 md:gap-y-4">
             <h3 className="text-base font-bold">ACM.Chapter.Cusco</h3>

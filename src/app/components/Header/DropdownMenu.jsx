@@ -55,12 +55,12 @@ const DropdownMenu = ({ closeToggle }) => {
       animate="animate"
       exit="exit"
     >
-      <div className={`rounded-b-3xl bg-azul-git pb-20 opacity-[0.98]`}>
-        {/* logo y cerrar  */}
+      <div className={`bg-blue-git rounded-b-3xl pb-20 opacity-[0.98]`}>
+        {/* logo and close  */}
         <div className="flex items-center justify-between p-3 py-8">
           <Logo />
           <button onClick={closeToggle}>
-            <IoClose size="40px" />
+            <IoClose className="text-white-blue mr-5 text-[40px]" />
           </button>
         </div>
 

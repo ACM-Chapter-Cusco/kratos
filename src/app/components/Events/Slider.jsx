@@ -137,7 +137,7 @@ const Slider = () => {
   };
 
   return (
-    <div className={`${sty.slider} bg-azul-git`}>
+    <div className={`${sty.slider} bg-blue-git`}>
       <div className={`backgrounds ${sty.backgrounds}`} ref={backgroundsRef}>
         {dataEvents.map((event, index) => (
           <div
@@ -152,36 +152,34 @@ const Slider = () => {
                 src={event.img}
                 alt={event.title}
                 fill="true"
-                className={`${sty.img} rounded-2xl bg-gradient-to-r from-azul-git md:rounded-r-3xl`}
+                className={`${sty.img} from-blue-git rounded-2xl bg-gradient-to-r md:rounded-r-3xl`}
               />
               {/* gradient for the background */}
               <div className="hidden md:block">
-                <div className="absolute inset-0 rounded-r-xl bg-gradient-to-r from-azul-git" />
+                <div className="from-blue-git absolute inset-0 rounded-r-xl bg-gradient-to-r" />
               </div>
             </div>
 
             <div
-              className={`${sty.content} relative z-10 mt-10 flex w-[100%] flex-col gap-y-3 md:absolute md:ml-10 md:mt-0 md:w-[50%] md:gap-y-6 xl:w-[45%]`}
+              className={`${sty.content} relative z-10 mt-10 flex w-[100%] flex-col gap-y-3 md:absolute md:mt-0 md:ml-10 md:w-[50%] md:gap-y-6 xl:w-[45%]`}
             >
-              <h2 className="font-Opensans text-3xl font-extrabold uppercase text-blue sm:text-4xl">
+              <h2 className="font-Opensans text-blue text-h5 font-extrabold uppercase">
                 {event.title}
               </h2>
-              <p className="font-Play text-lg text-gris2 sm:text-2xl">
-                {event.description}
-              </p>
+              <p className="font-Play text-gray text-p">{event.description}</p>
             </div>
           </div>
         ))}
       </div>
       <div className={`${sty.arrows} flex gap-x-4`}>
         <button
-          className="flex h-[40px] w-[40px] items-center justify-center rounded-xl bg-white-azul font-mono text-2xl text-black transition duration-200 hover:scale-110"
+          className="bg-white-blue flex h-[40px] w-[40px] items-center justify-center rounded-xl font-mono text-2xl text-black transition duration-200 hover:scale-110"
           onClick={goBackItem}
         >
           <FaArrowLeft />
         </button>
         <button
-          className="flex h-[40px] w-[40px] items-center justify-center rounded-xl bg-white-azul font-mono text-2xl text-black transition duration-200 hover:scale-110"
+          className="bg-white-blue flex h-[40px] w-[40px] items-center justify-center rounded-xl font-mono text-2xl text-black transition duration-200 hover:scale-110"
           onClick={goNextItem}
         >
           <FaArrowRight />
@@ -211,7 +209,7 @@ const Slider = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black" />
             </div>
             <h3
-              className={`${sty.content} text-xs font-bold uppercase text-white-azul`}
+              className={`${sty.content} text-white-blue text-xs font-bold uppercase`}
             >
               {event.title}
             </h3>
