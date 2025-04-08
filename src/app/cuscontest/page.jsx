@@ -2,10 +2,8 @@ import React from "react";
 import Header from "../components/Header";
 import Hero from "./components/Hero";
 import SimulatorSection from "./components/SimulatorSection";
-
-// We need to have another about component in cuscontest folder
-// currently is used the general about component
-import About from "../components/About";
+import About from "./components/About";
+import Comp from "./components/Comp";
 
 const CuscontestPage = () => {
   return (
@@ -17,6 +15,11 @@ const CuscontestPage = () => {
             <Hero />
             <SimulatorSection />
             <About />
+
+            {/* quitar este div */}
+            {/* <div className="h-60 w-full bg-green-500"></div>
+            <Comp /> */}
+            <div className="h-32 w-full"></div>
           </div>
         </div>
       </div>

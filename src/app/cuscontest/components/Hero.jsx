@@ -27,6 +27,7 @@ const Hero = () => {
           className="h-auto w-full"
         />
         <div className="from-blue-git absolute bottom-0 z-30 flex h-[20rem] w-full bg-gradient-to-t to-transparent"></div>
+        <div className="from-blue-git absolute -top-10 right-0 z-30 hidden h-full w-[20rem] bg-gradient-to-l to-transparent lg:flex"></div>
       </div>
 
       <div className="relative z-30 ml-4 flex flex-col items-start gap-y-[1.5rem] px-[1.12rem] lg:mt-[2rem] lg:gap-y-[2.5rem] xl:gap-y-[4.81rem]">
@@ -34,7 +35,7 @@ const Hero = () => {
           <h1 className="md:text-[3.5 rem] font-Opensans text-[2.5rem] font-[800] lg:text-[5rem]">
             CUS<span className="text-blue">CONTEST</span>
           </h1>
-          <p className="font-Inter text-[1rem] md:text-[1.3rem] lg:text-[1.87rem] lg:leading-9">
+          <p className="font-Inter text-p-lg">
             Atrévete a mostrar que eres increíble <br /> programando
           </p>
         </div>
