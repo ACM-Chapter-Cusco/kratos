@@ -51,7 +51,7 @@ const questionsItems = [
 const FAQSection = () => {
   return (
     <section className="max-w-[60.5rem] w-full mx-auto px-[1rem]  py-[8rem]">
-      <h2 className="text-[2.5rem] font-[800] text-white-blue font-Opensans text-center mb-[4rem] text-white">
+      <h2 className="text-h5 font-[800] text-white-blue font-Opensans text-center mb-[4rem] text-white">
         Preguntas <span className="text-blue">Frecuentes</span>
       </h2>
 
