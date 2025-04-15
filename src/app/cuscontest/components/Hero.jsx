@@ -3,16 +3,16 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <div className="text-white-blue xs:h-[25rem] relative h-[17rem] w-full sm:h-[20rem] md:h-[32rem] xl:h-screen">
+    <div className="text-white-blue xs:h-[25rem] relative h-[17rem] w-full sm:h-[20rem] md:h-[32rem] xl:h-[50rem]">
       {/* <div className="to-[#26D0CE]-end =left-[5rem] absolute -top-[5rem] size-[18.5rem] rounded-full bg-gradient-to-r from-[#0A84FF] blur-[250px]"></div> */}
-      <div className="absolute top-28 z-10 flex w-full justify-center sm:top-12 sm:justify-end">
+      <div className="absolute top-36 z-10 flex w-full justify-center sm:top-12 sm:justify-end">
         <img
           src="/images/cuscontest/pc-desktop.png"
           alt="pc"
           className="w-[90%] sm:mr-[2rem] sm:w-[85%]"
         />
       </div>
-      <div className="absolute right-0 left-0 w-full sm:hidden">
+      <div className="absolute top-5 right-0 left-0 w-full sm:hidden">
         <img
           src="/images/cuscontest/circuits.png"
           alt="circuits"
@@ -35,8 +35,12 @@ const Hero = () => {
           <h1 className="md:text-[3.5 rem] font-Opensans text-[2.5rem] font-[800] lg:text-[5rem]">
             CUS<span className="text-blue">CONTEST</span>
           </h1>
-          <p className="font-Inter text-p-lg">
-            Atrévete a mostrar que eres increíble <br /> programando
+          <p className="mobile:block font-Inter text-p-lg hidden">
+            Atrévete a mostrar que eres increíble <br />
+            programando
+          </p>
+          <p className="mobile:hidden font-Inter text-p-lg block">
+            Atrévete a mostrar que eres increíble programando
           </p>
         </div>
         {/* Boton */}
