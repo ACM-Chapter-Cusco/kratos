@@ -118,7 +118,11 @@ const MobileNavLink = ({ item }) => {
       // animate="open"
       className="font-Inter text-3xl font-medium"
     >
-      <NavigationItem valor={item.valor} subItems={item.subItems} />
+      <NavigationItem
+        valor={item.valor}
+        subItems={item.subItems}
+        href={item.href}
+      />
     </motion.div>
   );
 };
