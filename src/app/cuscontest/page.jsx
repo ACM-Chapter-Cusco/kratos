@@ -14,11 +14,6 @@ import { useScroll } from "framer-motion";
 
 const CuscontestPage = () => {
   const [scrollbarWidth, setScrollbarWidth] = useState(0);
-  const animationSectionRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: animationSectionRef,
-    offset: ["start", "end start"],
-  });
 
   useEffect(() => {
     // Calcular el ancho de la barra de desplazamiento
@@ -48,7 +43,7 @@ const CuscontestPage = () => {
                 className="bg-ai h-20"
                 style={{ width: `calc(100vw - ${scrollbarWidth}px)` }}
               ></div> */}
-              <Winners ref={animationSectionRef} scroll={scrollYProgress} />
+              <Winners />
               <FAQSection />
             </div>
           </div>
