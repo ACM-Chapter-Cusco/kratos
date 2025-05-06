@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Header from "../components/Header";
 import Hero from "./components/Hero";
 import SimulatorSection from "./components/SimulatorSection";
@@ -10,9 +10,15 @@ import FAQSection from "./components/FAQSection";
 import { ReactLenis, useLenis } from "lenis/react";
 import Advantages from "./components/Advantages/Advantages";
 import Winners from "./components/Winners/Winners";
+import { useScroll } from "framer-motion";
 
 const CuscontestPage = () => {
   const [scrollbarWidth, setScrollbarWidth] = useState(0);
+  const animationSectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: animationSectionRef,
+    offset: ["start", "end start"],
+  });
 
   useEffect(() => {
     // Calcular el ancho de la barra de desplazamiento
@@ -42,7 +48,7 @@ const CuscontestPage = () => {
                 className="bg-ai h-20"
                 style={{ width: `calc(100vw - ${scrollbarWidth}px)` }}
               ></div> */}
-              <Winners />
+              <Winners ref={animationSectionRef} scroll={scrollYProgress} />
               <FAQSection />
             </div>
           </div>

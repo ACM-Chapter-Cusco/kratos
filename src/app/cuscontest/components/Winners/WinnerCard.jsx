@@ -20,10 +20,13 @@ const WinnerCard = ({
   inverted = false,
   positionZ = 0,
   switchAtMiddle = false,
-  justParallax = false,
+  type = "tablet" || "mobile" || "desktop",
 }) => {
+  const justParallax = type == "desktop" ? false : true;
   const [currentWidth, setCurrentWidth] = useState(w);
-  const contentPaddingLeft = justParallax ? 0 : clipPathValue / 10 + 1 + "rem";
+  const contentPaddingLeft = justParallax
+    ? 1.2 + "rem"
+    : clipPathValue / 10 + 1 + "rem";
   const width = currentWidth + "rem";
   const cardRef = useRef(null);
   const relativePosition = useMotionValue(0);
@@ -78,13 +81,20 @@ const WinnerCard = ({
     };
   }, [dragX, relativePosition]);
 
-  let clipPath = useMotionTemplate`polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)`;
+  let clipPath = useMotionTemplate`polygon(10% 0%, 90% 0%, 90% 100%, 10% 100%)`;
 
   var position = 0;
-  if (!justParallax) {
+  if (type == "desktop") {
     position = useTransform(
       relativePosition,
       [-1, 0, 1],
+      // [-positionZ * 40, 0, positionZ * 40],
+      [-positionZ * 40, 0, positionZ * 40],
+    );
+  } else if (type == "mobile") {
+    position = useTransform(
+      relativePosition,
+      [-2, 0, 2],
       // [-positionZ * 40, 0, positionZ * 40],
       [-positionZ * 40, 0, positionZ * 40],
     );
@@ -93,7 +103,7 @@ const WinnerCard = ({
       relativePosition,
       [-2, 0, 2],
       // [-positionZ * 40, 0, positionZ * 40],
-      [-positionZ * 40, 0, positionZ * 40],
+      [-positionZ * 100, 0, positionZ * 100],
     );
   }
 
@@ -152,14 +162,14 @@ const WinnerCard = ({
         style={{ paddingLeft: contentPaddingLeft }}
       >
         <div className="relative">
-          <p className="text-h6 text-blue/20 font-OpenSans font-[800]">
+          <p className="text-h5 tablet:text-h5 text-blue/20 font-OpenSans font-[800]">
             {winner.edicion}
           </p>
-          <p className="font-Play absolute bottom-1 left-5 font-[700] text-[#646464]">
+          <p className="font-Play text-p-xs desktop:bottom-1 absolute bottom-0 left-5 font-[700] text-[#646464]">
             {winner.puesto}
           </p>
         </div>
-        <h3 className="font-Play text-[1.5rem] leading-7 font-[700] break-words text-[#646464]">
+        <h3 className="font-Play text-p desktop:leading-7 desktop:mt-0 mt-2 leading-5 font-[700] break-words text-[#646464]">
           {winner.equipo}
         </h3>
       </div>

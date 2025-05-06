@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import WinnerCard from "../WinnerCard";
 
-const EditionXXII = ({ dragX, justParallax }) => {
+const EditionXXII = ({ dragX, type }) => {
   const winners = [
     {
       id: 1,
@@ -71,87 +71,89 @@ const EditionXXII = ({ dragX, justParallax }) => {
   return (
     <div
       className={clsx(
-        "relative h-screen w-[2900px]",
-        justParallax && "!w-[1970px]",
+        "relative h-screen",
+        type == "desktop" && "!w-[2900px]",
+        type == "mobile" && "!w-[1692px]",
+        type == "tablet" && "!w-[2030px]",
       )}
     >
-      <div className="desktop:top-50 desktop:left-30 absolute top-50 left-20">
+      <div className="desktop:top-50 desktop:left-30 tablet:top-50 tablet:left-50 absolute top-50 left-20">
         <WinnerCard
           dragX={dragX}
           clipPathValue={10}
           winner={winners[0]}
           w={12}
-          tabletW={13}
+          tabletW={12}
           desktopW={15.6}
-          positionZ={1}
+          positionZ={type == "desktop" ? 1 : type == "tablet" ? 2 : 2.5}
           // inverted={true}
           switchAtMiddle={true}
-          justParallax={justParallax ? true : false}
+          type={type}
         />
       </div>
-      <div className="desktop:top-25 desktop:left-100 absolute top-25 left-70">
+      <div className="desktop:top-25 desktop:left-100 tablet:top-25 tablet:left-90 absolute top-25 left-65">
         <WinnerCard
           dragX={dragX}
           // clipPathValue={5}
           winner={winners[1]}
           w={14}
-          tabletW={17}
+          tabletW={16}
           desktopW={20}
-          positionZ={2}
-          justParallax={justParallax ? true : false}
+          positionZ={type == "desktop" ? 2 : type == "tablet" ? 1.7 : 2}
+          type={type}
         />
       </div>
-      <div className="desktop:top-96 desktop:left-150 absolute top-85 left-95">
+      <div className="desktop:top-96 desktop:left-150 tablet:top-92 tablet:left-115 absolute top-85 left-85">
         <WinnerCard
           dragX={dragX}
           // clipPathValue={20}
           winner={winners[2]}
-          w={12.4}
-          tabletW={13}
+          w={14}
+          tabletW={14}
           desktopW={15.6}
           positionZ={1}
-          justParallax={justParallax ? true : false}
+          type={type}
         />
       </div>
-      <div className="desktop:top-60 desktop:left-220 absolute top-60 left-156">
+      <div className="desktop:top-60 desktop:left-220 tablet:top-60 tablet:left-173 absolute top-60 left-137">
         <WinnerCard
           dragX={dragX}
           // clipPathValue={5}
           winner={winners[3]}
           w={15}
-          tabletW={18.3}
+          tabletW={17}
           desktopW={22.5}
-          positionZ={justParallax ? 2.5 : 1}
+          positionZ={type != "desktop" ? 2.5 : 1}
           inverted={true}
           switchAtMiddle={true}
-          justParallax={justParallax ? true : false}
+          type={type}
         />
       </div>
-      <div className="desktop:top-25 desktop:left-320 absolute top-25 left-220">
+      <div className="desktop:top-25 desktop:left-320 tablet:top-25 tablet:left-234 absolute top-25 left-189">
         <WinnerCard
           dragX={dragX}
           // clipPathValue={12}
           winner={winners[4]}
-          w={15}
-          tabletW={18.3}
+          w={17}
+          tabletW={19}
           desktopW={22.5}
-          positionZ={justParallax ? 2 : 2}
-          justParallax={justParallax ? true : false}
+          positionZ={type != "desktop" ? 2 : 2}
+          type={type}
         />
       </div>
-      <div className="desktop:top-100 desktop:left-370 absolute top-85 left-240">
+      <div className="desktop:top-100 desktop:left-370 tablet:top-90 tablet:left-255 absolute top-85 left-210">
         <WinnerCard
           dragX={dragX}
           // clipPathValue={5}
           winner={winners[5]}
-          w={10.5}
-          tabletW={13.2}
+          w={13}
+          tabletW={13}
           desktopW={16.25}
           positionZ={1}
-          justParallax={justParallax ? true : false}
+          type={type}
         />
       </div>
-      <div className="desktop:top-68 desktop:left-445 absolute top-58 left-300">
+      <div className="desktop:top-68 desktop:left-445 tablet:top-58 tablet:left-315 absolute top-58 left-260">
         <WinnerCard
           dragX={dragX}
           clipPathValue={10}
@@ -159,34 +161,34 @@ const EditionXXII = ({ dragX, justParallax }) => {
           w={14}
           tabletW={17}
           desktopW={20}
-          positionZ={justParallax ? 2.5 : 1}
+          positionZ={type != "desktop" ? 2.5 : 1}
           inverted={true}
           switchAtMiddle={true}
-          justParallax={justParallax ? true : false}
+          type={type}
         />
       </div>
-      <div className="desktop:top-30 desktop:left-540 absolute top-30 left-365">
+      <div className="desktop:top-30 desktop:left-540 tablet:top-30 tablet:left-380 absolute top-30 left-310">
         <WinnerCard
           dragX={dragX}
           // clipPathValue={10}
           winner={winners[7]}
-          w={14}
-          tabletW={17}
+          w={16}
+          tabletW={16}
           desktopW={20}
-          positionZ={justParallax ? 1.7 : 3}
-          justParallax={justParallax ? true : false}
+          positionZ={type != "desktop" ? 1.7 : 3}
+          type={type}
         />
       </div>
-      <div className="desktop:top-49 desktop:left-632 absolute top-49 left-432">
+      <div className="desktop:top-49 desktop:left-632 tablet:top-53 tablet:left-447 absolute top-49 left-374">
         <WinnerCard
           dragX={dragX}
           // clipPathValue={15}
           winner={winners[8]}
           w={12.5}
-          tabletW={15.3}
+          tabletW={12.5}
           desktopW={18.75}
-          positionZ={justParallax ? 1 : 2}
-          justParallax={justParallax ? true : false}
+          positionZ={type != "desktop" ? 1 : 2}
+          type={type}
         />
       </div>
     </div>

@@ -4,14 +4,14 @@ import { motion } from "framer-motion";
 import EditionXXI from "./Editions/EditionXXI";
 import EditionXX from "./Editions/EditionXX";
 
-const WinnersJustParallax = ({ x, containerRef }) => {
+const WinnersEditions = ({ x, containerRef, type, widthSize }) => {
   return (
     <>
       <motion.div
         className="flex w-full cursor-grab snap-x snap-mandatory"
         ref={containerRef}
         drag="x"
-        dragConstraints={{ left: -5550, right: 0 }}
+        dragConstraints={{ left: widthSize, right: 0 }}
         style={{ x }}
         whileTap={{ cursor: "grabbing" }}
         dragTransition={{
@@ -23,17 +23,17 @@ const WinnersJustParallax = ({ x, containerRef }) => {
         }}
       >
         <div className="snap-center">
-          <EditionXXII dragX={x} justParallax={true} />
+          <EditionXXII dragX={x} type={type} />
         </div>
         <div className="snap-center">
-          <EditionXXI dragX={x} justParallax={true} />
+          <EditionXXI dragX={x} type={type} />
         </div>
         <div className="snap-center">
-          <EditionXX dragX={x} justParallax={true} />
+          <EditionXX dragX={x} type={type} />
         </div>
       </motion.div>
     </>
   );
 };
 
-export default WinnersJustParallax;
+export default WinnersEditions;
