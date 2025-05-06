@@ -7,15 +7,34 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
-const AdvantagesDrag = ({ cards }) => {
+const AdvantagesDrag = ({ cards, dragConstraintLeft }) => {
+  const [scrollbarWidth, setScrollbarWidth] = useState(0);
+
+  useEffect(() => {
+    const scrollbarWidth =
+      window.innerWidth - document.documentElement.clientWidth;
+    setScrollbarWidth(scrollbarWidth);
+
+    document.documentElement.style.setProperty(
+      "--scrollbar-width",
+      `${scrollbarWidth}px`,
+    );
+  }, []);
+
   const containerRef = useRef(null);
   const x = useMotionValue(0);
 
   return (
-    <section className="jmp-my-2xl-lg jmp-gap-y-sm-4xs relative flex w-screen flex-col overflow-visible bg-stone-950">
-      <motion.div className="z-20 flex w-screen justify-center bg-stone-950">
+    <section
+      className="jmp-my-2xl-lg jmp-gap-y-sm-4xs relative flex flex-col overflow-visible bg-stone-950"
+      style={{ width: `calc(100vw - ${scrollbarWidth}px)` }}
+    >
+      <motion.div
+        className="z-20 flex justify-center bg-stone-950"
+        style={{ width: `calc(100vw - ${scrollbarWidth}px)` }}
+      >
         <h2 className="font-Opensans text-white-blue text-h5 text-center font-[800]">
           ¿Que ganas <span className="text-blue">Participando</span>?
         </h2>
@@ -25,7 +44,7 @@ const AdvantagesDrag = ({ cards }) => {
           <motion.div
             ref={containerRef}
             drag="x"
-            dragConstraints={{ left: -3700, right: 0 }}
+            dragConstraints={{ left: dragConstraintLeft, right: 0 }}
             style={{ x }}
             whileTap={{ cursor: "grabbing" }}
             dragTransition={{ bounceStiffness: 300, bounceDamping: 20 }}

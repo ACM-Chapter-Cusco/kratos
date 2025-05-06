@@ -12,6 +12,7 @@ const Hero = () => {
           className="w-[90%] sm:mr-[2rem] sm:w-[85%]"
         />
       </div>
+      {/* cirtcuits bg for mobile */}
       <div className="absolute top-5 right-0 left-0 w-full sm:hidden">
         <img
           src="/images/cuscontest/circuits.png"
@@ -20,6 +21,8 @@ const Hero = () => {
         />
         <div className="from-blue-git absolute bottom-0 z-30 flex h-[20rem] w-full bg-gradient-to-t to-transparent"></div>
       </div>
+
+      {/* cirtcuits bg for desktop and tablet */}
       <div className="absolute top-20 hidden w-full sm:block">
         <img
           src="/images/cuscontest/circuits-desktop.png"

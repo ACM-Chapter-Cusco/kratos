@@ -7,9 +7,22 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const AdvantagesScroll = ({ cards }) => {
+  const [scrollbarWidth, setScrollbarWidth] = useState(0);
+
+  useEffect(() => {
+    const scrollbarWidth =
+      window.innerWidth - document.documentElement.clientWidth;
+    setScrollbarWidth(scrollbarWidth);
+
+    document.documentElement.style.setProperty(
+      "--scrollbar-width",
+      `${scrollbarWidth}px`,
+    );
+  }, []);
+
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -21,11 +34,15 @@ const AdvantagesScroll = ({ cards }) => {
   return (
     <section
       ref={targetRef}
-      className="jmp-my-2xl-lg desktop:h-[1000vh] relative h-[1500vh] w-screen bg-stone-950"
+      className="jmp-my-2xl-lg desktop:h-[1000vh] relative h-[1500vh] bg-stone-950"
+      style={{ width: `calc(100vw - ${scrollbarWidth}px)` }}
     >
       <motion.div
-        className="sticky top-30 z-20 flex w-screen justify-center bg-stone-950"
-        style={{ opacity: titleOpacity }}
+        className="sticky top-20 z-20 flex justify-center bg-stone-950"
+        style={{
+          opacity: titleOpacity,
+          width: `calc(100vw - ${scrollbarWidth}px)`,
+        }}
       >
         <h2 className="font-Opensans text-white-blue text-h5 text-center font-[800]">
           ¿Que ganas <span className="text-blue">Participando</span>?

@@ -65,8 +65,11 @@ const Advantages = () => {
       <div className="desktop:block hidden">
         <AdvantagesScroll cards={cards} />
       </div>
-      <div className="desktop:hidden block">
-        <AdvantagesDrag cards={cards} />
+      <div className="desktop:hidden tablet:block hidden">
+        <AdvantagesDrag cards={cards} dragConstraintLeft={-3700} />
+      </div>
+      <div className="tablet:hidden block">
+        <AdvantagesDrag cards={cards} dragConstraintLeft={-2400} />
       </div>
     </>
   );
