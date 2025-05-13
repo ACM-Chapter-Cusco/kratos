@@ -15,7 +15,7 @@ const FAQItem = ({ question, answer }) => {
 				onClick={() => setIsOpen(!isOpen)}
 				className="w-full flex justify-between items-center text-left cursor-pointer"
 			>
-				<span className="font-Opensans font-[800] text-[1.25rem] text-blue">
+				<span className="font-Opensans font-[800] text-p-sm text-blue">
 					{question}
 				</span>
 				<span className="text-blue">
@@ -32,7 +32,7 @@ const FAQItem = ({ question, answer }) => {
 						exit={{ height: 0, opacity: 0 }}
 						transition={{ duration: 0.3, ease: "easeInOut" }}
 					>
-						<div className="pt-4 text-gray text-[1rem]">{answer}</div>
+						<div className="pt-4 text-gray text-p-xs">{answer}</div>
 					</motion.div>
 				)}
 			</AnimatePresence>
