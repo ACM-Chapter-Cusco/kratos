@@ -23,7 +23,7 @@ const Winners = ({ ref, scroll }) => {
   );
 
   return (
-    <section className="desktop:my-0 tablet:my-20 relative my-10  h-[31rem] tablet:h-[32rem] desktop:h-[36rem] w-full mb-30 tablet:mb-40 desktop:mb-48">
+    <section className="desktop:my-0 tablet:my-20 relative my-10 h-[31rem] tablet:h-[32rem] desktop:h-[36rem] w-full mb-16 tablet:mb-40 desktop:mb-48">
       {/* Title */}
       <div
         className="desktop:block lg-desktop:h-[135vh] desktop:h-[145vh] desktop:-top-100 lg-desktop:-top-125 absolute hidden w-full"
@@ -55,7 +55,7 @@ const Winners = ({ ref, scroll }) => {
         </motion.p>
       </div>
 
-      <div className="desktop:top-24 lg-desktop:top-30 top-20 tablet:top-24 absolute w-full overflow-hidden bg-ai/20">
+      <div className="desktop:top-24 lg-desktop:top-30 top-20 tablet:top-24 absolute w-full overflow-hidden ">
         <div className="desktop:block hidden h-[36rem] w-full ">
           <WinnersEditions
             x={x}
@@ -72,7 +72,7 @@ const Winners = ({ ref, scroll }) => {
             widthSize={-4900}
           />
         </div>
-        <div className="tablet:hidden h-[31rem] block bg-ai/20">
+        <div className="tablet:hidden h-[31rem] block ">
           <WinnersEditions
             x={x}
             containerRef={containerRef}
