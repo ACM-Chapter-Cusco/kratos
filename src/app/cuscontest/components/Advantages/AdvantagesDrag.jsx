@@ -28,7 +28,7 @@ const AdvantagesDrag = ({ cards, dragConstraintLeft }) => {
 
   return (
     <section
-      className="jmp-my-2xl-lg jmp-gap-y-sm-4xs relative flex flex-col overflow-visible bg-stone-950"
+      className="my-28 tablet:jmp-my-2xl-lg jmp-gap-y-sm-4xs relative flex flex-col overflow-visible bg-stone-950"
       style={{ width: `calc(100vw - ${scrollbarWidth}px)` }}
     >
       <motion.div
@@ -87,14 +87,14 @@ const Card = ({ card, dragX }) => {
       const cardCenter = rect.left + rect.width / 2;
       const viewportCenter = viewportWidth / 2;
 
-      // Valor normalizado entre -1 y 1 (0 es el centro)
+      // Value normalized between -1 and 1 (0 is the center)
       const position = (cardCenter - viewportCenter) / (viewportWidth / 2);
       relativePosition.set(position);
     };
 
     const unsubscribe = dragX.onChange(updatePosition);
     window.addEventListener("resize", updatePosition);
-    updatePosition(); // Configura valor inicial
+    updatePosition(); // Set initial value
 
     return () => {
       unsubscribe();

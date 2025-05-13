@@ -85,13 +85,13 @@ const EditionXX = ({ dragX, type }) => {
   return (
     <div
       className={clsx(
-        "relative h-screen",
-        type == "desktop" && "!w-[4000px]",
-        type == "mobile" && "!w-[2150px]",
-        type == "tablet" && "!w-[2250px]",
+        "relative",
+        type == "desktop" && "!w-[4000px] h-full",
+        type == "mobile" && "!w-[2150px] h-full",
+        type == "tablet" && "!w-[2250px] h-full",
       )}
     >
-      <div className="desktop:top-40 tablet:top-40 absolute top-40">
+      <div className="desktop:top-15 tablet:top-15 absolute top-15">
         <WinnerCard
           dragX={dragX}
           clipPathValue={10}
@@ -100,37 +100,34 @@ const EditionXX = ({ dragX, type }) => {
           tabletW={10}
           desktopW={14}
           positionZ={type != "desktop" ? 2.5 : 1}
-          // inverted={true}
           switchAtMiddle={true}
           type={type}
         />
       </div>
-      <div className="desktop:top-25 desktop:left-80 tablet:top-25 tablet:left-45 absolute top-25 left-39">
+      <div className="desktop:top-0 desktop:left-80 tablet:top-0 tablet:left-45 absolute top-0 left-39">
         <WinnerCard
           dragX={dragX}
-          // clipPathValue={5}
           winner={winners[1]}
           w={12}
           tabletW={12}
-          desktopW={16}
+          desktopW={15}
           positionZ={type != "desktop" ? 2 : 1.5}
           type={type}
         />
       </div>
-      <div className="desktop:top-100 desktop:left-110 tablet:top-90 tablet:left-60 absolute top-90 left-40">
+      <div className="desktop:top-69 desktop:left-120 tablet:top-65 tablet:left-60 absolute top-65 left-40">
         <WinnerCard
           dragX={dragX}
           clipPathValue={10}
           winner={winners[2]}
           w={18}
           tabletW={18}
-          desktopW={24}
+          desktopW={22}
           positionZ={type != "desktop" ? 3 : 2}
-          // switchAtMiddle={true}
           type={type}
         />
       </div>
-      <div className="desktop:top-60 desktop:left-215 tablet:top-60 tablet:left-132 absolute top-60 left-105">
+      <div className="desktop:top-35 desktop:left-215 tablet:top-35 tablet:left-132 absolute top-35 left-105">
         <WinnerCard
           dragX={dragX}
           clipPathValue={5}
@@ -143,71 +140,67 @@ const EditionXX = ({ dragX, type }) => {
           type={type}
         />
       </div>
-      <div className="desktop:top-25 desktop:left-300 tablet:top-35 tablet:left-196 absolute top-35 left-161">
+      <div className="desktop:top-0 desktop:left-300 tablet:top-0 tablet:left-193 absolute top-0 left-161">
         <WinnerCard
           dragX={dragX}
-          // clipPathValue={12}
           winner={winners[4]}
           w={14}
           tabletW={14}
-          desktopW={17}
+          desktopW={16}
           positionZ={1}
           type={type}
         />
       </div>
-      <div className="desktop:top-90 desktop:left-350 tablet:top-100 tablet:left-220 absolute top-100 left-180">
+      <div className="desktop:top-57 desktop:left-360 tablet:top-60 tablet:left-225 absolute top-60 left-180">
         <WinnerCard
           dragX={dragX}
-          // clipPathValue={5}
           winner={winners[5]}
           w={13}
           tabletW={13}
-          desktopW={18}
-          positionZ={type != "desktop" ? 3 : 1}
+          desktopW={17}
+          positionZ={type != "desktop" ? 2.5 : 1}
           type={type}
         />
       </div>
-      <div className="desktop:top-70 desktop:left-440 tablet:top-70 tablet:left-275 absolute top-70 left-228">
+      <div className="desktop:top-35 desktop:left-450 tablet:top-45 tablet:left-275 absolute top-45 left-228">
         <WinnerCard
           dragX={dragX}
           winner={winners[6]}
           w={15}
           tabletW={15}
-          desktopW={20}
+          desktopW={17}
           positionZ={type != "desktop" ? 2 : 1}
           switchAtMiddle={true}
           type={type}
         />
       </div>
-      <div className="desktop:top-25 desktop:left-540 tablet:top-30 tablet:left-340 absolute top-40 left-288">
+      <div className="desktop:top-0 desktop:left-540 tablet:top-0 tablet:left-340 absolute top-0 left-288">
         <WinnerCard
           dragX={dragX}
           winner={winners[7]}
           w={12}
           tabletW={12}
-          desktopW={15}
+          desktopW={14}
           positionZ={1}
-          // switchAtMiddle={true}
           type={type}
         />
       </div>
-      <div className="desktop:top-100 desktop:left-540 tablet:top-100 tablet:left-340 absolute top-110 left-280">
+      <div className="desktop:top-70 desktop:left-540 tablet:top-65 tablet:left-340 absolute top-63 left-280">
         <WinnerCard
           dragX={dragX}
-          // clipPathValue={15}
           winner={winners[8]}
           w={16}
           tabletW={16}
-          desktopW={22}
-          positionZ={type != "desktop" ? 3 : 1}
+          desktopW={18}
+          positionZ={type != "desktop" ? 3 : 2}
+          switchAtMiddle={true}
           type={type}
         />
       </div>
 
-      <div className="desktop:top-75 desktop:left-642 tablet:top-80 tablet:left-405 absolute top-80 left-337">
+      <div className="desktop:top-50 desktop:left-642 tablet:top-55 tablet:left-405 absolute top-45 left-337">
         <WinnerCard
           dragX={dragX}
-          // clipPathValue={15}
           winner={winners[9]}
           w={15}
           tabletW={15}
@@ -218,10 +211,9 @@ const EditionXX = ({ dragX, type }) => {
         />
       </div>
 
-      <div className="desktop:top-50 desktop:left-730 tablet:top-50 tablet:left-470 absolute top-50 left-397">
+      <div className="desktop:top-25 desktop:left-730 tablet:top-25 tablet:left-470 absolute top-15 left-397">
         <WinnerCard
           dragX={dragX}
-          // clipPathValue={15}
           winner={winners[10]}
           w={12}
           tabletW={12}

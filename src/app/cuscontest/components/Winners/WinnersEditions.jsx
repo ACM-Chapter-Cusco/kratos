@@ -8,18 +8,18 @@ const WinnersEditions = ({ x, containerRef, type, widthSize }) => {
   return (
     <>
       <motion.div
-        className="flex w-full cursor-grab snap-x snap-mandatory"
+        className="flex h-full w-full cursor-grab snap-x snap-mandatory"
         ref={containerRef}
         drag="x"
         dragConstraints={{ left: widthSize, right: 0 }}
         style={{ x }}
         whileTap={{ cursor: "grabbing" }}
         dragTransition={{
-          bounceStiffness: 100, // Aumentar para menor rebote
-          bounceDamping: 50, // Aumentar para frenar más rápido
-          power: 0.2, // Reducir para menos impulso (0-1)
-          timeConstant: 300, // Reducir para que la inercia dure menos
-          restDelta: 1, // Tolerancia más alta para detenerse antes
+          bounceStiffness: 100, // Increase for less bounce
+          bounceDamping: 50, // Increase for faster damping
+          power: 0.2, // Reduce for less impulse (0-1)
+          timeConstant: 300, // Reduce for faster inertia
+          restDelta: 1, // Higher tolerance for stopping before
         }}
       >
         <div className="snap-center">

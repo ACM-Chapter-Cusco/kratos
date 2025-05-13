@@ -48,7 +48,7 @@ const AdvantagesScroll = ({ cards }) => {
           ¿Que ganas <span className="text-blue">Participando</span>?
         </h2>
       </motion.div>
-      <div className="desktop:top-16 max-tablet:-top-[5%] sticky top-0 z-10 flex h-screen w-full items-center overflow-hidden bg-stone-900">
+      <div className="desktop:top-28 max-tablet:-top-[5%] lg-desktop:h-[80vh] sticky top-0 z-10 flex h-[100vh] w-full items-center overflow-hidden bg-stone-900">
         <motion.div
           style={{ x }}
           className="tablet:pl-20 desktop:gap-50 flex gap-20"

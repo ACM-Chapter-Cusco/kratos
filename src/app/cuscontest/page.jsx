@@ -16,12 +16,12 @@ const CuscontestPage = () => {
   const [scrollbarWidth, setScrollbarWidth] = useState(0);
 
   useEffect(() => {
-    // Calcular el ancho de la barra de desplazamiento
+    // Calculate the width of the scrollbar
     const scrollbarWidth =
       window.innerWidth - document.documentElement.clientWidth;
     setScrollbarWidth(scrollbarWidth);
 
-    // También podemos establecerlo como variable CSS para usarlo en otros lugares
+    // We can also set it as a CSS variable to use it in other places
     document.documentElement.style.setProperty(
       "--scrollbar-width",
       `${scrollbarWidth}px`,
@@ -34,15 +34,11 @@ const CuscontestPage = () => {
         <div className="bg-blue-git flex min-h-screen flex-col items-center">
           <Header />
           <div className="flex w-full justify-center">
-            <div className="max-w-pantalla lg mt-28 flex h-auto w-full flex-col items-center gap-10">
+            <div className="max-w-pantalla lg mt-28 flex h-auto w-full flex-col items-center">
               <Hero />
               <SimulatorSection />
               <About />
               <Advantages />
-              {/* <div
-                className="bg-ai h-20"
-                style={{ width: `calc(100vw - ${scrollbarWidth}px)` }}
-              ></div> */}
               <Winners />
               <FAQSection />
             </div>

@@ -23,14 +23,11 @@ const Winners = ({ ref, scroll }) => {
   );
 
   return (
-    <section className="relative h-screen w-full">
-      {/* <p className="font-OpenSans text-blue/5 absolute top-2/5 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[250px] font-extrabold">
-        WINNERS
-      </p> */}
+    <section className="desktop:my-0 tablet:my-20 relative my-10  h-[31rem] tablet:h-[32rem] desktop:h-[36rem] w-full mb-30 tablet:mb-40 desktop:mb-48">
+      {/* Title */}
       <div
-        className="absolute -top-150 w-full"
+        className="desktop:block lg-desktop:h-[135vh] desktop:h-[145vh] desktop:-top-100 lg-desktop:-top-125 absolute hidden w-full"
         ref={animationSectionRef}
-        style={{ height: "145vh" }}
       >
         <motion.div className="sticky top-0 left-0 flex h-[100vh] w-full items-center justify-center">
           <motion.p
@@ -46,8 +43,20 @@ const Winners = ({ ref, scroll }) => {
         </motion.div>
       </div>
 
-      <div className="absolute top-0 h-full w-full overflow-hidden">
-        <div className="desktop:block hidden">
+      <div className="desktop:hidden block ">
+        <motion.p
+          className="font-OpenSans text-white-blue text-h5 relative flex w-full justify-center font-extrabold"
+          style={{
+            zIndex: 1,
+          }}
+        >
+          {" "}
+          Salón de la <span className="text-blue">&nbsp;Fama</span>
+        </motion.p>
+      </div>
+
+      <div className="desktop:top-24 lg-desktop:top-30 top-20 tablet:top-24 absolute w-full overflow-hidden bg-ai/20">
+        <div className="desktop:block hidden h-[36rem] w-full ">
           <WinnersEditions
             x={x}
             containerRef={containerRef}
@@ -55,15 +64,15 @@ const Winners = ({ ref, scroll }) => {
             widthSize={-7500}
           />
         </div>
-        <div className="desktop:hidden tablet:block hidden">
+        <div className="desktop:hidden h-[32rem] tablet:block hidden">
           <WinnersEditions
             x={x}
             containerRef={containerRef}
             type="tablet"
-            widthSize={-4750}
+            widthSize={-4900}
           />
         </div>
-        <div className="tablet:hidden block">
+        <div className="tablet:hidden h-[31rem] block bg-ai/20">
           <WinnersEditions
             x={x}
             containerRef={containerRef}

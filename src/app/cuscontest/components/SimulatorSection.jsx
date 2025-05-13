@@ -92,7 +92,7 @@ const Simulador = () => {
 
 const SimulatorSection = () => {
   return (
-    <div className="z-40 my-20 flex w-full flex-col items-center justify-center gap-y-[2.44rem] lg:gap-y-[2.94rem]">
+    <div className="jmp-my-2xl-lg z-40 flex w-full flex-col items-center justify-center gap-y-[2.44rem] lg:gap-y-[2.94rem]">
       <Simulador />
       <Button variant="outline">Practica con problemas pasados</Button>
     </div>

@@ -31,7 +31,7 @@ const WinnerCard = ({
   const cardRef = useRef(null);
   const relativePosition = useMotionValue(0);
 
-  // Posición suavizada para evitar movimientos bruscos
+  // Position smoothed to avoid sudden movements
   const smoothPosition = useSpring(relativePosition, {
     stiffness: 100,
     damping: 30,
@@ -88,21 +88,18 @@ const WinnerCard = ({
     position = useTransform(
       relativePosition,
       [-1, 0, 1],
-      // [-positionZ * 40, 0, positionZ * 40],
       [-positionZ * 40, 0, positionZ * 40],
     );
   } else if (type == "mobile") {
     position = useTransform(
       relativePosition,
       [-2, 0, 2],
-      // [-positionZ * 40, 0, positionZ * 40],
       [-positionZ * 40, 0, positionZ * 40],
     );
   } else {
     position = useTransform(
       relativePosition,
       [-2, 0, 2],
-      // [-positionZ * 40, 0, positionZ * 40],
       [-positionZ * 100, 0, positionZ * 100],
     );
   }
@@ -113,26 +110,21 @@ const WinnerCard = ({
     let offset = offsetNormal;
 
     if (switchAtMiddle) {
-      // Crear un offset que cambia de dirección en el punto medio
       offset = useTransform(
         smoothPosition,
         [-1, -0.5, 0, 0.5, 1],
-        // [6, -6, -2, 1, 4],
         [8, 1, -2, -4, 0],
       );
     } else {
-      // Comportamiento estándar
       offset = inverted ? offsetInverted : offsetNormal;
     }
 
-    // Clip desde la izquierda y la derecha, manteniendo el ancho fijo
     const leftClip = useTransform(offset, (value) => clipPathValue + value);
     const rightClip = useTransform(
       offset,
       (value) => 100 - clipPathValue + value,
     );
 
-    // Clip path simple con ancho constante
     const movingClipPath = useMotionTemplate`polygon(${leftClip}% 0%, ${rightClip}% 0%, ${rightClip}% 100%, ${leftClip}% 100%)`;
     const defaultClipPath = useMotionTemplate`polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)`;
 
