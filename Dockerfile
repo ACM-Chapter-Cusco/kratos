@@ -1,6 +1,6 @@
 
 # Use the official Node.js image as the base image
-FROM node:23-alpine AS base
+FROM node:18-alpine AS base
 
 # Set the working directory
 WORKDIR /app
@@ -16,15 +16,15 @@ RUN npm ci
 FROM base AS builder
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-ENV NEXT_TELEMETRY_DISABLED=1
+ENV NEXT_TELEMETRY_DISABLED 1
 RUN npm run build
 
 # Production image, copy all the files and run the app
 FROM base AS runner
 WORKDIR /app
 
-ENV NODE_ENV=production
-ENV NEXT_TELEMETRY_DISABLED=1
+ENV NODE_ENV production
+ENV NEXT_TELEMETRY_DISABLED 1
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
@@ -38,6 +38,6 @@ USER nextjs
 
 EXPOSE 8080
 
-ENV PORT=8080
+ENV PORT 8080
 
 CMD ["npm", "start"]
