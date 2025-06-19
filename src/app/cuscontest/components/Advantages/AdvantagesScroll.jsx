@@ -1,15 +1,23 @@
 "use client";
-import H2 from "@/app/components/common/H2";
-import {
-  motion,
-  MotionValue,
-  useMotionValue,
-  useScroll,
-  useTransform,
-} from "framer-motion";
-import React, { useEffect, useRef } from "react";
+import { fadeIn, springDown } from "@/app/common/animations/entrances";
+import { createDelayedVariant } from "@/app/common/animations/shared";
+import { motion, useMotionValue, useScroll, useTransform } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
 
 const AdvantagesScroll = ({ cards }) => {
+  const [scrollbarWidth, setScrollbarWidth] = useState(0);
+
+  useEffect(() => {
+    const scrollbarWidth =
+      window.innerWidth - document.documentElement.clientWidth;
+    setScrollbarWidth(scrollbarWidth);
+
+    document.documentElement.style.setProperty(
+      "--scrollbar-width",
+      `${scrollbarWidth}px`,
+    );
+  }, []);
+
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -19,19 +27,31 @@ const AdvantagesScroll = ({ cards }) => {
   const titleOpacity = useTransform(scrollYProgress, [0.95, 1], [1, 0]);
 
   return (
-    <section
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
       ref={targetRef}
-      className="jmp-my-2xl-lg desktop:h-[1000vh] relative h-[1500vh] w-screen bg-stone-950"
+      className="jmp-my-2xl-lg desktop:h-[1000vh] relative h-[1500vh] bg-stone-950"
+      style={{ width: `calc(100vw - ${scrollbarWidth}px)` }}
     >
       <motion.div
-        className="sticky top-30 z-20 flex w-screen justify-center bg-stone-950"
-        style={{ opacity: titleOpacity }}
+        className="sticky top-20 z-20 flex justify-center bg-stone-950"
+        style={{
+          opacity: titleOpacity,
+          width: `calc(100vw - ${scrollbarWidth}px)`,
+        }}
       >
-        <h2 className="font-Opensans text-white-blue text-h5 text-center font-[800]">
+        <motion.h2
+          variants={createDelayedVariant(springDown, 0.5)}
+          className="font-Opensans text-white-blue text-h5 text-center font-[800]"
+        >
           ¿Que ganas <span className="text-blue">Participando</span>?
-        </h2>
+        </motion.h2>
       </motion.div>
-      <div className="desktop:top-16 max-tablet:-top-[5%] sticky top-0 z-10 flex h-screen w-full items-center overflow-hidden bg-stone-900">
+      <motion.div
+        variants={createDelayedVariant(fadeIn, 1)}
+        className="desktop:top-28 max-tablet:-top-[5%] lg-desktop:h-[80vh] sticky top-0 z-10 flex h-[100vh] w-full items-center overflow-hidden bg-stone-900"
+      >
         <motion.div
           style={{ x }}
           className="tablet:pl-20 desktop:gap-50 flex gap-20"
@@ -49,8 +69,8 @@ const AdvantagesScroll = ({ cards }) => {
             );
           })}
         </motion.div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 };
 

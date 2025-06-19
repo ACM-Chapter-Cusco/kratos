@@ -6,14 +6,14 @@ import Events from "./components/Events";
 import Footer from "./components/Footer";
 import Gallery from "./components/Gallery";
 import Leaders from "./components/Leaders";
-import { ReactLenis, useLenis } from "lenis/react";
+import { ReactLenis } from "lenis/react";
 
 export default function Home() {
   return (
     <>
       <ReactLenis root>
         <div className="bg-blue-git flex flex-col items-center">
-          <Header />
+          <Header delay={6.5} />
           <div className="flex w-full justify-center">
             <div className="w-pantalla flex h-auto flex-col items-center gap-10 overflow-hidden lg:pr-5">
               <Hero />

@@ -1,8 +1,8 @@
-import { CodeSvg } from "../Svgs/CodeSvg"
-import { PeopleSvg } from "../Svgs/PeopleSvg"
+import { CodeSvg } from "../../common/Svgs/CodeSvg";
+import { PeopleSvg } from "../../common/Svgs/PeopleSvg";
 
 export const LinksTeams = ({ color, links }) => {
-  const { code, website } = links
+  const { code, website } = links;
   return (
     <div className="flex items-center justify-between">
       <a href={code}>
@@ -12,5 +12,5 @@ export const LinksTeams = ({ color, links }) => {
         <CodeSvg color={color} />
       </a>
     </div>
-  )
-}
+  );
+};

@@ -1,5 +1,4 @@
 import clsx from "clsx";
-// import styles from "./TitleTeams.module.css";
 
 export const TitleTeams = ({ children, color, title }) => {
   const iconClasses = clsx(

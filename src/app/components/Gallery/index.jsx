@@ -1,39 +1,20 @@
 "use client";
+import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { delay, motion } from "framer-motion";
+import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
+import H2 from "../../common/H2";
+import { fadeIn, springDown } from "../../common/animations/entrances";
+import { createDelayedVariant, delays } from "../../common/animations/shared";
+import { galleryData } from "@/app/data/landingPage/gallery";
 
+// Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./Gallery.css";
-import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
-import H2 from "../common/H2";
-
-import {
-  titleVariants,
-  contentVariants,
-  extendVariant,
-} from "@/lib/animations/textVariants";
-
-const customContentVariants = extendVariant(contentVariants, {
-  visible: {
-    transition: {
-      delay: 1.5,
-    },
-  },
-});
 
 const Gallery = () => {
-  const arraySlides = [
-    "/gallery/gallery1.png",
-    "/gallery/gallery2.png",
-    "/gallery/gallery3.png",
-    "/gallery/gallery4.png",
-    "/gallery/gallery5.png",
-    "/gallery/gallery6.png",
-    "/gallery/gallery7.png",
-  ];
   return (
     <motion.div
       initial="hidden"
@@ -41,10 +22,13 @@ const Gallery = () => {
       viewport={{ amount: 0.5, once: true }}
       className="mb-0 flex w-[100%] flex-col items-center gap-16 lg:mb-44"
     >
-      <motion.div variants={titleVariants}>
+      <motion.div variants={createDelayedVariant(springDown, delays.short)}>
         <H2 title="Galeria" />
       </motion.div>
-      <motion.div variants={customContentVariants} className="container">
+      <motion.div
+        variants={createDelayedVariant(fadeIn, delays.long)}
+        className="container"
+      >
         <Swiper
           effect={"coverflow"}
           grabCursor={true}
@@ -61,13 +45,11 @@ const Gallery = () => {
           modules={[EffectCoverflow, Pagination, Navigation]}
           className="swiper_container"
         >
-          {arraySlides.map((slide, index) => {
-            return (
-              <SwiperSlide key={index}>
-                <img src={slide} alt="slide" />
-              </SwiperSlide>
-            );
-          })}
+          {galleryData.images.map((image) => (
+            <SwiperSlide key={image.id}>
+              <img src={image.src} alt={image.alt} />
+            </SwiperSlide>
+          ))}
           <div className="swiper-pagination"></div>
         </Swiper>
       </motion.div>

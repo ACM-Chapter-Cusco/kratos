@@ -1,5 +1,6 @@
 "use client";
-import H2 from "@/app/components/common/H2";
+import { fadeIn, springDown } from "@/app/common/animations/entrances";
+import { createDelayedVariant } from "@/app/common/animations/shared";
 import {
   motion,
   MotionValue,
@@ -7,25 +8,52 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
-const AdvantagesDrag = ({ cards }) => {
+const AdvantagesDrag = ({ cards, dragConstraintLeft }) => {
+  const [scrollbarWidth, setScrollbarWidth] = useState(0);
+
+  useEffect(() => {
+    const scrollbarWidth =
+      window.innerWidth - document.documentElement.clientWidth;
+    setScrollbarWidth(scrollbarWidth);
+
+    document.documentElement.style.setProperty(
+      "--scrollbar-width",
+      `${scrollbarWidth}px`,
+    );
+  }, []);
+
   const containerRef = useRef(null);
   const x = useMotionValue(0);
 
   return (
-    <section className="jmp-my-2xl-lg jmp-gap-y-sm-4xs relative flex w-screen flex-col overflow-visible bg-stone-950">
-      <motion.div className="z-20 flex w-screen justify-center bg-stone-950">
-        <h2 className="font-Opensans text-white-blue text-h5 text-center font-[800]">
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      className="tablet:jmp-my-2xl-lg jmp-gap-y-sm-4xs relative my-28 flex flex-col overflow-visible bg-stone-950"
+      style={{ width: `calc(100vw - ${scrollbarWidth}px)` }}
+    >
+      <motion.div
+        className="z-20 flex justify-center bg-stone-950"
+        style={{ width: `calc(100vw - ${scrollbarWidth}px)` }}
+      >
+        <motion.h2
+          variants={createDelayedVariant(springDown, 0.5)}
+          className="font-Opensans text-white-blue text-h5 text-center font-[800]"
+        >
           ¿Que ganas <span className="text-blue">Participando</span>?
-        </h2>
+        </motion.h2>
       </motion.div>
-      <div className="relative overflow-x-hidden">
+      <motion.div
+        variants={createDelayedVariant(fadeIn, 1.3)}
+        className="relative overflow-x-hidden"
+      >
         <div className="relative z-10 mt-10 mb-20 ml-10 flex h-full w-full items-center overflow-y-visible bg-stone-900">
           <motion.div
             ref={containerRef}
             drag="x"
-            dragConstraints={{ left: -3700, right: 0 }}
+            dragConstraints={{ left: dragConstraintLeft, right: 0 }}
             style={{ x }}
             whileTap={{ cursor: "grabbing" }}
             dragTransition={{ bounceStiffness: 300, bounceDamping: 20 }}
@@ -50,8 +78,8 @@ const AdvantagesDrag = ({ cards }) => {
             })}
           </motion.div>
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 };
 
@@ -68,14 +96,14 @@ const Card = ({ card, dragX }) => {
       const cardCenter = rect.left + rect.width / 2;
       const viewportCenter = viewportWidth / 2;
 
-      // Valor normalizado entre -1 y 1 (0 es el centro)
+      // Value normalized between -1 and 1 (0 is the center)
       const position = (cardCenter - viewportCenter) / (viewportWidth / 2);
       relativePosition.set(position);
     };
 
     const unsubscribe = dragX.onChange(updatePosition);
     window.addEventListener("resize", updatePosition);
-    updatePosition(); // Configura valor inicial
+    updatePosition(); // Set initial value
 
     return () => {
       unsubscribe();

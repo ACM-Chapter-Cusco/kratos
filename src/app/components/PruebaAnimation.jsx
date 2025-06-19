@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import clsx from "clsx";
 
 const PruebaAnimation = () => {
   const [showText, setShowText] = useState(false);

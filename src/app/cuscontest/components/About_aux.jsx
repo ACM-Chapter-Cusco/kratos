@@ -1,4 +1,4 @@
-import Button from "@/app/components/common/Button";
+import Button from "@/app/common/Button";
 import React from "react";
 
 const About = () => {
