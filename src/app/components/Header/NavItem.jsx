@@ -3,26 +3,31 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import Subitems from "./Subitems";
 
 const NavItem = ({ href, valor, subItems }) => {
-  console.log("href", href);
   const [itemOpen, setItemOpen] = useState(false);
+  console.log("subItems qui", subItems);
 
   return (
-    <div className="relative">
+    <div className="relative z-50">
       <a
         href={href}
-        className="border-blue-git/0 font-Opensans text-white-blue hover:border-blue hover:border-opacity-100 flex cursor-pointer items-center justify-center gap-3 border-b-2 text-3xl transition duration-300 md:gap-1 md:text-xl"
+        className="font-Opensans group text-white-blue flex cursor-pointer flex-col items-center justify-center gap-3 pb-2 text-3xl transition duration-300 md:gap-1 md:text-xl"
         onClick={(e) => {
-          setItemOpen(!itemOpen);
+          if (subItems) {
+            e.preventDefault();
+            setItemOpen(!itemOpen);
+          }
         }}
       >
-        {valor}
-        {subItems && itemOpen && <FaChevronUp size="12px" />}
-        {subItems && !itemOpen && <FaChevronDown size="12px" />}
+        <div className="flex items-center gap-3">
+          {valor}
+          {subItems && itemOpen && <FaChevronUp size="12px" />}
+          {subItems && !itemOpen && <FaChevronDown size="12px" />}
+        </div>
+        <div className="bg-blue/0 group-hover:bg-blue hidden h-[4px] w-8 rounded-3xl transition duration-400 md:block" />
       </a>
-      {itemOpen && subItems && (
-        <>
-          <Subitems opciones={subItems} isVisible={itemOpen} />
-        </>
+
+      {subItems && itemOpen && (
+        <Subitems opciones={subItems} isVisible={itemOpen} />
       )}
     </div>
   );

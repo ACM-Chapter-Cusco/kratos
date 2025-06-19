@@ -3,7 +3,10 @@
 import React, { useState } from "react";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import Button from "@/app/components/common/Button";
+import Button from "@/app/common/Button";
+import { fadeIn, springDown } from "@/app/common/animations/entrances";
+import { motion } from "framer-motion";
+import { createDelayedVariant } from "@/app/common/animations/shared";
 
 const Simulador = () => {
   const codeItems = [
@@ -92,10 +95,19 @@ const Simulador = () => {
 
 const SimulatorSection = () => {
   return (
-    <div className="jmp-my-2xl-lg z-40 flex w-full flex-col items-center justify-center gap-y-[2.44rem] lg:gap-y-[2.94rem]">
-      <Simulador />
-      <Button variant="outline">Practica con problemas pasados</Button>
-    </div>
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.5 }}
+      className="jmp-my-2xl-lg z-40 flex w-full flex-col items-center justify-center gap-y-[2.44rem] lg:gap-y-[2.94rem]"
+    >
+      <motion.div variants={springDown}>
+        <Simulador />
+      </motion.div>
+      <motion.div variants={createDelayedVariant(fadeIn, 1, 1)}>
+        <Button variant="outline">Practica con problemas pasados</Button>
+      </motion.div>
+    </motion.div>
   );
 };
 

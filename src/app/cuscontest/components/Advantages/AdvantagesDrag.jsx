@@ -1,5 +1,6 @@
 "use client";
-import H2 from "@/app/components/common/H2";
+import { fadeIn, springDown } from "@/app/common/animations/entrances";
+import { createDelayedVariant } from "@/app/common/animations/shared";
 import {
   motion,
   MotionValue,
@@ -27,19 +28,27 @@ const AdvantagesDrag = ({ cards, dragConstraintLeft }) => {
   const x = useMotionValue(0);
 
   return (
-    <section
-      className="my-28 tablet:jmp-my-2xl-lg jmp-gap-y-sm-4xs relative flex flex-col overflow-visible bg-stone-950"
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      className="tablet:jmp-my-2xl-lg jmp-gap-y-sm-4xs relative my-28 flex flex-col overflow-visible bg-stone-950"
       style={{ width: `calc(100vw - ${scrollbarWidth}px)` }}
     >
       <motion.div
         className="z-20 flex justify-center bg-stone-950"
         style={{ width: `calc(100vw - ${scrollbarWidth}px)` }}
       >
-        <h2 className="font-Opensans text-white-blue text-h5 text-center font-[800]">
+        <motion.h2
+          variants={createDelayedVariant(springDown, 0.5)}
+          className="font-Opensans text-white-blue text-h5 text-center font-[800]"
+        >
           ¿Que ganas <span className="text-blue">Participando</span>?
-        </h2>
+        </motion.h2>
       </motion.div>
-      <div className="relative overflow-x-hidden">
+      <motion.div
+        variants={createDelayedVariant(fadeIn, 1.3)}
+        className="relative overflow-x-hidden"
+      >
         <div className="relative z-10 mt-10 mb-20 ml-10 flex h-full w-full items-center overflow-y-visible bg-stone-900">
           <motion.div
             ref={containerRef}
@@ -69,8 +78,8 @@ const AdvantagesDrag = ({ cards, dragConstraintLeft }) => {
             })}
           </motion.div>
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 };
 

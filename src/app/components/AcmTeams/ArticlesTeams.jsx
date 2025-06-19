@@ -5,6 +5,7 @@ import clsx from "clsx";
 import { motion } from "framer-motion";
 
 import style from "./AcmTeams.module.css";
+import { slideUpDuration } from "../../common/animations/entrances";
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -14,7 +15,7 @@ const itemVariants = {
 export const ArticlesTeams = ({ children, color, content, links }) => {
   const { title, info } = content;
   return (
-    <motion.article variants={itemVariants}>
+    <motion.article variants={slideUpDuration(0.5)}>
       <div
         className={clsx(
           "items-ceter font-Opensans text-white-blue relative flex h-[245px] w-[336px] cursor-default flex-col justify-between rounded-xl bg-[#0F1317] px-[30px] py-[16px] pt-[33px] shadow drop-shadow-[0_0_0.3rem_#000307] transition-all duration-300 hover:-translate-y-[5px]",

@@ -1,16 +1,15 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Hero from "./components/Hero";
 import SimulatorSection from "./components/SimulatorSection";
 import About from "./components/About";
-import Comp from "./components/Comp";
 import FAQSection from "./components/FAQSection";
 
-import { ReactLenis, useLenis } from "lenis/react";
+import { ReactLenis } from "lenis/react";
 import Advantages from "./components/Advantages/Advantages";
 import Winners from "./components/Winners/Winners";
-import { useScroll } from "framer-motion";
+import Footer from "../components/Footer";
 
 const CuscontestPage = () => {
   const [scrollbarWidth, setScrollbarWidth] = useState(0);
@@ -32,7 +31,7 @@ const CuscontestPage = () => {
     <>
       <ReactLenis root>
         <div className="bg-blue-git flex min-h-screen flex-col items-center">
-          <Header />
+          <Header delay={1.3} />
           <div className="flex w-full justify-center">
             <div className="max-w-pantalla lg mt-28 flex h-auto w-full flex-col items-center">
               <Hero />
@@ -44,6 +43,7 @@ const CuscontestPage = () => {
             </div>
           </div>
         </div>
+        <Footer />
       </ReactLenis>
     </>
   );
