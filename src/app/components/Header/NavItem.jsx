@@ -3,6 +3,7 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import Subitems from "./Subitems";
 
 const NavItem = ({ href, valor, subItems }) => {
+  console.log("href", href);
   const [itemOpen, setItemOpen] = useState(false);
   console.log("subItems qui", subItems);
 

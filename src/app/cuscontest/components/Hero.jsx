@@ -78,7 +78,6 @@ const Hero = () => {
       className="text-white-blue xs:h-[25rem] relative h-[17rem] w-full sm:h-[20rem] md:h-[32rem] xl:h-[50rem]"
     >
       <motion.div variants={springRight} className="relative">
-        {/* <div className="to-[#26D0CE]-end =left-[5rem] absolute -top-[5rem] size-[18.5rem] rounded-full bg-gradient-to-r from-[#0A84FF] blur-[250px]"></div> */}
         <div className="absolute top-36 z-10 flex w-full justify-center sm:top-12 sm:justify-end">
           <img
             src="/images/cuscontest/pc-desktop.png"

@@ -1,6 +1,6 @@
 
 # Use the official Node.js image as the base image
-FROM node:18-alpine AS base
+FROM --platform=linux/amd64 node:22-alpine3.20 AS base
 
 # Set the working directory
 WORKDIR /app
@@ -16,15 +16,19 @@ RUN npm ci
 FROM base AS builder
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-ENV NEXT_TELEMETRY_DISABLED 1
+ENV NEXT_TELEMETRY_DISABLED=1
+RUN apk update && \
+  apk add --no-cache make g++
+RUN npm rebuild lightningcss
+RUN npm install --save-dev @tailwindcss/oxide-linux-x64-musl
 RUN npm run build
 
 # Production image, copy all the files and run the app
 FROM base AS runner
 WORKDIR /app
 
-ENV NODE_ENV production
-ENV NEXT_TELEMETRY_DISABLED 1
+ENV NODE_ENV=production
+ENV NEXT_TELEMETRY_DISABLED=1
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
@@ -38,6 +42,6 @@ USER nextjs
 
 EXPOSE 8080
 
-ENV PORT 8080
+ENV PORT=8080
 
 CMD ["npm", "start"]
