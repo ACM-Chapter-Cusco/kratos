@@ -7,7 +7,7 @@ const About = () => {
   return (
     <>
       {/* Desktop */}
-      <div className="text-gray relative flex w-full flex-col max-lg:p-[1.25rem] max-md:hidden sm:w-[640px] md:w-[768px] md:gap-y-5 lg:w-[1024px] lg:gap-y-10 xl:w-[1280px]">
+      <div className="text-gray jmp-my-2xl-lg relative flex w-full flex-col max-lg:p-[1.25rem] max-md:hidden sm:w-[640px] md:w-[768px] md:gap-y-5 lg:w-[1024px] lg:gap-y-10 xl:w-[1280px]">
         {/* Top part */}
         <div className="flex w-full items-stretch max-md:p-[1.25rem] md:gap-5 lg:gap-10">
           {/* content */}

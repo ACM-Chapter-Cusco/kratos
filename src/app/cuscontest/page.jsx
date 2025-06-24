@@ -6,25 +6,26 @@ import About from "./components/About";
 import Comp from "./components/Comp";
 import FAQSection from "./components/FAQSection";
 
+import { ReactLenis, useLenis } from "lenis/react";
+import Advantages from "./components/Advantages/Advantages";
+
 const CuscontestPage = () => {
   return (
     <>
-      <div className="bg-blue-git flex min-h-screen flex-col items-center">
-        <Header />
-        <div className="flex w-full justify-center">
-          <div className="w-pantalla lg mt-28 flex h-auto flex-col items-center gap-10">
-            <Hero />
-            <SimulatorSection />
-            <About />
-
-            <FAQSection />
-            {/* quitar este div */}
-            {/* <div className="h-60 w-full bg-green-500"></div>
-            <Comp /> */}
-            <div className="h-32 w-full"></div>
+      <ReactLenis root>
+        <div className="bg-blue-git flex min-h-screen flex-col items-center">
+          <Header />
+          <div className="flex w-full justify-center">
+            <div className="w-pantalla lg mt-28 flex h-auto flex-col items-center gap-10">
+              <Hero />
+              <SimulatorSection />
+              <About />
+              <Advantages />
+              <FAQSection />
+            </div>
           </div>
         </div>
-      </div>
+      </ReactLenis>
     </>
   );
 };
