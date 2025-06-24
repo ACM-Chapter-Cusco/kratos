@@ -17,7 +17,7 @@ const CuscontestPage = () => {
             <SimulatorSection />
             <About />
 
-           <FAQSection />
+            <FAQSection />
             {/* quitar este div */}
             {/* <div className="h-60 w-full bg-green-500"></div>
             <Comp /> */}
