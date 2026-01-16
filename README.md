@@ -2,6 +2,10 @@
 
 Kratos is the front-end of the ACM Chapter Cusco Website
 
+## Design
+
+[Figma Design](https://www.figma.com/design/AAjSxYsBciklIeooXoZd7X/ACM-demo?node-id=0-1&t=dtsx0rTeDB8RJFEJ-1)
+
 ## Requirements
 
 Install [Node.js](https://nodejs.org/en/download/package-manager) version `v20.17.0(LTS)`
