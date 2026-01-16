@@ -4,6 +4,8 @@ import DropdownMenu from "./DropdownMenu";
 import Navbar from "./Navbar";
 import Button from "./Button";
 import Logo from "./Logo";
+import Login from "../common/Login";
+import UserMenu from "../common/UserMenu";
 
 import styles from "./Header.module.css";
 
@@ -26,6 +28,16 @@ const navVariants = {
 
 const Header = () => {
   const [isToggleOpen, setIsToggleOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [user, setUser] = useState(null);
+
+  const handleLoginSuccess = (username) => {
+    setUser(username);
+  };
+
+  const handleLogout = () => {
+    setUser(null);
+  };
 
   return (
     <>
@@ -43,7 +55,13 @@ const Header = () => {
           <div className="hidden items-center justify-between p-3 py-8 lg:flex">
             <Logo />
             <Navbar />
-            <Button type="secundary">Join</Button>
+            {user ? (
+              <UserMenu username={user} onLogout={handleLogout} />
+            ) : (
+              <Button type="secundary" onClick={() => setIsModalOpen(true)}>
+                Join
+              </Button>
+            )}
           </div>
 
           {/* Nav on mobile closed */}
@@ -61,9 +79,21 @@ const Header = () => {
       {/* displayed drop-down menu on mobile */}
       <AnimatePresence>
         {isToggleOpen && (
-          <DropdownMenu closeToggle={() => setIsToggleOpen(false)} />
+          <DropdownMenu
+            closeToggle={() => setIsToggleOpen(false)}
+            user={user}
+            onLoginClick={() => setIsModalOpen(true)}
+            onLogout={handleLogout}
+          />
         )}
       </AnimatePresence>
+
+      {/* Login Modal */}
+      <Login
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onLoginSuccess={handleLoginSuccess}
+      />
     </>
   );
 };
