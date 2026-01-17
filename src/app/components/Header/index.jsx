@@ -18,15 +18,15 @@ const navVariants = {
   hidden: {
     opacity: 0,
   },
-  show: {
+  show: (delay = 6.5) => ({
     opacity: 1,
     transition: {
-      delay: 6.5,
+      delay: delay,
     },
-  },
+  }),
 };
 
-const Header = () => {
+const Header = ({ animationDelay = 6.5 }) => {
   const [isToggleOpen, setIsToggleOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [user, setUser] = useState(null);
@@ -45,6 +45,7 @@ const Header = () => {
       <motion.div
         initial="hidden"
         animate="show"
+        custom={animationDelay}
         variants={navVariants}
         className={`bg-blue-git/90 fixed top-0 z-50 flex w-full justify-center bg-clip-padding ${styles.blur_backdrop_filter}`}
       >
