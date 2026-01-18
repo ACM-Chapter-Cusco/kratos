@@ -57,11 +57,7 @@ const Header = ({ animationDelay = 6.5 }) => {
           <div className="hidden items-center justify-between p-3 py-8 lg:flex">
             <Logo />
             <Navbar />
-<<<<<<< HEAD
-            {user ? (
-=======
             {isAuthenticated && user ? (
->>>>>>> feat/auth-localStorage-caching
               <UserMenu user={user} onLogout={handleLogout} />
             ) : (
               <Button type="secundary" onClick={() => setIsModalOpen(true)}>
