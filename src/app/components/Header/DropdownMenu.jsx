@@ -47,7 +47,7 @@ const containerVars = {
   },
 };
 
-const DropdownMenu = ({ closeToggle, user, onLoginClick, onLogout }) => {
+const DropdownMenu = ({ closeToggle, user, isAuthenticated, onLoginClick, onLogout }) => {
   return (
     <motion.div
       className={`fixed z-[60] w-full origin-top shadow-xl lg:hidden ${styles.blur_backdrop_filter}`}
@@ -82,7 +82,7 @@ const DropdownMenu = ({ closeToggle, user, onLoginClick, onLogout }) => {
           {/* boton */}
           <div className="mt-8 w-[80%] overflow-hidden">
             <motion.div variants={mobileLinkVars}>
-              {user ? (
+              {isAuthenticated && user ? (
                 <div className="flex justify-center">
                   <UserMenu username={user} onLogout={onLogout} />
                 </div>

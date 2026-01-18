@@ -1,9 +1,12 @@
 'use client';
 
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState, useCallback } from 'react';
 import { apiClient } from '../api/apiClient';
 
 const AuthContext = createContext({});
+
+// Cache duration in milliseconds (30 minutes)
+const AUTH_CACHE_DURATION = 30 * 60 * 1000;
 
 export const useAuth = () => {
   const context = useContext(AuthContext);
@@ -28,9 +31,30 @@ export const AuthProvider = ({ children }) => {
     return () => window.removeEventListener('session-expired', handleSessionExpired);
   }, []);
 
-  const checkAuthStatus = async () => {
+  const checkAuthStatus = useCallback(async () => {
+    // Skip on server-side
+    if (typeof window === 'undefined') {
+      setIsLoading(false);
+      return;
+    }
+
+    console.log('checkAuthStatus called');
+    const cachedUser = localStorage.getItem('user');
+    const lastCheck = localStorage.getItem('lastAuthCheck');
+    
+    if (cachedUser && lastCheck && (Date.now() - parseInt(lastCheck)) < AUTH_CACHE_DURATION) {
+      console.log('Using cached user data');
+      setUser(JSON.parse(cachedUser));
+      setIsAuthenticated(true);
+      setIsLoading(false);
+      return;
+    }
+    
+    console.log('Making API call to /me');
     try {
       const member = await apiClient.checkSession();
+      localStorage.setItem('user', JSON.stringify(member));
+      localStorage.setItem('lastAuthCheck', Date.now().toString());
       setUser(member);
       setIsAuthenticated(true);
     } catch (error) {
@@ -38,7 +62,7 @@ export const AuthProvider = ({ children }) => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, []);
 
   // Handle session expiry on API calls
   const handleApiError = (error) => {
@@ -54,6 +78,11 @@ export const AuthProvider = ({ children }) => {
 
       // Login only creates session, get member data from /me
       const member = await apiClient.checkSession();
+      
+      // Cache the user data
+      localStorage.setItem('user', JSON.stringify(member));
+      localStorage.setItem('lastAuthCheck', Date.now().toString());
+      
       setUser(member);
       setIsAuthenticated(true);
 
@@ -77,6 +106,8 @@ export const AuthProvider = ({ children }) => {
   };
 
   const clearAuthData = () => {
+    localStorage.removeItem('user');
+    localStorage.removeItem('lastAuthCheck');
     setUser(null);
     setIsAuthenticated(false);
   };
