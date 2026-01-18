@@ -31,8 +31,8 @@ const Header = ({ animationDelay = 6.5 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [user, setUser] = useState(null);
 
-  const handleLoginSuccess = (username) => {
-    setUser(username);
+  const handleLoginSuccess = (member) => {
+    setUser(member);
   };
 
   const handleLogout = () => {
@@ -57,7 +57,7 @@ const Header = ({ animationDelay = 6.5 }) => {
             <Logo />
             <Navbar />
             {user ? (
-              <UserMenu username={user} onLogout={handleLogout} />
+              <UserMenu user={user} onLogout={handleLogout} />
             ) : (
               <Button type="secundary" onClick={() => setIsModalOpen(true)}>
                 Join
