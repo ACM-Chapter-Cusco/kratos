@@ -14,7 +14,7 @@ const CuscontestPage = () => {
     <>
       <ReactLenis root>
         <div className="bg-blue-git flex min-h-screen flex-col items-center">
-          <Header />
+          <Header animationDelay={0} />
           <div className="flex w-full justify-center">
             <div className="w-pantalla lg mt-28 flex h-auto flex-col items-center gap-10">
               <Hero />
