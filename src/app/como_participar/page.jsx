@@ -58,7 +58,7 @@ const ParticipationPage = () => {
 
   return (
     <div className="bg-blue-git flex min-h-screen flex-col items-center">
-      <Header />
+      <Header delay={0} />
       <main className="flex w-full justify-center">
         <section className="mt-28 flex h-auto w-full flex-col items-center gap-10">
           <div className="container mx-auto px-4">

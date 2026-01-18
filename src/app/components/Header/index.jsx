@@ -12,19 +12,19 @@ import { useState } from "react";
 
 import { AnimatePresence, motion } from "framer-motion";
 
-const navVariants = {
-  hidden: {
-    opacity: 0,
-  },
-  show: {
-    opacity: 1,
-    transition: {
-      delay: 6.5,
+const Header = ({ delay = 6.5 }) => {
+  const navVariants = {
+    hidden: {
+      opacity: 0,
     },
-  },
-};
+    show: {
+      opacity: 1,
+      transition: {
+        delay,
+      },
+    },
+  };
 
-const Header = () => {
   const [isToggleOpen, setIsToggleOpen] = useState(false);
 
   return (
