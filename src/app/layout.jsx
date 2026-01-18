@@ -6,6 +6,7 @@ import {
   Source_Code_Pro,
 } from "next/font/google";
 import "./globals.css";
+import { AuthProvider } from "@/lib/auth/AuthContext";
 
 import { Poppins } from "next/font/google";
 
@@ -64,7 +65,11 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${poppins.variable} ${inter.variable} ${play.variable} ${openSans.variable} ${raleway.variable} ${sourceCodePro.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <AuthProvider>
+          {children}
+        </AuthProvider>
+      </body>
     </html>
   );
 }

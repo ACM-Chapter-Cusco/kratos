@@ -4,6 +4,9 @@ import DropdownMenu from "./DropdownMenu";
 import Navbar from "./Navbar";
 import Button from "./Button";
 import Logo from "./Logo";
+import Login from "../common/Login";
+import UserMenu from "../common/UserMenu";
+import { useAuth } from "@/lib/auth/AuthContext";
 
 import styles from "./Header.module.css";
 
@@ -26,6 +29,16 @@ const Header = ({ delay = 6.5 }) => {
   };
 
   const [isToggleOpen, setIsToggleOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const { user, isAuthenticated, logout } = useAuth();
+
+  const handleLoginSuccess = () => {
+    // No need to manage local state, AuthContext handles it
+  };
+
+  const handleLogout = async () => {
+    await logout();
+  };
 
   return (
     <>
@@ -33,6 +46,7 @@ const Header = ({ delay = 6.5 }) => {
       <motion.div
         initial="hidden"
         animate="show"
+        custom={animationDelay}
         variants={navVariants}
         className={`bg-blue-git/90 fixed top-0 z-50 flex w-full justify-center bg-clip-padding ${styles.blur_backdrop_filter}`}
       >
@@ -43,7 +57,13 @@ const Header = ({ delay = 6.5 }) => {
           <div className="hidden items-center justify-between p-3 py-8 lg:flex">
             <Logo />
             <Navbar />
-            <Button type="secundary">Join</Button>
+            {isAuthenticated && user ? (
+              <UserMenu user={user} onLogout={handleLogout} />
+            ) : (
+              <Button type="secundary" onClick={() => setIsModalOpen(true)}>
+                Join
+              </Button>
+            )}
           </div>
 
           {/* Nav on mobile closed */}
@@ -61,9 +81,22 @@ const Header = ({ delay = 6.5 }) => {
       {/* displayed drop-down menu on mobile */}
       <AnimatePresence>
         {isToggleOpen && (
-          <DropdownMenu closeToggle={() => setIsToggleOpen(false)} />
+          <DropdownMenu
+            closeToggle={() => setIsToggleOpen(false)}
+            user={user}
+            isAuthenticated={isAuthenticated}
+            onLoginClick={() => setIsModalOpen(true)}
+            onLogout={handleLogout}
+          />
         )}
       </AnimatePresence>
+
+      {/* Login Modal */}
+      <Login
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onLoginSuccess={handleLoginSuccess}
+      />
     </>
   );
 };

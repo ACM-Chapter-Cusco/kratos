@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+/* Prism.js Syntax Highlighting - Figma Colors */
+.token.keyword { color: #647CF7 !important; }
+.token.builtin { color: #E84691 !important; }
+.token.function { color: #E84691 !important; }
+.token.string { color: #0BEFF6 !important; }
+.token.number { color: #0BEFF6 !important; }
+.token.boolean { color: #0BEFF6 !important; }
+.token.operator { color: #647CF7 !important; }
+.token.punctuation { color: #E8D009 !important; }
+.token.comment { color: #818C97 !important; }
+
 @theme inline {
   /* --breakpoint-*: initial; */
   --breakpoint-xs: 425px;

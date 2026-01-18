@@ -1,0 +1,84 @@
+{
+  "problems": [
+    {
+      "id": "A",
+      "title": "Team",
+      "timeLimit": "2 seconds",
+      "memoryLimit": "256 megabytes",
+      "description": "One day three best friends Petya, Vasya and Tonya decided to form a team and take part in programming contests. Participants are usually offered several problems during programming contests. Long before the start the friends decided that they will implement a problem if at least two of them are sure about the solution. Otherwise, the friends won't write the problem's solution.\n\nThis contest offers n problems to the participants. For each problem we know, which friend is sure about the solution. Help the friends find the number of problems for which they will write a solution.",
+      "input": "The first input line contains a single integer n (1 ≤ n ≤ 1000) — the number of problems in the contest. Then n lines contain three integers each, each integer is either 0 or 1. If the first number in the line equals 1, then Petya is sure about the problem's solution, otherwise he isn't sure. The second number shows Vasya's view on the solution, the third number shows Tonya's view. The numbers on the lines are separated by spaces.",
+      "output": "Print a single integer — the number of problems the friends will implement on the contest.",
+      "examples": {
+        "input": "3\n1 1 0\n1 1 1\n1 0 0",
+        "output": "2"
+      },
+      "hints": [
+        {
+          "id": "temas",
+          "title": "Temas",
+          "content": "Implementation, Basic Logic"
+        },
+        {
+          "id": "pista1",
+          "title": "Pista 1",
+          "content": "Count how many problems have at least 2 friends sure about the solution."
+        },
+        {
+          "id": "pista2",
+          "title": "Pista 2",
+          "content": "For each line, sum the three numbers. If sum >= 2, increment the answer."
+        },
+        {
+          "id": "pista3",
+          "title": "Pista 3",
+          "content": "Use a simple loop to iterate through all n problems."
+        }
+      ],
+      "code": {
+        "Python": "n = int(input())\ncount = 0\nfor _ in range(n):\n    a, b, c = map(int, input().split())\n    if a + b + c >= 2:\n        count += 1\nprint(count)",
+        "C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n, count = 0;\n    cin >> n;\n    for (int i = 0; i < n; i++) {\n        int a, b, c;\n        cin >> a >> b >> c;\n        if (a + b + c >= 2) count++;\n    }\n    cout << count << endl;\n    return 0;\n}",
+        "Java": "import java.util.Scanner;\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int count = 0;\n        for (int i = 0; i < n; i++) {\n            int a = sc.nextInt();\n            int b = sc.nextInt();\n            int c = sc.nextInt();\n            if (a + b + c >= 2) count++;\n        }\n        System.out.println(count);\n    }\n}"
+      }
+    },
+    {
+      "id": "B",
+      "title": "Way Too Long Words",
+      "timeLimit": "1 second",
+      "memoryLimit": "256 megabytes",
+      "description": "Sometimes some words like \"localization\" or \"internationalization\" are so long that writing them many times in one article is quite tiresome.\n\nLet's consider a word too long, if its length is strictly greater than 10 characters.\n\nAll too long words should be replaced with a special abbreviation.\n\nThis abbreviation is made by writing down the first and the last letter of a word, and between them - the count of letters between the first and the last letters.\n\nFor example, \"localization\" will be spelt as \"l10n\", and \"internationalization\" will be spelt as \"i18n\".\n\nYou are suggested to automatize the process of changing the words with abbreviations. Given a word, you need to replace it with the abbreviation if the word is too long.",
+      "input": "The first line contains an integer n (1 ≤ n ≤ 100). Then n lines follow. Each line contains a word. All the words consist only of lowercase English letters and each word contains at most 100 characters.",
+      "output": "Print n lines. The i-th line should contain the result of replacing of the i-th word from the input data.",
+      "examples": {
+        "input": "4\nword\nlocalization\ninternationalization\npneumonoultramicroscopicsilicovolcanoconiosiss",
+        "output": "word\nl10n\ni18n\np43s"
+      },
+      "hints": [
+        {
+          "id": "temas",
+          "title": "Temas",
+          "content": "String manipulation, Implementation"
+        },
+        {
+          "id": "pista1",
+          "title": "Pista 1",
+          "content": "Check if word length > 10, then abbreviate it."
+        },
+        {
+          "id": "pista2",
+          "title": "Pista 2",
+          "content": "Abbreviation format: first_letter + middle_count + last_letter"
+        },
+        {
+          "id": "pista3",
+          "title": "Pista 3",
+          "content": "Middle count = total_length - 2"
+        }
+      ],
+      "code": {
+        "Python": "n = int(input())\nfor _ in range(n):\n    word = input().strip()\n    if len(word) > 10:\n        print(f\"{word[0]}{len(word)-2}{word[-1]}\")\n    else:\n        print(word)",
+        "C++": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    for (int i = 0; i < n; i++) {\n        string word;\n        cin >> word;\n        if (word.length() > 10) {\n            cout << word[0] << word.length()-2 << word[word.length()-1] << endl;\n        } else {\n            cout << word << endl;\n        }\n    }\n    return 0;\n}",
+        "Java": "import java.util.Scanner;\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        for (int i = 0; i < n; i++) {\n            String word = sc.next();\n            if (word.length() > 10) {\n                System.out.println(word.charAt(0) + String.valueOf(word.length()-2) + word.charAt(word.length()-1));\n            } else {\n                System.out.println(word);\n            }\n        }\n    }\n}"
+      }
+    }
+  ]
+}

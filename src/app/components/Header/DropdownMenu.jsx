@@ -3,6 +3,7 @@ import React from "react";
 import navItems from "./navItems";
 import Logo from "./Logo";
 import styles from "./Header.module.css";
+import UserMenu from "../common/UserMenu";
 
 import { IoClose } from "react-icons/io5";
 import Button from "./Button";
@@ -46,7 +47,7 @@ const containerVars = {
   },
 };
 
-const DropdownMenu = ({ closeToggle }) => {
+const DropdownMenu = ({ closeToggle, user, isAuthenticated, onLoginClick, onLogout }) => {
   return (
     <motion.div
       className={`fixed z-[60] w-full origin-top shadow-xl lg:hidden ${styles.blur_backdrop_filter}`}
@@ -81,9 +82,19 @@ const DropdownMenu = ({ closeToggle }) => {
           {/* boton */}
           <div className="mt-8 w-[80%] overflow-hidden">
             <motion.div variants={mobileLinkVars}>
-              <Button type="secundary" className="mx-auto w-full text-3xl">
-                Join
-              </Button>
+              {isAuthenticated && user ? (
+                <div className="flex justify-center">
+                  <UserMenu user={user} onLogout={onLogout} />
+                </div>
+              ) : (
+                <Button
+                  type="secundary"
+                  className="mx-auto w-full text-3xl"
+                  onClick={onLoginClick}
+                >
+                  Join
+                </Button>
+              )}
             </motion.div>
           </div>
         </motion.div>
