@@ -6,6 +6,7 @@ import Button from "./Button";
 import Logo from "./Logo";
 import Login from "../common/Login";
 import UserMenu from "../common/UserMenu";
+import { useAuth } from "@/lib/auth/AuthContext";
 
 import styles from "./Header.module.css";
 
@@ -29,14 +30,14 @@ const navVariants = {
 const Header = ({ animationDelay = 6.5 }) => {
   const [isToggleOpen, setIsToggleOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [user, setUser] = useState(null);
+  const { user, isAuthenticated, logout } = useAuth();
 
-  const handleLoginSuccess = (member) => {
-    setUser(member);
+  const handleLoginSuccess = () => {
+    // No need to manage local state, AuthContext handles it
   };
 
-  const handleLogout = () => {
-    setUser(null);
+  const handleLogout = async () => {
+    await logout();
   };
 
   return (
@@ -56,7 +57,11 @@ const Header = ({ animationDelay = 6.5 }) => {
           <div className="hidden items-center justify-between p-3 py-8 lg:flex">
             <Logo />
             <Navbar />
+<<<<<<< HEAD
             {user ? (
+=======
+            {isAuthenticated && user ? (
+>>>>>>> feat/auth-localStorage-caching
               <UserMenu user={user} onLogout={handleLogout} />
             ) : (
               <Button type="secundary" onClick={() => setIsModalOpen(true)}>
@@ -83,6 +88,7 @@ const Header = ({ animationDelay = 6.5 }) => {
           <DropdownMenu
             closeToggle={() => setIsToggleOpen(false)}
             user={user}
+            isAuthenticated={isAuthenticated}
             onLoginClick={() => setIsModalOpen(true)}
             onLogout={handleLogout}
           />
