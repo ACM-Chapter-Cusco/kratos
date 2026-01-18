@@ -1,41 +1,49 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaTrophy } from "react-icons/fa";
 import { FaBrain } from "react-icons/fa6";
 import { FaLaptopCode } from "react-icons/fa";
 
 const Subitems = ({ opciones, isVisible }) => {
-  const ICONS = {
-    trophy: (
-      <FaTrophy className="group-hover:text-icpc transition duration-300 ease-in-out" />
-    ),
-    brain: (
-      <FaBrain className="group-hover:text-ai transition duration-300 ease-in-out" />
-    ),
-    computer: (
-      <FaLaptopCode className="group-hover:text-dev transition duration-300 ease-in-out" />
-    ),
+  const getNavIcon = (iconName) => {
+    switch (iconName) {
+      case "trophy":
+        return (
+          <FaTrophy className="group-hover:text-icpc transition duration-300 ease-in-out" />
+        );
+      case "brain":
+        return (
+          <FaBrain className="group-hover:text-ai transition duration-300 ease-in-out" />
+        );
+      case "computer":
+        return (
+          <FaLaptopCode className="group-hover:text-dev transition duration-300 ease-in-out" />
+        );
+      default:
+        return null;
+    }
   };
+
+  console.log("subitems para mostrar", opciones);
+  console.log("isVisible", isVisible);
 
   return (
     <div
-      className={`transform transition-opacity duration-700 ${
-        isVisible ? "opacity-100" : "opacity-0"
-      } top-[30px] inline-block lg:absolute`}
+      className={`relative top-full left-0 w-48 rounded-md py-2 shadow-xl transition-all duration-300 md:absolute md:bg-[#0F1317] ${
+        isVisible
+          ? "visible translate-y-0 opacity-100"
+          : "pointer-events-none invisible -translate-y-2 opacity-0"
+      }`}
     >
-      <ul className="text-white-blue lg:border-dark-1 lg:bg-dark-2 mt-5 flex flex-col gap-y-2 p-2 lg:mt-0 lg:gap-y-0 lg:rounded-lg lg:border-[2px]">
-        {opciones.map((opcion) => (
-          <li key={opcion.valor}>
-            <a
-              href="#"
-              style={{ minWidth: "min-content" }}
-              className="group font-Opensans lg:border-dark-2 lg:hover:border-dark-1 flex items-center gap-x-3 px-3 py-1 text-[20px] lg:rounded-lg lg:border-[2px]"
-            >
-              {ICONS[opcion.icon]}
-              <p>{opcion.valor}</p>
-            </a>
-          </li>
-        ))}
-      </ul>
+      {opciones.map((opcion, index) => (
+        <a
+          key={index}
+          href={opcion.href}
+          className="text-white-blue group mx-2 flex items-center gap-2 rounded-lg px-4 py-2 max-md:text-lg md:hover:bg-[#1a1f24]"
+        >
+          {getNavIcon(opcion.icon)}
+          <span>{opcion.valor}</span>
+        </a>
+      ))}
     </div>
   );
 };

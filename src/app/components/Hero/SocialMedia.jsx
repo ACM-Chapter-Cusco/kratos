@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  FaFacebookSquare,
-  FaInstagram,
-  FaGithubAlt,
-  FaDiscord,
-} from "react-icons/fa";
+import { FaFacebookSquare, FaGithubAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
 const SocialMedia = () => {

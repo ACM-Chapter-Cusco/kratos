@@ -23,7 +23,7 @@ const ContestPage = () => {
   return (
     <ReactLenis root>
       <div className={styles.contest_container}>
-        <Header animationDelay={0} />
+        <Header delay={0} />
         
         <main className={styles.main_content} role="main" aria-label="Contest problem content">
           <Problem 

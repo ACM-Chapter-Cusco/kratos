@@ -1,16 +1,15 @@
 import React from "react";
 
-import navItems from "./navItems";
+import navItems from "../../data/navItems";
 import Logo from "./Logo";
 import styles from "./Header.module.css";
-import UserMenu from "../common/UserMenu";
+import UserMenu from "../../common/UserMenu";
 
 import { IoClose } from "react-icons/io5";
 import Button from "./Button";
 
-import { delay, motion, stagger } from "framer-motion";
-import Link from "next/link";
-import NavigationItem from "./NavItem";
+import { motion } from "framer-motion";
+import NavItem from "./NavItem";
 
 // defining the variants for animations
 const menuVars = {
@@ -50,7 +49,7 @@ const containerVars = {
 const DropdownMenu = ({ closeToggle, user, isAuthenticated, onLoginClick, onLogout }) => {
   return (
     <motion.div
-      className={`fixed z-[60] w-full origin-top shadow-xl lg:hidden ${styles.blur_backdrop_filter}`}
+      className={`fixed z-[60] w-full origin-top rounded-b-3xl shadow-xl lg:hidden ${styles.blur_backdrop_filter}`}
       variants={menuVars}
       initial="initial"
       animate="animate"
@@ -129,11 +128,7 @@ const MobileNavLink = ({ item }) => {
       // animate="open"
       className="font-Inter text-3xl font-medium"
     >
-      <NavigationItem
-        valor={item.valor}
-        subItems={item.subItems}
-        href={item.href}
-      />
+      <NavItem valor={item.valor} subItems={item.subItems} href={item.href} />
     </motion.div>
   );
 };

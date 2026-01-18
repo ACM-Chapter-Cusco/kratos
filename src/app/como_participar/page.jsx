@@ -20,7 +20,7 @@ const ParticipationPage = () => {
       description:
         "Refuerza tu capacidad de resolución y algorítmica con problemas de cuscontest anteriores",
       buttonText: "Practica con problemas pasados",
-      buttonLink: "#",
+      buttonLink: "/contest",
       hasVideo: false,
       imageSrc: "/images/cuscontest/code-python.png",
     },
