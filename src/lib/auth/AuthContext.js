@@ -28,14 +28,11 @@ export const AuthProvider = ({ children }) => {
     return () => window.removeEventListener('session-expired', handleSessionExpired);
   }, []);
 
-  const checkAuthStatus = () => {
+  const checkAuthStatus = async () => {
     try {
-      const userData = localStorage.getItem('userData');
-
-      if (userData) {
-        setUser(JSON.parse(userData));
-        setIsAuthenticated(true);
-      }
+      const member = await apiClient.checkSession();
+      setUser(member);
+      setIsAuthenticated(true);
     } catch (error) {
       clearAuthData();
     } finally {
@@ -53,15 +50,14 @@ export const AuthProvider = ({ children }) => {
   const login = async (credentials) => {
     try {
       setIsLoading(true);
-      const response = await apiClient.login(credentials);
+      await apiClient.login(credentials);
 
-      const userData = response.user || response.member || { username: credentials.username };
-      localStorage.setItem('userData', JSON.stringify(userData));
-
-      setUser(userData);
+      // Login only creates session, get member data from /me
+      const member = await apiClient.checkSession();
+      setUser(member);
       setIsAuthenticated(true);
 
-      return { success: true, data: response };
+      return { success: true, member };
     } catch (error) {
       return { success: false, error: error.message };
     } finally {
@@ -81,7 +77,6 @@ export const AuthProvider = ({ children }) => {
   };
 
   const clearAuthData = () => {
-    localStorage.removeItem('userData');
     setUser(null);
     setIsAuthenticated(false);
   };

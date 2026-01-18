@@ -38,6 +38,18 @@ class ApiClient {
     return await response.json();
   }
 
+  async checkSession() {
+    const response = await this.makeRequest(`${this.baseURL}/api/v1/me`);
+
+    if (!response.ok) {
+      if (response.status === 401) throw new Error('Session expired');
+      throw new Error('Session check failed');
+    }
+
+    const data = await response.json();
+    return data.member; // Return the member object
+  }
+
   // Handle 401 errors globally
   async makeRequest(url, options = {}) {
     try {

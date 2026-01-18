@@ -18,7 +18,7 @@ const Login = ({ isOpen, onClose, onLoginSuccess }) => {
     const result = await login({ username, password });
 
     if (result.success) {
-      onLoginSuccess(username);
+      onLoginSuccess(result.member);
       onClose();
       setUsername("");
       setPassword("");
