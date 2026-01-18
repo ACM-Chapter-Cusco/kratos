@@ -4,6 +4,9 @@ import DropdownMenu from "./DropdownMenu";
 import Navbar from "./Navbar";
 import Button from "./Button";
 import Logo from "./Logo";
+import Login from "../../common/Login";
+import UserMenu from "../../common/UserMenu";
+import { useAuth } from "@/lib/auth/AuthContext";
 
 import styles from "./Header.module.css";
 
@@ -12,7 +15,7 @@ import { useState, useEffect } from "react";
 
 import { AnimatePresence, motion, useScroll } from "framer-motion";
 
-const Header = ({ delay }) => {
+const Header = ({ delay = 0 }) => {
   const navVariants = {
     hidden: {
       opacity: 0,
@@ -20,7 +23,7 @@ const Header = ({ delay }) => {
     show: {
       opacity: 1,
       transition: {
-        delay: delay,
+        delay,
       },
     },
   };
@@ -48,6 +51,16 @@ const Header = ({ delay }) => {
     visible: { y: 0 },
     hidden: { y: "-100%" },
   };
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const { user, isAuthenticated, logout } = useAuth();
+
+  const handleLoginSuccess = () => {
+    // No need to manage local state, AuthContext handles it
+  };
+
+  const handleLogout = async () => {
+    await logout();
+  };
 
   return (
     <motion.header
@@ -61,6 +74,7 @@ const Header = ({ delay }) => {
       <motion.div
         initial="hidden"
         animate={isVisible ? "visible" : "hidden"}
+        custom={delay}
         variants={headerVariants}
         transition={{ duration: 0.3, ease: "easeInOut" }}
         className={`bg-blue-git/90 fixed top-0 flex w-full justify-center bg-clip-padding ${styles.blur_backdrop_filter}`}
@@ -71,7 +85,13 @@ const Header = ({ delay }) => {
           <div className="hidden items-center justify-between p-3 py-8 lg:flex">
             <Logo />
             <Navbar />
-            <Button type="secundary">Join</Button>
+            {isAuthenticated && user ? (
+              <UserMenu user={user} onLogout={handleLogout} />
+            ) : (
+              <Button type="secundary" onClick={() => setIsModalOpen(true)}>
+                Join
+              </Button>
+            )}
           </div>
 
           {/* Nav on mobile closed */}
@@ -89,9 +109,22 @@ const Header = ({ delay }) => {
       {/* displayed drop-down menu on mobile */}
       <AnimatePresence>
         {isToggleOpen && (
-          <DropdownMenu closeToggle={() => setIsToggleOpen(false)} />
+          <DropdownMenu
+            closeToggle={() => setIsToggleOpen(false)}
+            user={user}
+            isAuthenticated={isAuthenticated}
+            onLoginClick={() => setIsModalOpen(true)}
+            onLogout={handleLogout}
+          />
         )}
       </AnimatePresence>
+
+      {/* Login Modal */}
+      <Login
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onLoginSuccess={handleLoginSuccess}
+      />
     </motion.header>
   );
 };

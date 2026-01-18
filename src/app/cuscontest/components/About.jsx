@@ -1,3 +1,5 @@
+"use client";
+
 import Button from "@/app/common/Button";
 import React from "react";
 import { delay, motion, spring } from "framer-motion";
@@ -76,6 +78,7 @@ const About = () => {
               <Button
                 variant="outline"
                 className="px-[3rem] md:w-[15.3rem] lg:mt-5 lg:w-[23rem]"
+                onClick={() => window.open("/como_participar", "_self")}
               >
                 Ver como participar
               </Button>

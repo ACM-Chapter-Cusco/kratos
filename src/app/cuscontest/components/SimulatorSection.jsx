@@ -7,6 +7,7 @@ import Button from "@/app/common/Button";
 import { fadeIn, springDown } from "@/app/common/animations/entrances";
 import { motion } from "framer-motion";
 import { createDelayedVariant } from "@/app/common/animations/shared";
+import { useRouter } from "next/navigation";
 
 const Simulador = () => {
   const codeItems = [
@@ -94,6 +95,12 @@ const Simulador = () => {
 };
 
 const SimulatorSection = () => {
+  const router = useRouter();
+
+  const handleContestClick = () => {
+    router.push('/contest');
+  };
+
   return (
     <motion.div
       initial="hidden"
@@ -105,7 +112,7 @@ const SimulatorSection = () => {
         <Simulador />
       </motion.div>
       <motion.div variants={createDelayedVariant(fadeIn, 1, 1)}>
-        <Button variant="outline">Practica con problemas pasados</Button>
+        <Button variant="outline" action={handleContestClick}>Practica con problemas pasados</Button>
       </motion.div>
     </motion.div>
   );
