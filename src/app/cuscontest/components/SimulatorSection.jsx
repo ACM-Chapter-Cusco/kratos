@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { useRouter } from "next/navigation";
 import Button from "@/app/components/common/Button";
 
 const Simulador = () => {
@@ -91,8 +92,10 @@ const Simulador = () => {
 };
 
 const SimulatorSection = () => {
+  const router = useRouter();
+
   const handleContestClick = () => {
-    window.location.href = '/contest';
+    router.push('/contest');
   };
 
   return (

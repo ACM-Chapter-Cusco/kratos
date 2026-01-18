@@ -2,15 +2,10 @@ const navItems = [
   {
     id: 1,
     valor: "About",
-    href: "#",
+    href: "/",
   },
   {
     id: 2,
-    valor: "Cuscontest",
-    href: "/cuscontest",
-  },
-  {
-    id: 3,
     valor: "Teams",
     subItems: [
       {
@@ -31,9 +26,14 @@ const navItems = [
     ],
   },
   {
-    id: 4,
+    id: 3,
     valor: "Events",
     href: "#",
+  },
+  {
+    id: 4,
+    valor: "Cuscontest",
+    href: "/cuscontest",
   },
   {
     id: 5,
