@@ -3,29 +3,27 @@
 import { useState } from "react";
 import { IoClose } from "react-icons/io5";
 import { motion, AnimatePresence } from "framer-motion";
-import { apiClient } from "@/lib/api/apiClient";
+import { useAuth } from "@/lib/auth/AuthContext";
 
 const Login = ({ isOpen, onClose, onLoginSuccess }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const { login, isLoading } = useAuth();
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    setIsLoading(true);
     setError("");
 
-    try {
-      const response = await apiClient.login({ username, password });
-      onLoginSuccess(username);
+    const result = await login({ username, password });
+
+    if (result.success) {
+      onLoginSuccess(result.member);
       onClose();
       setUsername("");
       setPassword("");
-    } catch (error) {
-      setError(error.message);
-    } finally {
-      setIsLoading(false);
+    } else {
+      setError(result.error);
     }
   };
 

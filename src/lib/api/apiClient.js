@@ -9,52 +9,63 @@ class ApiClient {
   }
 
   async login(credentials) {
-    try {
-      const response = await fetch(`${this.baseURL}/api/v1/login`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          member: {
-            id: credentials.username,
-            password: credentials.password
-          }
-        }),
-        credentials: 'include',
-      });
-
-      if (!response.ok) {
-        if (response.status === 404) {
-          throw new Error('Invalid username');
+    const response = await this.makeRequest(`${this.baseURL}/api/v1/login`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        member: {
+          id: credentials.username,
+          password: credentials.password
         }
-        if (response.status === 400) {
-          throw new Error('Invalid credentials');
-        }
-        throw new Error('Login failed');
-      }
+      })
+    });
 
-      return await response.json();
-    } catch (error) {
-      if (error.name === 'TypeError' || error.message === 'Failed to fetch') {
-        throw new Error('Connection error. Please try again.');
-      }
-      throw error;
+    if (!response.ok) {
+      if (response.status === 404) throw new Error('Invalid username');
+      if (response.status === 400) throw new Error('Invalid credentials');
+      throw new Error('Login failed');
     }
+
+    return await response.json();
   }
 
   async logout() {
+    const response = await this.makeRequest(`${this.baseURL}/api/v1/logout`, {
+      method: 'POST'
+    });
+
+    if (!response.ok) throw new Error('Logout failed');
+    return await response.json();
+  }
+
+  async checkSession() {
+    const response = await this.makeRequest(`${this.baseURL}/api/v1/me`);
+
+    if (!response.ok) {
+      if (response.status === 401) throw new Error('Session expired');
+      throw new Error('Session check failed');
+    }
+
+    const data = await response.json();
+    return data.member; // Return the member object
+  }
+
+  // Handle 401 errors globally
+  async makeRequest(url, options = {}) {
     try {
-      const response = await fetch(`${this.baseURL}/api/v1/logout`, {
-        method: 'POST',
-        credentials: 'include',
+      const response = await fetch(url, {
+        ...options,
+        credentials: 'include'
       });
 
-      if (!response.ok) {
-        throw new Error('Logout failed');
+      if (response.status === 401) {
+        // Session expired - trigger logout
+        if (typeof window !== 'undefined') {
+          window.dispatchEvent(new CustomEvent('session-expired'));
+        }
       }
 
-      return await response.json();
+      return response;
     } catch (error) {
       if (error.name === 'TypeError' || error.message === 'Failed to fetch') {
         throw new Error('Connection error. Please try again.');
