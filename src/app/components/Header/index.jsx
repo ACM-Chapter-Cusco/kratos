@@ -46,7 +46,7 @@ const Header = ({ delay = 6.5 }) => {
       <motion.div
         initial="hidden"
         animate="show"
-        custom={animationDelay}
+        custom={delay}
         variants={navVariants}
         className={`bg-blue-git/90 fixed top-0 z-50 flex w-full justify-center bg-clip-padding ${styles.blur_backdrop_filter}`}
       >
