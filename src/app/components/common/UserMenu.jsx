@@ -4,7 +4,7 @@ import { useState } from "react";
 import { FiUser, FiLogOut, FiChevronDown } from "react-icons/fi";
 import { apiClient } from "@/lib/api/apiClient";
 
-const UserMenu = ({ username, onLogout }) => {
+const UserMenu = ({ user, onLogout }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleLogout = async () => {
@@ -26,7 +26,7 @@ const UserMenu = ({ username, onLogout }) => {
         className="flex items-center gap-2 px-3 py-2 rounded-xl bg-blue/20 border border-white-blue/30 hover:bg-blue/30 transition-colors"
       >
         <FiUser className="text-white-blue text-lg" />
-        <span className="text-white-blue font-medium">{username}</span>
+        <span className="text-white-blue font-medium">{user.id}</span>
         <FiChevronDown className="text-white-blue text-sm" />
       </button>
 

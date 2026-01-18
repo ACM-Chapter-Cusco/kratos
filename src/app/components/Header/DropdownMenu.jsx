@@ -84,7 +84,7 @@ const DropdownMenu = ({ closeToggle, user, onLoginClick, onLogout }) => {
             <motion.div variants={mobileLinkVars}>
               {user ? (
                 <div className="flex justify-center">
-                  <UserMenu username={user} onLogout={onLogout} />
+                  <UserMenu user={user} onLogout={onLogout} />
                 </div>
               ) : (
                 <Button
