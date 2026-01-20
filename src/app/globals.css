@@ -1,5 +1,23 @@
 @import "tailwindcss";
 
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0e12;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #14181c;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1a1f24;
+}
+
 /* Prism.js Syntax Highlighting - Figma Colors */
 .token.keyword { color: #647CF7 !important; }
 .token.builtin { color: #E84691 !important; }

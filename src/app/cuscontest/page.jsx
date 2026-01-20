@@ -9,7 +9,6 @@ import FAQSection from "./components/FAQSection";
 
 import { ReactLenis } from "lenis/react";
 import Advantages from "./components/Advantages/Advantages";
-import Winners from "./components/Winners/Winners";
 import WinnerCarousel from "./components/Winners/WinnerCarousel";
 import Footer from "../components/Footer";
 
@@ -77,7 +76,6 @@ const CuscontestPage = () => {
               <SimulatorSection />
               <About />
               <Advantages />
-              <Winners />
               
               <WinnerCarousel
                 winners={allWinners}
