@@ -48,7 +48,7 @@ const About = () => {
           <div className="flex-1">
             <motion.img
               variants={createDelayedVariant(springRight, 0)}
-              src="/images/cuscontest/about-1.png"
+              src="/pages/cuscontest/images/hero-cuscontest-01.webp"
               alt="about-1"
               className="h-full w-full rounded-xl object-cover"
             />
@@ -88,7 +88,7 @@ const About = () => {
           <div className="flex-[0.45]">
             <motion.img
               variants={createDelayedVariant(springRight, 0.5)}
-              src="/images/cuscontest/about-2.png"
+              src="/pages/cuscontest/images/hero-cuscontest-02.webp"
               alt="about-2"
               className="h-full w-full rounded-xl object-cover"
             />
@@ -96,19 +96,19 @@ const About = () => {
           <div className="relative flex-[0.12] md:ml-10 lg:ml-10 xl:ml-16">
             <motion.img
               variants={createDelayedVariant(springRight, 3.7)}
-              src="/images/cuscontest/orange-ballom.svg"
+              src="/pages/cuscontest/icons/decoration-balloon-orange.svg"
               alt="about-3"
               className="absolute top-0 left-0 h-[40%]"
             />
             <motion.img
               variants={createDelayedVariant(springRight, 4.2)}
-              src="/images/cuscontest/green-ballom.svg"
+              src="/pages/cuscontest/icons/decoration-balloon-green.svg"
               alt="about-3"
               className="absolute top-[40%] right-0 h-[30%]"
             />
             <motion.img
               variants={createDelayedVariant(springRight, 4.7)}
-              src="/images/cuscontest/pink-ballom.svg"
+              src="/pages/cuscontest/icons/decoration-balloon-pink.svg"
               alt="about-3"
               className="absolute bottom-0 left-8 h-[20%]"
             />
@@ -119,7 +119,7 @@ const About = () => {
         <div className="absolute h-full md:-top-2 md:left-[4.2rem] lg:-top-10 lg:left-[4rem] xl:left-[6rem]">
           <motion.img
             variants={createDelayedVariant(fadeIn, 0, 2)}
-            src="/images/cuscontest/transparent-ballom.png"
+            src="/pages/cuscontest/images/decoration-balloon-transparent.webp"
             alt="about-4"
             className="md:h-[80%] lg:h-[94%]"
           />
@@ -184,7 +184,7 @@ const About = () => {
             <div className="flex-1">
               <motion.img
                 variants={createDelayedVariant(springUp, 3.8)}
-                src="/images/cuscontest/about-1.png"
+                src="/pages/cuscontest/images/hero-cuscontest-01.webp"
                 alt="about-1"
                 className="h-full w-full rounded-xl object-cover"
               />
@@ -196,7 +196,7 @@ const About = () => {
         <div className="absolute left-1/2 h-full -translate-x-1/2 transform">
           <motion.img
             variants={createDelayedVariant(fadeIn, 0, 2)}
-            src="/images/cuscontest/transparent-ballom.png"
+            src="/pages/cuscontest/images/decoration-balloon-transparent.webp"
             alt="about-4"
             className="max-md:w-[12rem]"
           />

@@ -27,7 +27,7 @@ const CodeEditor = ({ problemId, codeExamples = {} }) => {
         await navigator.clipboard.writeText(codeExamples[activeLanguage]);
       }
     } catch (error) {
-      console.error('Failed to copy code:', error);
+      // Failed to copy code
     }
   };
 
@@ -50,7 +50,7 @@ const CodeEditor = ({ problemId, codeExamples = {} }) => {
           aria-label={isCodeVisible ? "Hide code editor" : "Show code editor"}
         >
           <Image 
-            src="/contest/reveal-code.svg" 
+            src="/pages/contest/icons/icon-reveal-code.svg" 
             alt="Reveal code" 
             width={40} 
             height={26}
@@ -82,7 +82,7 @@ const CodeEditor = ({ problemId, codeExamples = {} }) => {
               aria-label="Copy code"
             >
               <Image 
-                src="/contest/copy.svg" 
+                src="/pages/contest/icons/icon-copy.svg" 
                 alt="Copy" 
                 width={25} 
                 height={25}

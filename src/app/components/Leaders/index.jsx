@@ -30,7 +30,7 @@ const Leaders = () => {
         <div className="relative hidden h-[55rem] w-[85rem] md:block">
           {/* background */}
           <div className="absolute flex w-full -translate-y-1/4 justify-center">
-            <img src="/LOGO.svg" alt="logo" className="md:w-[60%] xl:w-[80%]" />
+            <img src="/assets/icons/logo-acm-main.svg" alt="logo" className="md:w-[60%] xl:w-[80%]" />
           </div>
 
           {/* Primer grupo - Líderes principales */}

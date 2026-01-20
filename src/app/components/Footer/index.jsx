@@ -24,14 +24,14 @@ const Footer = () => {
 
           <div className="flex w-full justify-center md:w-auto">
             <Image
-              src="/info_logo.png"
+              src="/assets/icons/logo-info.webp"
               alt="informatica logo"
               width={80}
               height={80}
               className=""
             />
             <Image
-              src="/unsaac_logo.png"
+              src="/assets/icons/logo-unsaac.webp"
               alt="unsaac logo"
               width={109}
               height={80}

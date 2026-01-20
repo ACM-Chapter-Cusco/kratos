@@ -22,7 +22,7 @@ const Imagery = () => {
         {/* Div hijo con las transiciones CSS */}
         <div className="relative h-full w-full scale-75 rounded-2xl shadow-2xl shadow-black transition-transform duration-300 ease-in-out hover:scale-100 md:scale-100 md:hover:scale-125">
           <Image
-            src="/about/image5.svg"
+            src="/pages/home/icons/illustration-about-05.svg"
             alt="Image0"
             fill
             style={{ objectFit: "cover" }}
@@ -39,7 +39,7 @@ const Imagery = () => {
         {/* Div hijo con las transiciones CSS */}
         <div className="relative h-full w-full scale-60 rounded-2xl shadow-2xl shadow-black transition-transform duration-300 ease-in-out hover:scale-100 md:scale-100 hover:md:scale-110">
           <Image
-            src="/about/image2.svg"
+            src="/pages/home/icons/illustration-about-02.svg"
             alt="Image1"
             fill
             style={{ objectFit: "cover" }}
@@ -56,7 +56,7 @@ const Imagery = () => {
         {/* Div hijo con las transiciones CSS */}
         <div className="relative h-full w-full scale-60 shadow-2xl shadow-black transition-transform duration-300 ease-in-out hover:scale-90 md:scale-100 hover:md:scale-105">
           <Image
-            src="/about/image3.svg"
+            src="/pages/home/icons/illustration-about-03.svg"
             alt="Image2"
             fill
             style={{ objectFit: "cover" }}
@@ -73,7 +73,7 @@ const Imagery = () => {
         {/* Div hijo con las transiciones CSS */}
         <div className="relative h-full w-full scale-60 rounded-2xl shadow-2xl shadow-black transition-transform duration-300 ease-in-out hover:scale-90 md:scale-100 hover:md:scale-105">
           <Image
-            src="/about/image1.svg"
+            src="/pages/home/icons/illustration-about-01.svg"
             alt="Image3"
             fill
             style={{ objectFit: "cover" }}

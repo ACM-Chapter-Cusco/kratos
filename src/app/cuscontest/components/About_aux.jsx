@@ -24,7 +24,7 @@ const About = () => {
           {/* image */}
           <div className="flex-1">
             <img
-              src="/images/cuscontest/about-1.png"
+              src="/pages/cuscontest/images/hero-cuscontest-01.webp"
               alt="about-1"
               className="h-full w-full rounded-xl object-cover"
             />
@@ -57,24 +57,24 @@ const About = () => {
           {/* image */}
           <div className="flex-[0.45]">
             <img
-              src="/images/cuscontest/about-2.png"
+              src="/pages/cuscontest/images/hero-cuscontest-02.webp"
               alt="about-2"
               className="h-full w-full rounded-xl object-cover"
             />
           </div>
           <div className="relative flex-[0.12] md:ml-10 lg:ml-10 xl:ml-16">
             <img
-              src="/images/cuscontest/orange-ballom.svg"
+              src="/pages/cuscontest/icons/decoration-balloon-orange.svg"
               alt="about-3"
               className="absolute top-0 left-0 h-[40%]"
             />
             <img
-              src="/images/cuscontest/green-ballom.svg"
+              src="/pages/cuscontest/icons/decoration-balloon-green.svg"
               alt="about-3"
               className="absolute top-[40%] right-0 h-[30%]"
             />
             <img
-              src="/images/cuscontest/pink-ballom.svg"
+              src="/pages/cuscontest/icons/decoration-balloon-pink.svg"
               alt="about-3"
               className="absolute bottom-0 left-8 h-[20%]"
             />
@@ -84,7 +84,7 @@ const About = () => {
         {/* Ballom */}
         <div className="absolute h-full md:-top-2 md:left-[4.2rem] lg:-top-10 lg:left-[4rem] xl:left-[6rem]">
           <img
-            src="/images/cuscontest/transparent-ballom.png"
+            src="/pages/cuscontest/images/decoration-balloon-transparent.webp"
             alt="about-4"
             className="md:h-[80%] lg:h-[94%]"
           />
@@ -131,7 +131,7 @@ const About = () => {
             {/* image */}
             <div className="flex-1">
               <img
-                src="/images/cuscontest/about-1.png"
+                src="/pages/cuscontest/images/hero-cuscontest-01.webp"
                 alt="about-1"
                 className="h-full w-full rounded-xl object-cover"
               />
@@ -142,7 +142,7 @@ const About = () => {
         {/* Ballom */}
         {/* <div className="absolute h-full md:-top-2 md:left-[4.2rem] lg:-top-10 lg:left-[4rem] xl:left-[6rem]">
           <img
-            src="/images/cuscontest/transparent-ballom.png"
+            src="/pages/cuscontest/images/decoration-balloon-transparent.webp"
             alt="about-4"
             className="md:h-[80%] lg:h-[94%]"
           />

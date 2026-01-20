@@ -6,33 +6,31 @@ import EditionXX from "./Editions/EditionXX";
 
 const WinnersEditions = ({ x, containerRef, type, widthSize }) => {
   return (
-    <>
-      <motion.div
-        className="flex h-full w-full cursor-grab snap-x snap-mandatory"
-        ref={containerRef}
-        drag="x"
-        dragConstraints={{ left: widthSize, right: 0 }}
-        style={{ x }}
-        whileTap={{ cursor: "grabbing" }}
-        dragTransition={{
-          bounceStiffness: 100, // Increase for less bounce
-          bounceDamping: 50, // Increase for faster damping
-          power: 0.2, // Reduce for less impulse (0-1)
-          timeConstant: 300, // Reduce for faster inertia
-          restDelta: 1, // Higher tolerance for stopping before
-        }}
-      >
-        <div className="snap-center">
-          <EditionXXII dragX={x} type={type} />
-        </div>
-        <div className="snap-center">
-          <EditionXXI dragX={x} type={type} />
-        </div>
-        <div className="snap-center">
-          <EditionXX dragX={x} type={type} />
-        </div>
-      </motion.div>
-    </>
+    <motion.div
+      className="flex h-full cursor-grab"
+      ref={containerRef}
+      drag="x"
+      dragConstraints={{ left: widthSize, right: 0 }}
+      style={{ x }}
+      whileTap={{ cursor: "grabbing" }}
+      dragTransition={{
+        bounceStiffness: 100,
+        bounceDamping: 50,
+        power: 0.2,
+        timeConstant: 300,
+        restDelta: 1,
+      }}
+    >
+      <div className="flex-shrink-0">
+        <EditionXXII dragX={x} type={type} />
+      </div>
+      <div className="flex-shrink-0">
+        <EditionXXI dragX={x} type={type} />
+      </div>
+      <div className="flex-shrink-0">
+        <EditionXX dragX={x} type={type} />
+      </div>
+    </motion.div>
   );
 };
 

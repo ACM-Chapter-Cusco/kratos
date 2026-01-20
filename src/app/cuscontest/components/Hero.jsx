@@ -80,7 +80,7 @@ const Hero = () => {
       <motion.div variants={springRight} className="relative">
         <div className="absolute top-36 z-10 flex w-full justify-center sm:top-12 sm:justify-end">
           <img
-            src="/images/cuscontest/pc-desktop.png"
+            src="/pages/cuscontest/images/hero-computer-desktop.webp"
             alt="pc"
             className="w-[90%] sm:mr-[2rem] sm:w-[85%]"
           />
@@ -88,7 +88,7 @@ const Hero = () => {
         {/* cirtcuits bg for mobile */}
         <div className="absolute top-5 right-0 left-0 w-full sm:hidden">
           <img
-            src="/images/cuscontest/circuits.png"
+            src="/pages/cuscontest/images/background-circuits-mobile.webp"
             alt="circuits"
             className=""
           />
@@ -98,7 +98,7 @@ const Hero = () => {
         {/* cirtcuits bg for desktop and tablet */}
         <div className="absolute top-20 hidden w-full sm:block">
           <img
-            src="/images/cuscontest/circuits-desktop.png"
+            src="/pages/cuscontest/images/background-circuits-desktop.webp"
             alt="circuits"
             className="h-auto w-full"
           />

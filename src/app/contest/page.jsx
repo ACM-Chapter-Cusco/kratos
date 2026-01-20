@@ -62,7 +62,7 @@ const ContestPage = () => {
           <div className={styles.vertical_bar}></div>
           <div className={styles.vertical_row_left}>
             <Image 
-              src="/contest/play.svg" 
+              src="/pages/contest/icons/icon-play.svg" 
               alt="Play icon" 
               width={6} 
               height={20}

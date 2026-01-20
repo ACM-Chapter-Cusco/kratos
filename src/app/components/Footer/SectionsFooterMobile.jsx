@@ -46,7 +46,6 @@ export const SectionsFooterMobile = () => {
   ];
 
   const handleClick = (name) => {
-    console.log(name);
     if (isOpen === "none") {
       setIsOpen(name);
     } else {
