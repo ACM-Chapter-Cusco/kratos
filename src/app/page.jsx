@@ -1,11 +1,11 @@
-import Header from "@/components/layout/Header";
-import Hero from "@/components/sections/Hero";
-import About from "@/components/sections/About";
-import AcmTeams from "@/components/sections/AcmTeams";
-import Events from "@/components/sections/Events";
-import Footer from "@/components/layout/Footer";
-import Gallery from "@/components/sections/Gallery";
-import Leaders from "@/components/sections/Leaders";
+import Header from "@/components/common/layout/Header";
+import Hero from "@/components/home/Hero";
+import About from "@/components/home/About";
+import AcmTeams from "@/components/home/AcmTeams";
+import Events from "@/components/home/Events";
+import Footer from "@/components/common/layout/Footer";
+import Gallery from "@/components/home/Gallery";
+import Leaders from "@/components/home/Leaders";
 import { ReactLenis } from "lenis/react";
 
 export default function Home() {

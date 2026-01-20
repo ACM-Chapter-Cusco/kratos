@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "@/components/layout/Header";
-import ParticipationSteps from "@/components/pages/participation/ParticipationSteps";
+import Header from "@/components/common/layout/Header";
+import ParticipationSteps from "@/components/participation/ParticipationSteps";
 
 const ParticipationPage = () => {
   const participationSteps = [
