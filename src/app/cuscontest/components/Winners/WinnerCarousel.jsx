@@ -1,27 +1,19 @@
 import { motion, useMotionValue, useScroll, useTransform } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
-import { fadeIn, springDown } from "@/app/common/animations/entrances";
-import { createDelayedVariant } from "@/app/common/animations/shared";
+import { useRef } from "react";
 import WinnerItem from "./WinnerItem";
 
 const WinnerCarousel = ({ winners }) => {
-  const [scrollbarWidth, setScrollbarWidth] = useState(0);
   const targetRef = useRef(null);
   const animationSectionRef = useRef(null);
   const containerRef = useRef(null);
   const dragX = useMotionValue(0);
-
-  useEffect(() => {
-    const width = window.innerWidth - document.documentElement.clientWidth;
-    setScrollbarWidth(width);
-  }, []);
 
   const { scrollYProgress: titleScrollProgress } = useScroll({
     target: animationSectionRef,
     offset: ["start", "end start"],
   });
 
-  // Background WINNERS effect - exact same as original
+  // Background WINNERS effect
   const titleScale = useTransform(titleScrollProgress, [0, 0.3, 1], [1, 5, 5]);
   const titleBackgroundOpacity = useTransform(
     titleScrollProgress,
@@ -29,12 +21,17 @@ const WinnerCarousel = ({ winners }) => {
     [1, 0.05, 0.05],
   );
 
+  // Dynamic drag constraints based on content
+  const getDragConstraints = () => {
+    return { left: -5000, right: 0 };
+  };
+
   return (
     <motion.section
       initial="hidden"
       whileInView="visible"
       ref={targetRef}
-      className="desktop:my-0 tablet:my-20 tablet:h-[32rem] desktop:h-[36rem] tablet:mb-40 desktop:mb-60 relative my-10 mb-16 h-[31rem] w-full"
+      className="relative my-10 mb-16 h-[22rem] tablet:my-20 tablet:h-[24rem] tablet:mb-40 desktop:my-0 desktop:h-[28rem] desktop:mb-60 lg-desktop:h-[30rem] w-full"
     >
       {/* Background WINNERS text effect */}
       <div
@@ -55,13 +52,13 @@ const WinnerCarousel = ({ winners }) => {
         </motion.div>
       </div>
 
-      <motion.div className="desktop:top-24 lg-desktop:top-30 tablet:top-24 absolute top-20 w-full overflow-x-auto overflow-y-hidden">
-        <div className="desktop:block hidden h-[36rem] w-full">
+      <motion.div className="absolute top-20 tablet:top-24 desktop:top-24 lg-desktop:top-30 w-full overflow-x-auto overflow-y-hidden">
+        <div className="h-[22rem] tablet:h-[24rem] desktop:h-[28rem] lg-desktop:h-[30rem] w-full">
           <motion.div
-            className="flex h-full cursor-grab gap-32 desktop:gap-60"
+            className="flex h-full cursor-grab gap-8 tablet:gap-12 desktop:gap-16"
             ref={containerRef}
             drag="x"
-            dragConstraints={{ left: -8000, right: 0 }}
+            dragConstraints={getDragConstraints()}
             style={{ x: dragX }}
             whileTap={{ cursor: "grabbing" }}
             dragTransition={{
@@ -72,47 +69,11 @@ const WinnerCarousel = ({ winners }) => {
               restDelta: 1,
             }}
           >
-            <div className="hidden tablet:block tablet:w-10 h-full" />
+            <div className="w-4 tablet:w-6 desktop:w-10 h-full flex-shrink-0" />
             {winners.map((winner) => (
-              <WinnerItem
-                key={winner.id}
-                winner={winner}
-                dragX={dragX}
-              />
-            ))}
-          </motion.div>
-        </div>
-        <div className="desktop:hidden tablet:block hidden h-[32rem] w-full">
-          <motion.div
-            className="flex h-full cursor-grab gap-32"
-            drag="x"
-            dragConstraints={{ left: -6000, right: 0 }}
-            style={{ x: dragX }}
-            whileTap={{ cursor: "grabbing" }}
-          >
-            {winners.map((winner) => (
-              <WinnerItem
-                key={winner.id}
-                winner={winner}
-                dragX={dragX}
-              />
-            ))}
-          </motion.div>
-        </div>
-        <div className="tablet:hidden block h-[31rem] w-full">
-          <motion.div
-            className="flex h-full cursor-grab gap-32"
-            drag="x"
-            dragConstraints={{ left: -5000, right: 0 }}
-            style={{ x: dragX }}
-            whileTap={{ cursor: "grabbing" }}
-          >
-            {winners.map((winner) => (
-              <WinnerItem
-                key={winner.id}
-                winner={winner}
-                dragX={dragX}
-              />
+              <div key={winner.id} className="flex-shrink-0">
+                <WinnerItem winner={winner} />
+              </div>
             ))}
           </motion.div>
         </div>
