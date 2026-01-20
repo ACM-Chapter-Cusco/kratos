@@ -14,17 +14,17 @@ const Simulador = () => {
     {
       id: 1,
       language: "Python",
-      codeImage: "/images/cuscontest/code-python.png",
+      codeImage: "/pages/cuscontest/images/example-code-python.webp",
     },
     {
       id: 2,
       language: "C++",
-      codeImage: "/images/cuscontest/code-python.png",
+      codeImage: "/pages/cuscontest/images/example-code-python.webp",
     },
     {
       id: 3,
       language: "Java",
-      codeImage: "/images/cuscontest/code-python.png",
+      codeImage: "/pages/cuscontest/images/example-code-python.webp",
     },
   ];
 
@@ -58,8 +58,8 @@ const Simulador = () => {
         <div className="my-[1.5rem] h-[0.125rem] w-full bg-[#1C2024]"></div>
         <div>
           <img
-            src="/images/cuscontest/code-python.png"
-            alt="code-python.png"
+            src="/pages/cuscontest/images/example-code-python.webp"
+            alt="code-python.webp"
             className="w-[19.5rem] md:w-[26.25rem]"
           />
         </div>
@@ -73,7 +73,7 @@ const Simulador = () => {
         >
           <div className="w-flull hover:bg-dev-600 text-white-blue flex cursor-pointer items-center gap-x-2 rounded-md bg-[#0AB764] px-[1.25rem] py-[0.2rem] transition-colors duration-300 hover:bg-[#0AB764]/50 md:rounded-xl md:py-[0.4rem]">
             <div className="flex size-[0.75rem] items-center justify-center rounded-full bg-[#fff]">
-              <img src="/images/cuscontest/icon-play.png" alt="icon-play" />
+              <img src="/pages/cuscontest/images/icon-play.webp" alt="icon-play" />
             </div>
             <p className="font-Raleway text-[0.75rem] font-[700] text-[#fff]">
               Run

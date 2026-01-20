@@ -23,9 +23,6 @@ const Subitems = ({ opciones, isVisible }) => {
     }
   };
 
-  console.log("subitems para mostrar", opciones);
-  console.log("isVisible", isVisible);
-
   return (
     <div
       className={`relative top-full left-0 w-48 rounded-md py-2 shadow-xl transition-all duration-300 md:absolute md:bg-[#0F1317] ${

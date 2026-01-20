@@ -49,7 +49,7 @@ const Hero = () => {
           className="h-[200px] w-[200px] xl:h-[290px] xl:w-[290px]"
         >
           <Image
-            src="/acm-logo-img.svg"
+            src="/assets/icons/logo-acm-hero.svg"
             alt="Hero"
             width={290}
             height={290}

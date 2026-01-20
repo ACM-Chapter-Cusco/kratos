@@ -35,7 +35,7 @@ const Hints = ({ hints = [] }) => {
               <span className={styles.hint_title}>{hint.title}</span>
               <div className={`${styles.hint_icon} ${expandedHints[hint.id] ? styles.expanded : ''}`}>
                 <Image 
-                  src="/contest/angle-down.svg" 
+                  src="/pages/contest/icons/icon-angle-down.svg" 
                   alt="Expand hint" 
                   width={16} 
                   height={16}

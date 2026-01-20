@@ -11,7 +11,7 @@ const ParticipationPage = () => {
       buttonText: "Inscríbete",
       buttonLink: "#",
       hasVideo: true,
-      imageSrc: "/participar/participar1.jpg",
+      imageSrc: "/pages/participation/images/step-participate-01.webp",
     },
     {
       id: "02",
@@ -22,14 +22,14 @@ const ParticipationPage = () => {
       buttonText: "Practica con problemas pasados",
       buttonLink: "/contest",
       hasVideo: false,
-      imageSrc: "/images/cuscontest/code-python.png",
+      imageSrc: "/pages/participation/images/step-preparation.webp",
     },
     {
       id: "03",
       duration: "El día del evento antes de concursar",
       title: "Recibe tu fotocheck",
       hasVideo: false,
-      imageSrc: "/participar/cardParticipation.png",
+      imageSrc: "/pages/participation/images/step-card.webp",
     },
     {
       id: "04",
@@ -37,14 +37,14 @@ const ParticipationPage = () => {
       title: "Ingresa a la plataforma",
       description: "Ingresar el nombre de usuario y contraseña respectivos",
       hasVideo: false,
-      imageSrc: "/participar/participar2.jpg",
+      imageSrc: "/pages/participation/images/step-participate-02.webp",
     },
     {
       id: "05",
       duration: "Durante el concurso",
       title: "Manda la solución de un problema",
       hasVideo: false,
-      imageSrc: "/participar/participar2.jpg",
+      imageSrc: "/pages/participation/images/step-participate-02.webp",
     },
     {
       id: "06",
@@ -53,6 +53,7 @@ const ParticipationPage = () => {
       description:
         "Ve al evento de premiación para ser reconocido por haber quedado entre los mejores 3 equipos de tu categoría, pero si no, aun puedes participar del emocionante sorteo de muchisimos regalos geniales.",
       hasVideo: false,
+      imageSrc: "/pages/participation/images/step-awards.webp",
     },
   ];
 

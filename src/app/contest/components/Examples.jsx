@@ -9,7 +9,7 @@ const Examples = ({
     try {
       await navigator.clipboard.writeText(text);
     } catch (error) {
-      console.error('Failed to copy text:', error);
+      // Failed to copy text
     }
   };
 
@@ -28,7 +28,7 @@ const Examples = ({
               aria-label="Copy input data"
             >
               <Image 
-                src="/contest/copy.svg" 
+                src="/pages/contest/icons/icon-copy.svg" 
                 alt="Copy" 
                 width={25} 
                 height={25}
@@ -58,7 +58,7 @@ const Examples = ({
               aria-label="Copy output data"
             >
               <Image 
-                src="/contest/copy.svg" 
+                src="/pages/contest/icons/icon-copy.svg" 
                 alt="Copy" 
                 width={25} 
                 height={25}

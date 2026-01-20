@@ -24,10 +24,10 @@ export function Seccion6Normal() {
         id="row-1"
       >
         <div className="h-[16vw] w-[52%]" id="image-1">
-          <ImageStyles src="/participar/Cuscontest01.jpg" />
+          <ImageStyles src="/pages/gallery/images/gallery-01.webp" />
         </div>
         <div className="h-[16vw] w-[34%]" id="image-2">
-          <ImageStyles src="/participar/Cuscontest02.jpg" />
+          <ImageStyles src="/pages/gallery/images/gallery-02.webp" />
         </div>
       </div>
       {/* Seccion 2 - fila 2 */}
@@ -40,16 +40,16 @@ export function Seccion6Normal() {
           {/* Seccion 2 - fila 2 - columna 1 - fila 1*/}
           <div className="flex w-full flex-row gap-5 max-lg:gap-3.5" id="row-1">
             <div className="h-[11vw] w-[55%]" id="image-1">
-              <ImageStyles src="/participar/Cuscontest03.jpg" />
+              <ImageStyles src="/pages/gallery/images/gallery-03.webp" />
             </div>
             <div className="h-[11vw] w-[45%]" id="image-2">
-              <ImageStyles src="/participar/Cuscontest04.jpg" />
+              <ImageStyles src="/pages/gallery/images/gallery-04.webp" />
             </div>
           </div>
           {/* Seccion 2 - fila 2 - columna 1 - fila 2*/}
           <div className="flex w-full justify-end" id="row-2">
             <div className="h-[14vw] w-4/5">
-              <ImageStyles src="/participar/Cuscontest06.jpg" />
+              <ImageStyles src="/pages/gallery/images/gallery-06.webp" />
             </div>
           </div>
           <div
@@ -65,15 +65,15 @@ export function Seccion6Normal() {
         <div className="flex w-[60%] flex-col gap-7 max-lg:gap-5" id="col-2">
           <div className="flex w-full justify-start" id="row-2">
             <div className="h-[21vw] w-full">
-              <ImageStyles src="/participar/Cuscontest05.jpg" />
+              <ImageStyles src="/pages/gallery/images/gallery-05.webp" />
             </div>
           </div>
           <div className="flex flex-row gap-4 max-lg:gap-2.5" id="row-2">
             <div className="h-[12vw] w-[35%]" id="image-1">
-              <ImageStyles src="/participar/Cuscontest07.jpg" />
+              <ImageStyles src="/pages/gallery/images/gallery-07.webp" />
             </div>
             <div className="h-[12vw] w-1/2" id="image-2">
-              <ImageStyles src="/participar/Cuscontest08.jpg" />
+              <ImageStyles src="/pages/gallery/images/gallery-01.webp" />
             </div>
           </div>
         </div>
@@ -107,36 +107,36 @@ export function Seccion6Mobile() {
     >
       <div className="flex h-auto w-full flex-col items-center justify-center gap-6">
         <div className="h-[36vw] w-4/5">
-          <ImageStyles src="/participar/Cuscontest01.jpg" />
+          <ImageStyles src="/pages/gallery/images/gallery-01.webp" />
         </div>
         {/*Cuadrado*/}
         <div className="flex w-11/12 flex-row gap-6">
           <div className="flex w-[55%] flex-col gap-6">
             <div className="h-[30vw]">
-              <ImageStyles src="/participar/Cuscontest02.jpg"></ImageStyles>
+              <ImageStyles src="/pages/gallery/images/gallery-02.webp"></ImageStyles>
             </div>
             <div className="h-[25vw]">
-              <ImageStyles src="/participar/Cuscontest06.jpg"></ImageStyles>
+              <ImageStyles src="/pages/gallery/images/gallery-06.webp"></ImageStyles>
             </div>
           </div>
           <div className="flex w-2/5 flex-col gap-6">
             <div className="h-[22vw]">
-              <ImageStyles src="/participar/Cuscontest03.jpg"></ImageStyles>
+              <ImageStyles src="/pages/gallery/images/gallery-03.webp"></ImageStyles>
             </div>
             <div className="h-[33vw]">
-              <ImageStyles src="/participar/Cuscontest04.jpg"></ImageStyles>
+              <ImageStyles src="/pages/gallery/images/gallery-04.webp"></ImageStyles>
             </div>
           </div>
         </div>
         <div className="h-[36vh] w-11/12">
-          <ImageStyles src="/participar/Cuscontest05.jpg" />
+          <ImageStyles src="/pages/gallery/images/gallery-05.webp" />
         </div>
         <div className="flex h-[20vh] w-4/5 flex-row gap-6">
           <div className="w-3/5">
-            <ImageStyles src="/participar/Cuscontest06.jpg" />
+            <ImageStyles src="/pages/gallery/images/gallery-06.webp" />
           </div>
           <div className="w-2/5">
-            <ImageStyles src="/participar/Cuscontest07.jpg" />
+            <ImageStyles src="/pages/gallery/images/gallery-07.webp" />
           </div>
         </div>
         <div className="flex w-4/5 flex-col items-center gap-2 text-gray-400">
@@ -147,7 +147,7 @@ export function Seccion6Mobile() {
             </div>
             {/* Right Section: Image */}
             <div className="h-[10vh] w-[32vw]">
-              <ImageStyles src="/participar/Cuscontest08.jpg" />
+              <ImageStyles src="/pages/gallery/images/gallery-01.webp" />
             </div>
           </div>
           <div className="flex w-4/5 flex-col items-center">

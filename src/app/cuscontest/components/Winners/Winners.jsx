@@ -1,13 +1,12 @@
 "use client";
 
 import React, { useRef } from "react";
-import WinnersWindowEffect from "./WinnersEditions";
 import { useMotionValue, motion, useScroll, useTransform } from "framer-motion";
 import WinnersEditions from "./WinnersEditions";
 import { fadeIn, springDown } from "@/app/common/animations/entrances";
 import { createDelayedVariant } from "@/app/common/animations/shared";
 
-const Winners = ({ ref, scroll }) => {
+const Winners = () => {
   const containerRef = useRef(null);
   const x = useMotionValue(0);
 
@@ -57,34 +56,33 @@ const Winners = ({ ref, scroll }) => {
             zIndex: 1,
           }}
         >
-          {" "}
           Salón de la <span className="text-blue">&nbsp;Fama</span>
         </motion.p>
       </div>
 
-      <motion.div className="desktop:top-24 lg-desktop:top-30 tablet:top-24 absolute top-20 w-full overflow-hidden">
+      <motion.div className="desktop:top-24 lg-desktop:top-30 tablet:top-24 absolute top-20 w-full overflow-x-auto overflow-y-hidden">
         <div className="desktop:block hidden h-[36rem] w-full">
           <WinnersEditions
             x={x}
             containerRef={containerRef}
             type="desktop"
-            widthSize={-7500}
+            widthSize={-9430}
           />
         </div>
-        <div className="desktop:hidden tablet:block hidden h-[32rem]">
+        <div className="desktop:hidden tablet:block hidden h-[32rem] w-full">
           <WinnersEditions
             x={x}
             containerRef={containerRef}
             type="tablet"
-            widthSize={-4900}
+            widthSize={-5760}
           />
         </div>
-        <div className="tablet:hidden block h-[31rem]">
+        <div className="tablet:hidden block h-[31rem] w-full">
           <WinnersEditions
             x={x}
             containerRef={containerRef}
             type="mobile"
-            widthSize={-4690}
+            widthSize={-5342}
           />
         </div>
       </motion.div>

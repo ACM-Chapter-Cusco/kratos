@@ -38,19 +38,16 @@ export const AuthProvider = ({ children }) => {
       return;
     }
 
-    console.log('checkAuthStatus called');
     const cachedUser = localStorage.getItem('user');
     const lastCheck = localStorage.getItem('lastAuthCheck');
     
     if (cachedUser && lastCheck && (Date.now() - parseInt(lastCheck)) < AUTH_CACHE_DURATION) {
-      console.log('Using cached user data');
       setUser(JSON.parse(cachedUser));
       setIsAuthenticated(true);
       setIsLoading(false);
       return;
     }
     
-    console.log('Making API call to /me');
     try {
       const member = await apiClient.checkSession();
       localStorage.setItem('user', JSON.stringify(member));

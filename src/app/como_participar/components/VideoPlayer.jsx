@@ -70,7 +70,7 @@ export function VideoPlayer() {
               controls
               autoPlay
             >
-              <source src="/participar/test.mp4" type="video/mp4" />
+              <source src="/pages/participation/media/tutorial-participation.mp4" type="video/mp4" />
               Tu navegador no soporta el tag de video.
             </video>
           </div>

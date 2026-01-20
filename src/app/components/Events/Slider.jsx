@@ -12,72 +12,72 @@ const dataEvents = [
     title: "Cuscontest",
     description:
       "Concurso de programación desafiante y divertido, en el cual puedes demostrar tus habilidades de resolución de problemas y vivir una experiencia memorable con tu equipo.",
-    img: "/events/img1.png",
-    prevImg: "/events/prev-img1.png",
+    img: "/pages/home/events/event-main-01.webp",
+    prevImg: "/pages/home/events/event-preview-01.webp",
   },
   {
     id: 1,
     title: "Todos vuelven",
     description:
       "Fascinantes charlas de exalumnos de la carrera como tú, donde cuentan sus experiencias sobre como triunfaron en el extranjero. Una oportunidad para encontrar tu rumbo en la carrera y hacer networking.",
-    img: "/events/img2.png",
-    prevImg: "/events/prev-img2.png",
+    img: "/pages/home/events/event-main-02.webp",
+    prevImg: "/pages/home/events/event-preview-02.webp",
   },
   {
     id: 2,
     title: "Induccion al cachimbo",
     description:
       "Charla donde buscamos dar una mejor perspectiva a los nuevos ingresantes sobre nuestra carrera y mostrarles las maravillosas cosas que pueden crear en un futuro.",
-    img: "/events/img3.png",
-    prevImg: "/events/prev-img3.png",
+    img: "/pages/home/events/event-main-03.webp",
+    prevImg: "/pages/home/events/event-preview-03.webp",
   },
   {
     id: 3,
     title: "Cuscontest",
     description:
       "Concurso de programación desafiante y divertido, en el cual puedes demostrar tus habilidades de resolución de problemas y vivir una experiencia memorable con tu equipo.",
-    img: "/events/img1.png",
-    prevImg: "/events/prev-img1.png",
+    img: "/pages/home/events/event-main-01.webp",
+    prevImg: "/pages/home/events/event-preview-01.webp",
   },
   {
     id: 4,
     title: "Todos vuelven",
     description:
       "Fascinantes charlas de exalumnos de la carrera como tú, donde cuentan sus experiencias sobre como triunfaron en el extranjero. Una oportunidad para encontrar tu rumbo en la carrera y hacer networking.",
-    img: "/events/img2.png",
-    prevImg: "/events/prev-img2.png",
+    img: "/pages/home/events/event-main-02.webp",
+    prevImg: "/pages/home/events/event-preview-02.webp",
   },
   {
     id: 5,
     title: "Induccion al cachimbo",
     description:
       "Charla donde buscamos dar una mejor perspectiva a los nuevos ingresantes sobre nuestra carrera y mostrarles las maravillosas cosas que pueden crear en un futuro.",
-    img: "/events/img3.png",
-    prevImg: "/events/prev-img3.png",
+    img: "/pages/home/events/event-main-03.webp",
+    prevImg: "/pages/home/events/event-preview-03.webp",
   },
   {
     id: 6,
     title: "Cuscontest",
     description:
       "Concurso de programación desafiante y divertido, en el cual puedes demostrar tus habilidades de resolución de problemas y vivir una experiencia memorable con tu equipo.",
-    img: "/events/img1.png",
-    prevImg: "/events/prev-img1.png",
+    img: "/pages/home/events/event-main-01.webp",
+    prevImg: "/pages/home/events/event-preview-01.webp",
   },
   {
     id: 7,
     title: "Todos vuelven",
     description:
       "Fascinantes charlas de exalumnos de la carrera como tú, donde cuentan sus experiencias sobre como triunfaron en el extranjero. Una oportunidad para encontrar tu rumbo en la carrera y hacer networking.",
-    img: "/events/img2.png",
-    prevImg: "/events/prev-img2.png",
+    img: "/pages/home/events/event-main-02.webp",
+    prevImg: "/pages/home/events/event-preview-02.webp",
   },
   {
     id: 8,
     title: "Induccion al cachimbo",
     description:
       "Charla donde buscamos dar una mejor perspectiva a los nuevos ingresantes sobre nuestra carrera y mostrarles las maravillosas cosas que pueden crear en un futuro.",
-    img: "/events/img3.png",
-    prevImg: "/events/prev-img3.png",
+    img: "/pages/home/events/event-main-03.webp",
+    prevImg: "/pages/home/events/event-preview-03.webp",
   },
 ];
 const Slider = () => {
