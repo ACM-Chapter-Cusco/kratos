@@ -2,13 +2,13 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Header from "../components/Header";
-import Problem from "./components/Problem";
-import Hints from "./components/Hints";
-import CodeEditor from "./components/CodeEditor";
+import Header from "@/components/layout/Header";
+import Problem from "@/components/pages/contest/Problem";
+import Hints from "@/components/pages/contest/Hints";
+import CodeEditor from "@/components/pages/contest/CodeEditor";
 import { ReactLenis } from "lenis/react";
-import styles from "./components/Contest.module.css";
-import problemsData from "./data/problems.json";
+import styles from "@/components/pages/contest/Contest.module.css";
+import problemsData from "@/data/problems.json";
 
 const ContestPage = () => {
   const [currentProblem, setCurrentProblem] = useState(0);
