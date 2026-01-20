@@ -1,16 +1,16 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
 import { useMotionValue } from "framer-motion";
-import Header from "../components/Header";
-import Hero from "./components/Hero";
-import SimulatorSection from "./components/SimulatorSection";
-import About from "./components/About";
-import FAQSection from "./components/FAQSection";
+import Header from "@/components/common/layout/Header";
+import Hero from "@/components/cuscontest/Hero";
+import SimulatorSection from "@/components/cuscontest/SimulatorSection";
+import About from "@/components/cuscontest/About";
+import FAQSection from "@/components/cuscontest/FAQSection";
 
 import { ReactLenis } from "lenis/react";
-import Advantages from "./components/Advantages/Advantages";
-import WinnerCarousel from "./components/Winners/WinnerCarousel";
-import Footer from "../components/Footer";
+import Advantages from "@/components/cuscontest/Advantages/Advantages";
+import WinnerCarousel from "@/components/cuscontest/Winners/WinnerCarousel";
+import Footer from "@/components/common/layout/Footer";
 
 const CuscontestPage = () => {
   const [scrollbarWidth, setScrollbarWidth] = useState(0);
